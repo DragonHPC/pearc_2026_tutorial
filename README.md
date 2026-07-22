@@ -17,20 +17,21 @@ use cases. By learning how to take advantage of the features of DragonHPC, atten
 can be explored on their laptop or common HPC platforms and be able to scale their workloads to leadership scale systems with
 little-to-no code changes.
 
-## Agenda
+## Agenda (with links to jupyter notebook tutorials)
+
 | Time Slot | Minutes | Course | Topic/Exercise | Presenter(s) |
 | --- | --- | --- | --- | --- |
 | 0:00 - 0:15 |  15 | | Tutorial introduction | P. Mendygral |
 | 0:15 - 0:45 | 30 | | Presentation: AI+HPC workflows and DragonHPC | C. Simpson |
 | 0:45 - 1:00 | 15 | 1 | Preparations for exercises | P. Mendygral<br>T. Maiden |
-| 1:00 - 1:30 | 30 | 1 | Python multiprocessing across multiple nodes | P. Mendygral<br>D. Potts |
-| 1:30 - 2:00 | 30 | 1 | Managing Python objects, tensors, and contiguous<br>data with the in-memory distributed dictionary<br>(DDict API) | C. Simpson<br>K. Lee |
+| 1:00 - 1:30 | 30 | 1 | [Python multiprocessing across multiple nodes](course1/multiprocessing_across_nodes/multiprocessing_intro.ipynb) | P. Mendygral<br>D. Potts |
+| 1:30 - 2:00 | 30 | 1 | [Managing DDict objects across processes <br> in Python and C++ (DDict API)](course1/managing_data_with_ddict/ddict_tutorial.ipynb) | C. Simpson<br>K. Lee |
 | 2:00 - 2:15 | 15 | | Coffee Break | |
-| 2:15 - 2:45 | 30 | 2 | Using Python multiprocessing with GPUs, and<br>PyTorch for multi-node LLM inference | P. Mendygral |
+| 2:15 - 2:45 | 30 | 2 | [Using Python multiprocessing with GPUs, and<br>PyTorch for multi-node LLM inference](course2/multiprocessing_with_GPUs_and_LLMs/gpu_llm_inference_tutorial.ipynb) | P. Mendygral |
 | 2:45 - 3:00 | 15 | 2 | Checkpoint with attendees/Q&A | All presenters |
-| 3:00 - 3:15 | 15 | 2 | Orchestrating MPI applications with the<br>ProcessGroup API | P. Mendygral |
-| 3:15 - 3:45 | 30 | 2 | Sharing data between MPI and other processes<br>using the DDict API | K. Lee<br>C. Simpson |
-| 3:45 - 4:15 | 30 | 3 | Coupling MPI applications with PyTorch-based<br>inference and training | P. Mendygral<br>C. Simpson |
+| 3:00 - 3:15 | 15 | 2 | [Orchestrating MPI applications with the<br>ProcessGroup API](course2/orchestrating_MPI/processgroup_mpi_tutorial.ipynb) | P. Mendygral |
+| 3:15 - 3:45 | 30 | 2 | [Sharing data between MPI and other processes<br>using the DDict API](course2/sharing_data_mpi_and_others/ddict_tutorial_2.ipynb) | K. Lee<br>C. Simpson |
+| 3:45 - 4:15 | 30 | 3 | [Coupling MPI applications with PyTorch-based<br>inference and training](course3/coupling_MPI_and_AI/mpi_pytorch_coupled_tutorial.ipynb) | P. Mendygral<br>C. Simpson |
 | 4:15 - 4:30 | 15 | 3 | Checkpoint with attendees/Q&A | All presenters |
 | 4:30 - 4:45 | 15 | | Coffee Break | |
 | 4:45 - 5:50 | 65 | | Review/discussion/Q&A/hackathon| All presenters |
@@ -41,10 +42,6 @@ little-to-no code changes.
 
 ## Primary tool documentation
 * [DragonHPC](https://dragonhpc.github.io/dragon/doc/_build/html/index.html)
-
-## Sample tutorials
-* [Data processing introduction for DragonHPC](https://dragonhpc.github.io/dragon/doc/_build/html/uses/data_processing.html)
-* [AI in the loop example for DragonHPC](https://dragonhpc.github.io/dragon/doc/_build/html/cbook/ai-in-the-loop.html)
 
 ## Technical Organizers and Contributers
 * Pete Mendygral, HPE
@@ -57,49 +54,12 @@ little-to-no code changes.
 
 # DragonHPC PEARC Tutorial Environment
 
-Welcome to the DragonHPC PEARC Tutorial Environment! We're excited to help you get to know Dragon!
+Welcome to the DragonHPC PEARC Tutorial Environment! We're excited to help you get to know Dragon! Please
+open the [Requirements Guide](REQUIREMENTS.md) for instructions on how to set up your environment for running
+the DragonHPC tutorials.
 
-This tutorial environment is built on top of the DevContainer specification. A DevContainer is
-an isolated Docker-based development environment that includes everything needed to work with
-DragonHPC.
+# Tip
 
-Before starting the DragonHPC DevContainer, make sure your system is configured to run
-DevContainers. This is typically done through an IDE such as VS Code, or through a CLI tool
-such as DevPod.
-
-## Prerequisites
-
-1. A working Docker engine.
-   See https://docs.docker.com/engine/install/ for Docker installation instructions.
-
-2. One of the following environments for running the DragonHPC DevContainer:
-
-   - VS Code with the Dev Containers extension installed.
-     See https://code.visualstudio.com/docs/devcontainers/tutorial for setup instructions.
-
-   or
-
-   - DevPod, to access the DragonHPC DevContainer from your computer's shell.
-     Install the DevPod CLI: https://devpod.sh/docs/getting-started/install
-     Then add the DevPod Docker provider: https://devpod.sh/docs/quickstart/devpod-cli
-
-## Starting the DragonHPC DevContainer
-
-Follow the instructions below based on whether you are using VS Code or DevPod.
-
-### Using VS Code
-
-1. Open this project folder locally in VS Code (File > Open Folder...).
-2. Click the pop-up notification in the bottom-right corner that says "Reopen in Container".
-3. If you miss the pop-up, open the Command Palette by pressing Ctrl+Shift+P (or Cmd+Shift+P on macOS).
-4. Run "Dev Containers: Reopen in Container".
-
-VS Code will build the environment, reload the window, and connect you directly into the container.
-
-### Using DevPod
-
-This repository includes three scripts to start, connect to, and stop the DragonHPC DevContainer:
-
-   * DevPod-start - starts the DragonHPC DevContainer in the background
-   * DevPod-ssh   - opens an SSH connection to the DragonHPC DevContainer
-   * DevPod-stop  - stops and removes the DragonHPC DevContainer
+The tutorials are in Jupyter notebook form. If you make a mistake while writing code you may leave
+your notebook in a bad state. If that happens you can restart the kernel to recover from it. After
+restarting the kernel, make sure to re-execute any start up code that was necessary for the tutorial.

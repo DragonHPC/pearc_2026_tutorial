@@ -1,7 +1,10 @@
+import argparse
 import mpi4py
 mpi4py.rc.initialize = False
 import numpy as np
 from time import perf_counter as timer
+
+from dragon.data import DDict
 
 plotOn = False  # set to True to generate a plot per rank
 
@@ -11,6 +14,22 @@ if plotOn:
     import matplotlib.pyplot as plt
 
 from mpi4py import MPI
+
+def get_args():
+    parser = argparse.ArgumentParser(description="1d Van Leer Advection Solver")
+    parser.add_argument(
+        "--cfl",
+        type=float,
+        default=0.8,
+        help="CFL (aka Courant number) to use in the solver",
+    )
+    parser.add_argument(
+        "--dser",
+        type=str,
+        default="",
+        help="Serialize DDict descriptor to write data to",
+    )
+    return parser.parse_args()
 
 # van Leer limiter function
 def van_leer(r):
@@ -61,7 +80,7 @@ def time_step(u, dt, dx, c):
 
     u[2:-2] = u[2:-2] - (dt / dx) * (F[2:-2] - F[1:-3])
 
-def main():
+def main(cfl, ddict):
 
     MPI.Init()  # now we can initializatize MPI
 
@@ -69,6 +88,7 @@ def main():
     rank = comm.Get_rank()
     size = comm.Get_size()
     print(f"Rank {rank} of {size} says: Hello from MPI!", flush=True)
+    print(f"Using CFL={cfl} and provided DDict={ddict}", flush=True)
 
     # Parameters
     nx = 256                    # Number of grid cells per rank
@@ -76,7 +96,6 @@ def main():
     dx = Lx / (size * nx)       # Cell size
     c = 1.0                     # Advection speed
     t_final = 0.1               # Final time
-    cfl = 0.4                   # CFL number
     dt = cfl * dx / np.abs(c)   # Time step
 
     # Grid setup (cell centers)
@@ -108,6 +127,10 @@ def main():
             plt.plot(u[2:-2])
             plt.savefig(f"my_plot_{rank}.png")
 
+    # write the results to the DDict if we have one
+    if ddict is not None:
+        ddict[f"cfl_{cfl}_rank{rank}"] = u[2:-2]
+
     # Write something unique from this MPI rank into the provided shared output Queue
     comm.Barrier()
     tot_elap = timer() - tot_elap
@@ -117,4 +140,10 @@ def main():
     MPI.Finalize()
 
 if __name__ == '__main__':
-    main()
+    args = get_args()
+    if args.dser != "":
+        ddict = DDict.attach(args.dser)
+    else:
+        ddict = None
+
+    main(args.cfl, ddict)
