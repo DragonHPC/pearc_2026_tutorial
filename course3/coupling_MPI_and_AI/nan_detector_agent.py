@@ -215,6 +215,7 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
                     tools=tools,
                     add_generation_prompt=True,
                     tokenize=False,
+                    #enable_thinking=True,
                     enable_thinking=False,
                 )
             except TypeError:
@@ -257,7 +258,7 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
 # Not wired into main() — provided as an example of a zero-latency backend.
 # ===========================================================================
 
-def ultralight_inference_service(input_queue, shutdown_event, model_name):
+def ultralight_nan_service(input_queue, shutdown_event, model_name):
     """Answer NaN queries directly, without an LLM.
 
     :param input_queue: Shared Dragon Queue the agents publish requests to.
@@ -332,13 +333,25 @@ pipeline = Pipeline(nodes=[
     PipelineNode(
         agent_id="nan_agent",
         task_description=(
-            "You are a data-quality assistant.  The user tells you the DDict "
-            "key under which a list of numbers is stored.  Determine whether "
-            "that list contains any NaN (missing/invalid) values by calling "
-            "the detect_nans tool with that key (do NOT pass the numbers "
-            "themselves — pass only the key string).\n\n"
-            "After the tool returns, state clearly whether NaNs are present, "
-            "how many there are, and at which indices."
+            "You are a data-quality assistant.  Results from a number of MPI "
+            "ranks are stored in the shared data store.  The user tells you "
+            "how many ranks there are; each rank's array is stored under a "
+            "key of the form 'rank_i', where i counts from 0 up to "
+            "num_ranks - 1.  Derive the full list of keys yourself from that "
+            "count.\n\n"
+            "WORKFLOW:\n"
+            "  1. Call detect_nans once for EACH key, passing only the key "
+            "string (e.g. 'rank_0').  Check each key exactly once and never "
+            "re-check a key you have already checked.\n"
+            "  2. As soon as every key has been checked, STOP calling tools "
+            "and give your final answer in that same turn (do not call any "
+            "tool when giving the final answer).\n\n"
+            "FINAL ANSWER:\n"
+            "  - Write plain text, not JSON.\n"
+            "  - Report ONLY the keys whose arrays contain NaNs, with the NaN "
+            "count and indices for each.  Do NOT mention keys that are clean.\n"
+            "  - Example: 'rank_1 has 1 NaN at index 2; rank_3 has 2 NaNs at "
+            "indices 1 and 3.'"
         ),
         depends_on=[],
     ),
@@ -354,14 +367,24 @@ async def main():
     inference_shutdown = Event()
 
     # --- Shared data store -------------------------------------------------
-    # Create a small DDict (1 manager, 1 node, 2 MB) and stage the dataset
-    # under a key.  The payload here is tiny (~80 bytes), so there is no need
-    # to reserve a large managed pool.  The agent passes this key to the
-    # detect_nans tool instead of the raw list.
+    # Create a small DDict (1 manager, 1 node, 2 MB) and stage the datasets
+    # under keys.  The payload here is tiny, so there is no need to reserve a
+    # large managed pool.  The agent passes a key to the detect_nans tool
+    # instead of the raw list.
     # See develop/examples/dragon_data/ddict/demo_ddict.py.
     data_store = DDict(1, 1, 2 * 1024 * 1024)
-    data_key = "sensor_readings"
-    data_store[data_key] = [1.0, 2.5, float("nan"), 4.2, 5.0, float("nan"), 7.7]
+
+    # Simulate result arrays gathered from four MPI ranks (rank_0..rank_3).
+    # Two ranks contain NaNs (bad data); the other two are clean.
+    rank_arrays = {
+        "rank_0": [1.0, 2.0, 3.0, 4.0],
+        "rank_1": [3.0, 6.0, float("nan"), 12.0],           # has NaNs
+        #"rank_2": [0.5, 1.5, 2.5, 3.5],
+        #"rank_3": [5.0, float("nan"), 3.0, float("nan")],   # has NaNs
+    }
+    for _key, _arr in rank_arrays.items():
+        data_store[_key] = _arr
+    data_keys = list(rank_arrays)
 
     registry = ToolRegistry()
     registry.register(make_detect_nans(data_store))
@@ -381,14 +404,18 @@ async def main():
                 agent_id="nan_agent",
                 name="NaN Detector",
                 role=(
-                    "You are a data-quality assistant.  Detect NaN values in "
-                    "numeric lists by calling detect_nans, then summarise the "
-                    "findings for the user."
+                    "You are a data-quality assistant.  You scan per-rank "
+                    "arrays for NaN values by calling detect_nans once per "
+                    "key, then report only the ranks whose arrays contain "
+                    "NaNs."
                 ),
                 inference_queue=input_queue,
                 # Single agent, one request at a time — no need for the
                 # proxy's default pool of 32 response channels.
                 max_concurrent_requests=1,
+                # Four keys to check — allow enough tool-call iterations for
+                # one detect_nans call per key plus the final answer.
+                max_tool_call_iterations=15,
             ),
             "tool_registry": registry,
             "shutdown_event": Event(),
@@ -410,15 +437,18 @@ async def main():
             config=OrchestratorConfig(
                 agents=[agent_spec["config"]],
                 poll_interval=0.5,
-                poll_timeout=600.0,
+                poll_timeout=1200.0,
             ),
             pipeline=pipeline,
         )
 
+        num_ranks = len(data_keys)
         user_input = (
-            f"A list of sensor readings is stored in the shared data store "
-            f"under the key '{data_key}'. "
-            "Do any of them contain NaN values?"
+            f"Result arrays from {num_ranks} MPI ranks are stored in the "
+            "shared data store.  Each rank's array is under a key of the form "
+            f"'rank_i' for i from 0 to {num_ranks - 1}.  Work out the keys "
+            "yourself, check each one, and report only the ranks whose arrays "
+            "contain NaN values."
         )
 
         batch = Batch(results_ddict_mem=int(10*1024*1024))
@@ -430,10 +460,35 @@ async def main():
 
             result = orchestrator.run(user_input=user_input, batch=batch)
 
+            # orchestrator.run() returns the terminal node's result dict,
+            # shaped like {"response": <final answer text>}.  Pull the text
+            # out so we print the agent's actual words, not the dict repr.
+            if isinstance(result, dict):
+                final_text = result.get("response") or result.get("error") or ""
+            else:
+                final_text = str(result)
+
             print("\n" + "=" * 60, flush=True)
-            print("FINAL RESULT", flush=True)
+            print("FINAL RESULT (agent's answer)", flush=True)
             print("=" * 60, flush=True)
-            print(result, flush=True)
+            print(final_text.strip() or "[agent returned no final text]", flush=True)
+
+            # Deterministic cross-check straight from the shared store, so the
+            # keys with NaNs are always reported even if the model's final
+            # text comes back weak or empty.
+            print("\n--- Keys with NaNs (ground truth) ---", flush=True)
+            any_flagged = False
+            for k in data_keys:
+                check = _check_nans(data_store[k])
+                if check["has_nans"]:
+                    any_flagged = True
+                    print(
+                        f"  {k}: {check['nan_count']} NaN(s) at "
+                        f"indices {check['nan_indices']}",
+                        flush=True,
+                    )
+            if not any_flagged:
+                print("  none", flush=True)
         except Exception as exc:
             import traceback
             print(f"\n[error] Pipeline failed: {exc}", flush=True)
