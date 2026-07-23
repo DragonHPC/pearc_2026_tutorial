@@ -99,7 +99,7 @@ def _propose_cfls(cfl_values, flags, num_ranks):
 # Both are plain functions with the required
 # ``(*upstreams: TaskResult) -> TaskResult`` signature once their leading
 # arguments (the shared data-store DDict and num_ranks) are bound with
-# ``functools.partial`` in main() — exactly like run_experiments_node.
+# ``functools.partial`` in run() — exactly like run_experiments_node.
 # Each mirrors run_experiments_node's plumbing: attach to the orchestrator's
 # DDict via ``upstream.serialized_ddict``, publish DISPATCH/RESULT/STATUS keys
 # so downstream nodes (and the orchestrator) can read the result, and return a
@@ -116,7 +116,7 @@ def check_nans(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
     NaNs (``nan_flags``, aligned with ``cfl_values``) so the downstream
     ``chose_new_cfls`` node can bracket the stability boundary.
 
-    :param data_store: Shared data-store DDict (bound via partial in main).
+    :param data_store: Shared data-store DDict (bound via partial in run).
     :param num_ranks: Number of MPI ranks per CFL (bound via partial).
     :param upstreams: TaskResult tokens from upstream nodes (the DAG root).
     :returns: A TaskResult marking this node DONE.
@@ -169,7 +169,7 @@ def chose_new_cfls(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
     CFLs as a plain comma-separated string — the exact text format
     ``run_experiments_node`` parses via ``_parse_cfls``.
 
-    :param data_store: Shared data-store DDict (bound via partial in main).
+    :param data_store: Shared data-store DDict (bound via partial in run).
     :param num_ranks: Number of MPI ranks per CFL (bound via partial).
     :param upstreams: TaskResult tokens from upstream nodes (check_nans).
     :returns: A TaskResult marking this node DONE.
@@ -212,7 +212,7 @@ def chose_new_cfls(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
     )
 
 
-def main(init_cfls, num_ranks, user_prompt):
+def run(init_cfls, num_ranks, user_prompt):
 
     # --- Shared data store -------------------------------------------------
     # A small DDict carries CFL values and per-rank result arrays between the
@@ -342,4 +342,4 @@ if __name__ == "__main__":
         "stable ranks and decreasing it for ranks that produced "
         "NaNs."
     )
-    main(init_cfls=init_cfls, num_ranks=NUM_RANKS, user_prompt=user_prompt)
+    run(init_cfls=init_cfls, num_ranks=NUM_RANKS, user_prompt=user_prompt)

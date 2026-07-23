@@ -275,7 +275,7 @@ def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResul
 # Main
 # ===========================================================================
 
-def main(init_cfls, num_ranks, user_prompt):
+def run(init_cfls, num_ranks, user_prompt):
     input_queue = Queue()
     inference_shutdown = Event()
 
@@ -503,4 +503,4 @@ if __name__ == "__main__":
         "stable ranks and decreasing it for ranks that produced "
         "NaNs."
     )
-    main(init_cfls=init_cfls, num_ranks=NUM_RANKS, user_prompt=user_prompt)
+    run(init_cfls=init_cfls, num_ranks=NUM_RANKS, user_prompt=user_prompt)
