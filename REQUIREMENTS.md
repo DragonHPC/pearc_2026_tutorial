@@ -21,12 +21,18 @@ environment.
 Once you have followed the steps in one of these sections you can open a terminal
 window (see Terminal menu in VS Code) or however you get a terminal window in the
 environment you built. If running outside of a container make sure you activate
-your virtual environment inside the terminal. Then from the root directory of the
-repo run:
+your virtual environment inside the terminal. Then to both download the model from
+HuggingFace that we will use during parts of the tutorial and to validate that
+you have a viable environment, from the root directory of the repo run the
+following commands:
 
 ```bash
+pip install huggingface_hub
+hf download --local-dir ./SmolLM3_3B HuggingFaceTB/SmolLM3-3B
 dragon smoke_test.py
 ```
+
+Note that the downloaded model is approximately 6GB in size and may take some time to download.  If you encounter issues with your organization's use of mandatory proxies, we highly recommend completing this download, potentially seeking help from your organization's IT on how to properly set proxy settings, prior to arriving on site for the tutorial.
 
 If `smoke_test.py` runs sucessfully, then you are ready to attend the Dragon tutorial.
 We are looking forward to seeing you there!
