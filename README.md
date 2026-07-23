@@ -37,8 +37,7 @@ We meet in Room 202AB for the tutorial at 9am.
 | 2:30 - 3:00  | 30 | 3 | [Coupling MPI applications with PyTorch-based<br>inference and training](course3/coupling_MPI_and_AI/mpi_pytorch_coupled_tutorial.ipynb) | P. Mendygral<br>C. Simpson |
 | 3:00 - 3:30  | 30 | | Coffee Break | |
 | 3:30 - 3:45  | 15 | 3 | Checkpoint with attendees/Q&A | All presenters |
-
-| 3:45 - 4:50  | 65 | | Review/discussion/Q&A/hackathon| All presenters |
+| 3:45 - 4:50  | 65 |  | Review/discussion/Q&A/hackathon | All presenters |
 | 4:50 - 5:00  | 10 | | Wrap-up and next steps| P. Mendygral |
 
 ## Primary tool website
