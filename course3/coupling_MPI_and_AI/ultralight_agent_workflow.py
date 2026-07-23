@@ -212,7 +212,7 @@ def chose_new_cfls(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
     )
 
 
-def run(init_cfls, num_ranks, user_prompt):
+def run(init_cfls, num_ranks, iterations, user_prompt):
 
     # --- Shared data store -------------------------------------------------
     # A small DDict carries CFL values and per-rank result arrays between the
@@ -278,7 +278,7 @@ def run(init_cfls, num_ranks, user_prompt):
             pipeline=pipeline,
         )
 
-        for iteration in range(NUM_ITERATIONS):
+        for iteration in range(iterations):
             if iteration == 0:
                 # Bootstrap: run the user-provided CFLs once so the NaN
                 # checker has results to scan on the first pipeline pass.
@@ -286,7 +286,7 @@ def run(init_cfls, num_ranks, user_prompt):
                 run_experiments_node(batch, data_store.serialize(),  num_ranks, None)
 
             print("=" * 60, flush=True)
-            print(f"Iteration {iteration + 1}/{NUM_ITERATIONS}", flush=True)
+            print(f"Iteration {iteration + 1}/{iterations}", flush=True)
             print("=" * 60, flush=True)
             print(f"Request: {user_prompt}\n", flush=True)
 
@@ -342,4 +342,4 @@ if __name__ == "__main__":
         "stable ranks and decreasing it for ranks that produced "
         "NaNs."
     )
-    run(init_cfls=init_cfls, num_ranks=NUM_RANKS, user_prompt=user_prompt)
+    run(init_cfls=init_cfls, num_ranks=NUM_RANKS, iterations=NUM_ITERATIONS, user_prompt=user_prompt)
