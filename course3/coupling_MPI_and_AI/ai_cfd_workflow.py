@@ -7,7 +7,8 @@ from dragon.data import DDict
 def queue_job(batch, nranks, cfl=0.8, dser=""):
 
     rank_tmpls = [(nranks, ProcessTemplate(target=sys.executable,
-                                           args=("../../course2/orchestrating_MPI/mpi4py_example.py","--cfl",cfl,"--dser",dser)))]
+                                           args=("../../course2/orchestrating_MPI/mpi4py_example.py","--cfl",cfl,"--dser",dser),
+                                           stdout=ProcessTemplate.DEVNULL))]
     job = batch.options(pmi=PMIBackend.PMIX).job(process_templates=rank_tmpls)
     print(f"Got a job {job}", flush=True)
     return job.uid, job

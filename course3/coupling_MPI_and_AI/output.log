@@ -1,0 +1,1989 @@
+[startup] Launching lightweight inference service...
+[startup] Agent 'generator_agent' ready.
+[startup] Agent 'nan_agent' ready.
+
+[fn] run_experiments_node -> cfl_values=[0.3, 2.4, 9.9, 0.8]
+Got a job <dragon.workflows.batch.batch.Job object at 0xffffaad12a20>
+Got a job <dragon.workflows.batch.batch.Job object at 0xffffaad12960>
+Got a job <dragon.workflows.batch.batch.Job object at 0xffffaad12db0>
+Got a job <dragon.workflows.batch.batch.Job object at 0xffffaad13260>
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.3 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa7f249b0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.3 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff8f6949b0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.3 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffbc0149b0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.3 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff9c3249b0>
+Step =      1 : SimTime = 2.9297e-04 : StepElapsed = 4.25e-03 s : CellsPS = 2.41e+05
+Step =      2 : SimTime = 5.8594e-04 : StepElapsed = 3.47e-03 s : CellsPS = 2.95e+05
+Step =      3 : SimTime = 8.7891e-04 : StepElapsed = 7.03e-03 s : CellsPS = 1.46e+05
+Step =      4 : SimTime = 1.1719e-03 : StepElapsed = 5.62e-03 s : CellsPS = 1.82e+05
+Step =      5 : SimTime = 1.4648e-03 : StepElapsed = 5.25e-03 s : CellsPS = 1.95e+05
+Step =      6 : SimTime = 1.7578e-03 : StepElapsed = 7.21e-04 s : CellsPS = 1.42e+06
+Step =      7 : SimTime = 2.0508e-03 : StepElapsed = 2.13e-04 s : CellsPS = 4.81e+06
+Step =      8 : SimTime = 2.3437e-03 : StepElapsed = 6.81e-04 s : CellsPS = 1.50e+06
+Step =      9 : SimTime = 2.6367e-03 : StepElapsed = 3.14e-04 s : CellsPS = 3.26e+06
+Step =     10 : SimTime = 2.9297e-03 : StepElapsed = 1.94e-04 s : CellsPS = 5.29e+06
+Step =     11 : SimTime = 3.2227e-03 : StepElapsed = 9.56e-04 s : CellsPS = 1.07e+06
+Step =     12 : SimTime = 3.5156e-03 : StepElapsed = 2.91e-04 s : CellsPS = 3.52e+06
+Step =     13 : SimTime = 3.8086e-03 : StepElapsed = 2.07e-04 s : CellsPS = 4.96e+06
+Step =     14 : SimTime = 4.1016e-03 : StepElapsed = 1.85e-04 s : CellsPS = 5.54e+06
+Step =     15 : SimTime = 4.3945e-03 : StepElapsed = 3.86e-03 s : CellsPS = 2.65e+05
+Step =     16 : SimTime = 4.6875e-03 : StepElapsed = 3.58e-03 s : CellsPS = 2.86e+05
+Step =     17 : SimTime = 4.9805e-03 : StepElapsed = 6.69e-04 s : CellsPS = 1.53e+06
+Step =     18 : SimTime = 5.2734e-03 : StepElapsed = 1.27e-03 s : CellsPS = 8.09e+05
+Step =     19 : SimTime = 5.5664e-03 : StepElapsed = 8.10e-04 s : CellsPS = 1.26e+06
+Step =     20 : SimTime = 5.8594e-03 : StepElapsed = 3.07e-04 s : CellsPS = 3.34e+06
+Step =     21 : SimTime = 6.1523e-03 : StepElapsed = 4.31e-04 s : CellsPS = 2.37e+06
+Step =     22 : SimTime = 6.4453e-03 : StepElapsed = 1.96e-04 s : CellsPS = 5.22e+06
+Step =     23 : SimTime = 6.7383e-03 : StepElapsed = 1.71e-04 s : CellsPS = 6.00e+06
+Step =     24 : SimTime = 7.0312e-03 : StepElapsed = 1.80e-04 s : CellsPS = 5.68e+06
+Step =     25 : SimTime = 7.3242e-03 : StepElapsed = 1.56e-04 s : CellsPS = 6.58e+06
+Step =     26 : SimTime = 7.6172e-03 : StepElapsed = 2.20e-04 s : CellsPS = 4.66e+06
+Step =     27 : SimTime = 7.9102e-03 : StepElapsed = 1.96e-04 s : CellsPS = 5.22e+06
+Step =     28 : SimTime = 8.2031e-03 : StepElapsed = 1.71e-04 s : CellsPS = 5.99e+06
+Step =     29 : SimTime = 8.4961e-03 : StepElapsed = 1.97e-04 s : CellsPS = 5.21e+06
+Step =     30 : SimTime = 8.7891e-03 : StepElapsed = 1.99e-04 s : CellsPS = 5.14e+06
+Step =     31 : SimTime = 9.0820e-03 : StepElapsed = 1.01e-03 s : CellsPS = 1.01e+06
+Step =     32 : SimTime = 9.3750e-03 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =     33 : SimTime = 9.6680e-03 : StepElapsed = 2.97e-04 s : CellsPS = 3.44e+06
+Step =     34 : SimTime = 9.9609e-03 : StepElapsed = 1.46e-04 s : CellsPS = 7.00e+06
+Step =     35 : SimTime = 1.0254e-02 : StepElapsed = 2.25e-03 s : CellsPS = 4.56e+05
+Step =     36 : SimTime = 1.0547e-02 : StepElapsed = 1.30e-04 s : CellsPS = 7.90e+06
+Step =     37 : SimTime = 1.0840e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.84e+06
+Step =     38 : SimTime = 1.1133e-02 : StepElapsed = 3.11e-03 s : CellsPS = 3.30e+05
+Step =     39 : SimTime = 1.1426e-02 : StepElapsed = 1.34e-03 s : CellsPS = 7.62e+05
+Step =     40 : SimTime = 1.1719e-02 : StepElapsed = 3.47e-04 s : CellsPS = 2.95e+06
+Step =     41 : SimTime = 1.2012e-02 : StepElapsed = 7.84e-04 s : CellsPS = 1.31e+06
+Step =     42 : SimTime = 1.2305e-02 : StepElapsed = 4.96e-04 s : CellsPS = 2.07e+06
+Step =     43 : SimTime = 1.2598e-02 : StepElapsed = 4.17e-04 s : CellsPS = 2.45e+06
+Step =     44 : SimTime = 1.2891e-02 : StepElapsed = 3.92e-04 s : CellsPS = 2.61e+06
+Step =     45 : SimTime = 1.3184e-02 : StepElapsed = 1.33e-03 s : CellsPS = 7.72e+05
+Step =     46 : SimTime = 1.3477e-02 : StepElapsed = 1.12e-03 s : CellsPS = 9.15e+05
+Step =     47 : SimTime = 1.3770e-02 : StepElapsed = 4.94e-04 s : CellsPS = 2.07e+06
+Step =     48 : SimTime = 1.4063e-02 : StepElapsed = 1.98e-03 s : CellsPS = 5.17e+05
+Step =     49 : SimTime = 1.4355e-02 : StepElapsed = 7.11e-04 s : CellsPS = 1.44e+06
+Step =     50 : SimTime = 1.4648e-02 : StepElapsed = 6.08e-04 s : CellsPS = 1.68e+06
+Step =     51 : SimTime = 1.4941e-02 : StepElapsed = 3.56e-04 s : CellsPS = 2.88e+06
+Step =     52 : SimTime = 1.5234e-02 : StepElapsed = 1.29e-02 s : CellsPS = 7.93e+04
+Step =     53 : SimTime = 1.5527e-02 : StepElapsed = 2.20e-03 s : CellsPS = 4.65e+05
+Step =     54 : SimTime = 1.5820e-02 : StepElapsed = 1.08e-03 s : CellsPS = 9.46e+05
+Step =     55 : SimTime = 1.6113e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.52e+06
+Step =     56 : SimTime = 1.6406e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.33e+06
+Step =     57 : SimTime = 1.6699e-02 : StepElapsed = 1.29e-04 s : CellsPS = 7.92e+06
+Step =     58 : SimTime = 1.6992e-02 : StepElapsed = 2.50e-04 s : CellsPS = 4.10e+06
+Step =     59 : SimTime = 1.7285e-02 : StepElapsed = 2.42e-04 s : CellsPS = 4.24e+06
+Step =     60 : SimTime = 1.7578e-02 : StepElapsed = 2.06e-04 s : CellsPS = 4.98e+06
+Step =     61 : SimTime = 1.7871e-02 : StepElapsed = 1.23e-03 s : CellsPS = 8.30e+05
+Step =     62 : SimTime = 1.8164e-02 : StepElapsed = 4.06e-04 s : CellsPS = 2.52e+06
+Step =     63 : SimTime = 1.8457e-02 : StepElapsed = 4.89e-03 s : CellsPS = 2.09e+05
+Step =     64 : SimTime = 1.8750e-02 : StepElapsed = 5.18e-04 s : CellsPS = 1.98e+06
+Step =     65 : SimTime = 1.9043e-02 : StepElapsed = 3.05e-03 s : CellsPS = 3.36e+05
+Step =     66 : SimTime = 1.9336e-02 : StepElapsed = 2.36e-04 s : CellsPS = 4.35e+06
+Step =     67 : SimTime = 1.9629e-02 : StepElapsed = 2.73e-03 s : CellsPS = 3.75e+05
+Step =     68 : SimTime = 1.9922e-02 : StepElapsed = 2.33e-04 s : CellsPS = 4.39e+06
+Step =     69 : SimTime = 2.0215e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.47e+06
+Step =     70 : SimTime = 2.0508e-02 : StepElapsed = 1.88e-03 s : CellsPS = 5.43e+05
+Step =     71 : SimTime = 2.0801e-02 : StepElapsed = 5.93e-04 s : CellsPS = 1.73e+06
+Step =     72 : SimTime = 2.1094e-02 : StepElapsed = 1.15e-03 s : CellsPS = 8.89e+05
+Step =     73 : SimTime = 2.1387e-02 : StepElapsed = 5.94e-04 s : CellsPS = 1.72e+06
+Step =     74 : SimTime = 2.1680e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.09e+06
+Step =     75 : SimTime = 2.1973e-02 : StepElapsed = 1.78e-04 s : CellsPS = 5.77e+06
+Step =     76 : SimTime = 2.2266e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.74e+06
+Step =     77 : SimTime = 2.2559e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.75e+06
+Step =     78 : SimTime = 2.2852e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.71e+06
+Step =     79 : SimTime = 2.3145e-02 : StepElapsed = 1.96e-04 s : CellsPS = 5.24e+06
+Step =     80 : SimTime = 2.3438e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.30e+06
+Step =     81 : SimTime = 2.3730e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.31e+06
+Step =     82 : SimTime = 2.4023e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.60e+06
+Step =     83 : SimTime = 2.4316e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.76e+06
+Step =     84 : SimTime = 2.4609e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.98e+06
+Step =     85 : SimTime = 2.4902e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.88e+06
+Step =     86 : SimTime = 2.5195e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.78e+06
+Step =     87 : SimTime = 2.5488e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.38e+06
+Step =     88 : SimTime = 2.5781e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.64e+06
+Step =     89 : SimTime = 2.6074e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.22e+06
+Step =     90 : SimTime = 2.6367e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.60e+06
+Step =     91 : SimTime = 2.6660e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.75e+06
+Step =     92 : SimTime = 2.6953e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.69e+06
+Step =     93 : SimTime = 2.7246e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.06e+06
+Step =     94 : SimTime = 2.7539e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.75e+06
+Step =     95 : SimTime = 2.7832e-02 : StepElapsed = 1.31e-04 s : CellsPS = 7.81e+06
+Step =     96 : SimTime = 2.8125e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.10e+06
+Step =     97 : SimTime = 2.8418e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.55e+06
+Step =     98 : SimTime = 2.8711e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.69e+06
+Step =     99 : SimTime = 2.9004e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.69e+06
+Step =    100 : SimTime = 2.9297e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.82e+06
+Step =    101 : SimTime = 2.9590e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.89e+06
+Step =    102 : SimTime = 2.9883e-02 : StepElapsed = 3.53e-04 s : CellsPS = 2.90e+06
+Step =    103 : SimTime = 3.0176e-02 : StepElapsed = 4.87e-04 s : CellsPS = 2.10e+06
+Step =    104 : SimTime = 3.0469e-02 : StepElapsed = 2.18e-04 s : CellsPS = 4.69e+06
+Step =    105 : SimTime = 3.0762e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.48e+06
+Step =    106 : SimTime = 3.1055e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.39e+06
+Step =    107 : SimTime = 3.1348e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.38e+06
+Step =    108 : SimTime = 3.1641e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.68e+06
+Step =    109 : SimTime = 3.1934e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.83e+06
+Step =    110 : SimTime = 3.2227e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.59e+06
+Step =    111 : SimTime = 3.2520e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.39e+06
+Step =    112 : SimTime = 3.2813e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.66e+06
+Step =    113 : SimTime = 3.3105e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.69e+06
+Step =    114 : SimTime = 3.3398e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.67e+06
+Step =    115 : SimTime = 3.3691e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.65e+06
+Step =    116 : SimTime = 3.3984e-02 : StepElapsed = 3.08e-04 s : CellsPS = 3.32e+06
+Step =    117 : SimTime = 3.4277e-02 : StepElapsed = 2.02e-04 s : CellsPS = 5.07e+06
+Step =    118 : SimTime = 3.4570e-02 : StepElapsed = 5.16e-04 s : CellsPS = 1.98e+06
+Step =    119 : SimTime = 3.4863e-02 : StepElapsed = 2.50e-04 s : CellsPS = 4.10e+06
+Step =    120 : SimTime = 3.5156e-02 : StepElapsed = 6.63e-03 s : CellsPS = 1.54e+05
+Step =    121 : SimTime = 3.5449e-02 : StepElapsed = 1.40e-03 s : CellsPS = 7.31e+05
+Step =    122 : SimTime = 3.5742e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.74e+06
+Step =    123 : SimTime = 3.6035e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.76e+06
+Step =    124 : SimTime = 3.6328e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.74e+06
+Step =    125 : SimTime = 3.6621e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.87e+06
+Step =    126 : SimTime = 3.6914e-02 : StepElapsed = 3.62e-04 s : CellsPS = 2.83e+06
+Step =    127 : SimTime = 3.7207e-02 : StepElapsed = 6.25e-04 s : CellsPS = 1.64e+06
+Step =    128 : SimTime = 3.7500e-02 : StepElapsed = 6.68e-04 s : CellsPS = 1.53e+06
+Step =    129 : SimTime = 3.7793e-02 : StepElapsed = 5.57e-04 s : CellsPS = 1.84e+06
+Step =    130 : SimTime = 3.8086e-02 : StepElapsed = 3.08e-04 s : CellsPS = 3.32e+06
+Step =    131 : SimTime = 3.8379e-02 : StepElapsed = 1.27e-03 s : CellsPS = 8.03e+05
+Step =    132 : SimTime = 3.8672e-02 : StepElapsed = 1.63e-03 s : CellsPS = 6.30e+05
+Step =    133 : SimTime = 3.8965e-02 : StepElapsed = 3.91e-03 s : CellsPS = 2.62e+05
+Step =    134 : SimTime = 3.9258e-02 : StepElapsed = 1.05e-03 s : CellsPS = 9.79e+05
+Step =    135 : SimTime = 3.9551e-02 : StepElapsed = 3.58e-04 s : CellsPS = 2.86e+06
+Step =    136 : SimTime = 3.9844e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.76e+06
+Step =    137 : SimTime = 4.0137e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.72e+06
+Step =    138 : SimTime = 4.0430e-02 : StepElapsed = 1.51e-03 s : CellsPS = 6.77e+05
+Step =    139 : SimTime = 4.0723e-02 : StepElapsed = 2.56e-04 s : CellsPS = 4.00e+06
+Step =    140 : SimTime = 4.1016e-02 : StepElapsed = 5.07e-03 s : CellsPS = 2.02e+05
+Step =    141 : SimTime = 4.1309e-02 : StepElapsed = 3.49e-02 s : CellsPS = 2.94e+04
+Step =    142 : SimTime = 4.1602e-02 : StepElapsed = 1.61e-02 s : CellsPS = 6.36e+04
+Step =    143 : SimTime = 4.1895e-02 : StepElapsed = 1.66e-04 s : CellsPS = 6.16e+06
+Step =    144 : SimTime = 4.2187e-02 : StepElapsed = 2.81e-03 s : CellsPS = 3.65e+05
+Step =    145 : SimTime = 4.2480e-02 : StepElapsed = 1.15e-02 s : CellsPS = 8.91e+04
+Step =    146 : SimTime = 4.2773e-02 : StepElapsed = 2.19e-03 s : CellsPS = 4.67e+05
+Step =    147 : SimTime = 4.3066e-02 : StepElapsed = 3.18e-03 s : CellsPS = 3.22e+05
+Step =    148 : SimTime = 4.3359e-02 : StepElapsed = 6.43e-03 s : CellsPS = 1.59e+05
+Step =    149 : SimTime = 4.3652e-02 : StepElapsed = 1.60e-02 s : CellsPS = 6.41e+04
+Step =    150 : SimTime = 4.3945e-02 : StepElapsed = 8.55e-03 s : CellsPS = 1.20e+05
+Step =    151 : SimTime = 4.4238e-02 : StepElapsed = 1.73e-02 s : CellsPS = 5.92e+04
+Step =    152 : SimTime = 4.4531e-02 : StepElapsed = 4.19e-04 s : CellsPS = 2.44e+06
+Step =    153 : SimTime = 4.4824e-02 : StepElapsed = 6.01e-03 s : CellsPS = 1.70e+05
+Step =    154 : SimTime = 4.5117e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.79e+06
+Step =    155 : SimTime = 4.5410e-02 : StepElapsed = 1.34e-02 s : CellsPS = 7.64e+04
+Step =    156 : SimTime = 4.5703e-02 : StepElapsed = 9.77e-04 s : CellsPS = 1.05e+06
+Step =    157 : SimTime = 4.5996e-02 : StepElapsed = 9.09e-04 s : CellsPS = 1.13e+06
+Step =    158 : SimTime = 4.6289e-02 : StepElapsed = 5.10e-04 s : CellsPS = 2.01e+06
+Step =    159 : SimTime = 4.6582e-02 : StepElapsed = 1.43e-03 s : CellsPS = 7.17e+05
+Step =    160 : SimTime = 4.6875e-02 : StepElapsed = 1.00e-03 s : CellsPS = 1.02e+06
+Step =    161 : SimTime = 4.7168e-02 : StepElapsed = 1.84e-04 s : CellsPS = 5.57e+06
+Step =    162 : SimTime = 4.7461e-02 : StepElapsed = 4.10e-03 s : CellsPS = 2.50e+05
+Step =    163 : SimTime = 4.7754e-02 : StepElapsed = 2.96e-04 s : CellsPS = 3.45e+06
+Step =    164 : SimTime = 4.8047e-02 : StepElapsed = 1.21e-03 s : CellsPS = 8.48e+05
+Step =    165 : SimTime = 4.8340e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.24e+06
+Step =    166 : SimTime = 4.8633e-02 : StepElapsed = 1.30e-03 s : CellsPS = 7.88e+05
+Step =    167 : SimTime = 4.8926e-02 : StepElapsed = 6.97e-04 s : CellsPS = 1.47e+06
+Step =    168 : SimTime = 4.9219e-02 : StepElapsed = 1.13e-03 s : CellsPS = 9.03e+05
+Step =    169 : SimTime = 4.9512e-02 : StepElapsed = 3.11e-04 s : CellsPS = 3.29e+06
+Step =    170 : SimTime = 4.9805e-02 : StepElapsed = 2.39e-04 s : CellsPS = 4.28e+06
+Step =    171 : SimTime = 5.0098e-02 : StepElapsed = 4.61e-04 s : CellsPS = 2.22e+06
+Step =    172 : SimTime = 5.0391e-02 : StepElapsed = 5.01e-04 s : CellsPS = 2.04e+06
+Step =    173 : SimTime = 5.0684e-02 : StepElapsed = 1.06e-03 s : CellsPS = 9.63e+05
+Step =    174 : SimTime = 5.0977e-02 : StepElapsed = 4.84e-04 s : CellsPS = 2.12e+06
+Step =    175 : SimTime = 5.1270e-02 : StepElapsed = 3.85e-04 s : CellsPS = 2.66e+06
+Step =    176 : SimTime = 5.1562e-02 : StepElapsed = 5.59e-04 s : CellsPS = 1.83e+06
+Step =    177 : SimTime = 5.1855e-02 : StepElapsed = 4.74e-04 s : CellsPS = 2.16e+06
+Step =    178 : SimTime = 5.2148e-02 : StepElapsed = 7.24e-04 s : CellsPS = 1.41e+06
+Step =    179 : SimTime = 5.2441e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.61e+06
+Step =    180 : SimTime = 5.2734e-02 : StepElapsed = 9.92e-04 s : CellsPS = 1.03e+06
+Step =    181 : SimTime = 5.3027e-02 : StepElapsed = 4.24e-04 s : CellsPS = 2.41e+06
+Step =    182 : SimTime = 5.3320e-02 : StepElapsed = 4.65e-04 s : CellsPS = 2.20e+06
+Step =    183 : SimTime = 5.3613e-02 : StepElapsed = 4.59e-04 s : CellsPS = 2.23e+06
+Step =    184 : SimTime = 5.3906e-02 : StepElapsed = 1.47e-03 s : CellsPS = 6.95e+05
+Step =    185 : SimTime = 5.4199e-02 : StepElapsed = 5.32e-04 s : CellsPS = 1.93e+06
+Step =    186 : SimTime = 5.4492e-02 : StepElapsed = 9.90e-04 s : CellsPS = 1.03e+06
+Step =    187 : SimTime = 5.4785e-02 : StepElapsed = 1.04e-03 s : CellsPS = 9.82e+05
+Step =    188 : SimTime = 5.5078e-02 : StepElapsed = 5.79e-03 s : CellsPS = 1.77e+05
+Step =    189 : SimTime = 5.5371e-02 : StepElapsed = 3.61e-03 s : CellsPS = 2.84e+05
+Step =    190 : SimTime = 5.5664e-02 : StepElapsed = 2.49e-04 s : CellsPS = 4.12e+06
+Step =    191 : SimTime = 5.5957e-02 : StepElapsed = 2.12e-03 s : CellsPS = 4.82e+05
+Step =    192 : SimTime = 5.6250e-02 : StepElapsed = 7.08e-03 s : CellsPS = 1.45e+05
+Step =    193 : SimTime = 5.6543e-02 : StepElapsed = 1.94e-03 s : CellsPS = 5.28e+05
+Step =    194 : SimTime = 5.6836e-02 : StepElapsed = 1.78e-04 s : CellsPS = 5.76e+06
+Step =    195 : SimTime = 5.7129e-02 : StepElapsed = 3.78e-03 s : CellsPS = 2.71e+05
+Step =    196 : SimTime = 5.7422e-02 : StepElapsed = 3.14e-04 s : CellsPS = 3.26e+06
+Step =    197 : SimTime = 5.7715e-02 : StepElapsed = 6.21e-04 s : CellsPS = 1.65e+06
+Step =    198 : SimTime = 5.8008e-02 : StepElapsed = 1.40e-02 s : CellsPS = 7.34e+04
+Step =    199 : SimTime = 5.8301e-02 : StepElapsed = 2.15e-04 s : CellsPS = 4.77e+06
+Step =    200 : SimTime = 5.8594e-02 : StepElapsed = 2.12e-04 s : CellsPS = 4.84e+06
+Step =    201 : SimTime = 5.8887e-02 : StepElapsed = 7.57e-03 s : CellsPS = 1.35e+05
+Step =    202 : SimTime = 5.9180e-02 : StepElapsed = 6.94e-04 s : CellsPS = 1.48e+06
+Step =    203 : SimTime = 5.9473e-02 : StepElapsed = 5.46e-04 s : CellsPS = 1.88e+06
+Step =    204 : SimTime = 5.9766e-02 : StepElapsed = 4.19e-04 s : CellsPS = 2.45e+06
+Step =    205 : SimTime = 6.0059e-02 : StepElapsed = 4.21e-04 s : CellsPS = 2.43e+06
+Step =    206 : SimTime = 6.0352e-02 : StepElapsed = 5.58e-04 s : CellsPS = 1.84e+06
+Step =    207 : SimTime = 6.0645e-02 : StepElapsed = 2.42e-03 s : CellsPS = 4.22e+05
+Step =    208 : SimTime = 6.0937e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =    209 : SimTime = 6.1230e-02 : StepElapsed = 1.90e-04 s : CellsPS = 5.40e+06
+Step =    210 : SimTime = 6.1523e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.16e+06
+Step =    211 : SimTime = 6.1816e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.15e+06
+Step =    212 : SimTime = 6.2109e-02 : StepElapsed = 1.24e-03 s : CellsPS = 8.24e+05
+Step =    213 : SimTime = 6.2402e-02 : StepElapsed = 1.99e-04 s : CellsPS = 5.16e+06
+Step =    214 : SimTime = 6.2695e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.38e+06
+Step =    215 : SimTime = 6.2988e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.22e+06
+Step =    216 : SimTime = 6.3281e-02 : StepElapsed = 6.67e-04 s : CellsPS = 1.53e+06
+Step =    217 : SimTime = 6.3574e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.20e+06
+Step =    218 : SimTime = 6.3867e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.18e+06
+Step =    219 : SimTime = 6.4160e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.70e+06
+Step =    220 : SimTime = 6.4453e-02 : StepElapsed = 3.35e-04 s : CellsPS = 3.05e+06
+Step =    221 : SimTime = 6.4746e-02 : StepElapsed = 1.98e-04 s : CellsPS = 5.17e+06
+Step =    222 : SimTime = 6.5039e-02 : StepElapsed = 1.84e-04 s : CellsPS = 5.57e+06
+Step =    223 : SimTime = 6.5332e-02 : StepElapsed = 4.19e-04 s : CellsPS = 2.45e+06
+Step =    224 : SimTime = 6.5625e-02 : StepElapsed = 2.41e-04 s : CellsPS = 4.25e+06
+Step =    225 : SimTime = 6.5918e-02 : StepElapsed = 2.85e-04 s : CellsPS = 3.59e+06
+Step =    226 : SimTime = 6.6211e-02 : StepElapsed = 2.67e-04 s : CellsPS = 3.84e+06
+Step =    227 : SimTime = 6.6504e-02 : StepElapsed = 2.17e-04 s : CellsPS = 4.72e+06
+Step =    228 : SimTime = 6.6797e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.70e+06
+Step =    229 : SimTime = 6.7090e-02 : StepElapsed = 1.92e-04 s : CellsPS = 5.34e+06
+Step =    230 : SimTime = 6.7383e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.17e+06
+Step =    231 : SimTime = 6.7676e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.15e+06
+Step =    232 : SimTime = 6.7969e-02 : StepElapsed = 2.21e-02 s : CellsPS = 4.64e+04
+Step =    233 : SimTime = 6.8262e-02 : StepElapsed = 8.24e-04 s : CellsPS = 1.24e+06
+Step =    234 : SimTime = 6.8555e-02 : StepElapsed = 4.37e-03 s : CellsPS = 2.34e+05
+Step =    235 : SimTime = 6.8848e-02 : StepElapsed = 1.63e-03 s : CellsPS = 6.28e+05
+Step =    236 : SimTime = 6.9141e-02 : StepElapsed = 4.94e-03 s : CellsPS = 2.07e+05
+Step =    237 : SimTime = 6.9434e-02 : StepElapsed = 1.54e-03 s : CellsPS = 6.64e+05
+Step =    238 : SimTime = 6.9727e-02 : StepElapsed = 2.22e-02 s : CellsPS = 4.62e+04
+Step =    239 : SimTime = 7.0020e-02 : StepElapsed = 1.51e-03 s : CellsPS = 6.78e+05
+Step =    240 : SimTime = 7.0312e-02 : StepElapsed = 4.94e-04 s : CellsPS = 2.07e+06
+Step =    241 : SimTime = 7.0605e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.93e+06
+Step =    242 : SimTime = 7.0898e-02 : StepElapsed = 3.09e-04 s : CellsPS = 3.32e+06
+Step =    243 : SimTime = 7.1191e-02 : StepElapsed = 4.64e-04 s : CellsPS = 2.21e+06
+Step =    244 : SimTime = 7.1484e-02 : StepElapsed = 2.89e-04 s : CellsPS = 3.55e+06
+Step =    245 : SimTime = 7.1777e-02 : StepElapsed = 1.01e-03 s : CellsPS = 1.01e+06
+Step =    246 : SimTime = 7.2070e-02 : StepElapsed = 2.41e-03 s : CellsPS = 4.25e+05
+Step =    247 : SimTime = 7.2363e-02 : StepElapsed = 4.48e-03 s : CellsPS = 2.29e+05
+Step =    248 : SimTime = 7.2656e-02 : StepElapsed = 4.05e-04 s : CellsPS = 2.53e+06
+Step =    249 : SimTime = 7.2949e-02 : StepElapsed = 1.99e-04 s : CellsPS = 5.14e+06
+Step =    250 : SimTime = 7.3242e-02 : StepElapsed = 2.57e-04 s : CellsPS = 3.98e+06
+Step =    251 : SimTime = 7.3535e-02 : StepElapsed = 3.01e-04 s : CellsPS = 3.40e+06
+Step =    252 : SimTime = 7.3828e-02 : StepElapsed = 1.45e-03 s : CellsPS = 7.05e+05
+Step =    253 : SimTime = 7.4121e-02 : StepElapsed = 6.35e-03 s : CellsPS = 1.61e+05
+Step =    254 : SimTime = 7.4414e-02 : StepElapsed = 3.06e-04 s : CellsPS = 3.35e+06
+Step =    255 : SimTime = 7.4707e-02 : StepElapsed = 4.62e-03 s : CellsPS = 2.22e+05
+Step =    256 : SimTime = 7.5000e-02 : StepElapsed = 2.53e-04 s : CellsPS = 4.05e+06
+Step =    257 : SimTime = 7.5293e-02 : StepElapsed = 4.31e-04 s : CellsPS = 2.38e+06
+Step =    258 : SimTime = 7.5586e-02 : StepElapsed = 4.72e-03 s : CellsPS = 2.17e+05
+Step =    259 : SimTime = 7.5879e-02 : StepElapsed = 4.56e-03 s : CellsPS = 2.25e+05
+Step =    260 : SimTime = 7.6172e-02 : StepElapsed = 8.80e-04 s : CellsPS = 1.16e+06
+Step =    261 : SimTime = 7.6465e-02 : StepElapsed = 1.88e-04 s : CellsPS = 5.44e+06
+Step =    262 : SimTime = 7.6758e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.47e+06
+Step =    263 : SimTime = 7.7051e-02 : StepElapsed = 6.28e-03 s : CellsPS = 1.63e+05
+Step =    264 : SimTime = 7.7344e-02 : StepElapsed = 3.72e-04 s : CellsPS = 2.75e+06
+Step =    265 : SimTime = 7.7637e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.31e+06
+Step =    266 : SimTime = 7.7930e-02 : StepElapsed = 2.93e-04 s : CellsPS = 3.49e+06
+Step =    267 : SimTime = 7.8223e-02 : StepElapsed = 2.13e-03 s : CellsPS = 4.82e+05
+Step =    268 : SimTime = 7.8516e-02 : StepElapsed = 1.34e-02 s : CellsPS = 7.61e+04
+Step =    269 : SimTime = 7.8809e-02 : StepElapsed = 2.12e-04 s : CellsPS = 4.84e+06
+Step =    270 : SimTime = 7.9102e-02 : StepElapsed = 1.36e-03 s : CellsPS = 7.50e+05
+Step =    271 : SimTime = 7.9395e-02 : StepElapsed = 1.05e-03 s : CellsPS = 9.80e+05
+Step =    272 : SimTime = 7.9687e-02 : StepElapsed = 2.36e-04 s : CellsPS = 4.34e+06
+Step =    273 : SimTime = 7.9980e-02 : StepElapsed = 2.78e-04 s : CellsPS = 3.69e+06
+Step =    274 : SimTime = 8.0273e-02 : StepElapsed = 2.07e-04 s : CellsPS = 4.95e+06
+Step =    275 : SimTime = 8.0566e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.65e+06
+Step =    276 : SimTime = 8.0859e-02 : StepElapsed = 1.66e-04 s : CellsPS = 6.16e+06
+Step =    277 : SimTime = 8.1152e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.01e+06
+Step =    278 : SimTime = 8.1445e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.72e+06
+Step =    279 : SimTime = 8.1738e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.49e+06
+Step =    280 : SimTime = 8.2031e-02 : StepElapsed = 1.96e-04 s : CellsPS = 5.23e+06
+Step =    281 : SimTime = 8.2324e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.03e+06
+Step =    282 : SimTime = 8.2617e-02 : StepElapsed = 2.14e-04 s : CellsPS = 4.79e+06
+Step =    283 : SimTime = 8.2910e-02 : StepElapsed = 1.78e-04 s : CellsPS = 5.74e+06
+Step =    284 : SimTime = 8.3203e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.26e+06
+Step =    285 : SimTime = 8.3496e-02 : StepElapsed = 2.00e-04 s : CellsPS = 5.12e+06
+Step =    286 : SimTime = 8.3789e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =    287 : SimTime = 8.4082e-02 : StepElapsed = 2.93e-04 s : CellsPS = 3.49e+06
+Step =    288 : SimTime = 8.4375e-02 : StepElapsed = 1.85e-04 s : CellsPS = 5.54e+06
+Step =    289 : SimTime = 8.4668e-02 : StepElapsed = 2.02e-04 s : CellsPS = 5.06e+06
+Step =    290 : SimTime = 8.4961e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.86e+06
+Step =    291 : SimTime = 8.5254e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.48e+06
+Step =    292 : SimTime = 8.5547e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.30e+06
+Step =    293 : SimTime = 8.5840e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =    294 : SimTime = 8.6133e-02 : StepElapsed = 9.91e-04 s : CellsPS = 1.03e+06
+Step =    295 : SimTime = 8.6426e-02 : StepElapsed = 2.23e-03 s : CellsPS = 4.60e+05
+Step =    296 : SimTime = 8.6719e-02 : StepElapsed = 2.31e-03 s : CellsPS = 4.44e+05
+Step =    297 : SimTime = 8.7012e-02 : StepElapsed = 3.92e-04 s : CellsPS = 2.61e+06
+Step =    298 : SimTime = 8.7305e-02 : StepElapsed = 4.98e-04 s : CellsPS = 2.06e+06
+Step =    299 : SimTime = 8.7598e-02 : StepElapsed = 2.29e-04 s : CellsPS = 4.47e+06
+Step =    300 : SimTime = 8.7891e-02 : StepElapsed = 1.88e-03 s : CellsPS = 5.46e+05
+Step =    301 : SimTime = 8.8184e-02 : StepElapsed = 3.75e-04 s : CellsPS = 2.73e+06
+Step =    302 : SimTime = 8.8477e-02 : StepElapsed = 1.05e-03 s : CellsPS = 9.73e+05
+Step =    303 : SimTime = 8.8770e-02 : StepElapsed = 1.21e-03 s : CellsPS = 8.44e+05
+Step =    304 : SimTime = 8.9062e-02 : StepElapsed = 4.14e-04 s : CellsPS = 2.47e+06
+Step =    305 : SimTime = 8.9355e-02 : StepElapsed = 2.12e-04 s : CellsPS = 4.84e+06
+Step =    306 : SimTime = 8.9648e-02 : StepElapsed = 8.64e-04 s : CellsPS = 1.18e+06
+Step =    307 : SimTime = 8.9941e-02 : StepElapsed = 3.50e-04 s : CellsPS = 2.93e+06
+Step =    308 : SimTime = 9.0234e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.27e+06
+Step =    309 : SimTime = 9.0527e-02 : StepElapsed = 1.71e-04 s : CellsPS = 6.00e+06
+Step =    310 : SimTime = 9.0820e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.30e+06
+Step =    311 : SimTime = 9.1113e-02 : StepElapsed = 1.85e-04 s : CellsPS = 5.55e+06
+Step =    312 : SimTime = 9.1406e-02 : StepElapsed = 6.06e-04 s : CellsPS = 1.69e+06
+Step =    313 : SimTime = 9.1699e-02 : StepElapsed = 9.78e-04 s : CellsPS = 1.05e+06
+Step =    314 : SimTime = 9.1992e-02 : StepElapsed = 8.01e-04 s : CellsPS = 1.28e+06
+Step =    315 : SimTime = 9.2285e-02 : StepElapsed = 2.74e-03 s : CellsPS = 3.74e+05
+Step =    316 : SimTime = 9.2578e-02 : StepElapsed = 5.81e-04 s : CellsPS = 1.76e+06
+Step =    317 : SimTime = 9.2871e-02 : StepElapsed = 7.11e-04 s : CellsPS = 1.44e+06
+Step =    318 : SimTime = 9.3164e-02 : StepElapsed = 2.22e-04 s : CellsPS = 4.61e+06
+Step =    319 : SimTime = 9.3457e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.82e+06
+Step =    320 : SimTime = 9.3750e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.30e+06
+Step =    321 : SimTime = 9.4043e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.61e+06
+Step =    322 : SimTime = 9.4336e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.95e+06
+Step =    323 : SimTime = 9.4629e-02 : StepElapsed = 6.02e-04 s : CellsPS = 1.70e+06
+Step =    324 : SimTime = 9.4922e-02 : StepElapsed = 3.79e-04 s : CellsPS = 2.70e+06
+Step =    325 : SimTime = 9.5215e-02 : StepElapsed = 4.07e-04 s : CellsPS = 2.52e+06
+Step =    326 : SimTime = 9.5508e-02 : StepElapsed = 3.74e-04 s : CellsPS = 2.74e+06
+Step =    327 : SimTime = 9.5801e-02 : StepElapsed = 6.02e-04 s : CellsPS = 1.70e+06
+Step =    328 : SimTime = 9.6094e-02 : StepElapsed = 1.50e-03 s : CellsPS = 6.82e+05
+Step =    329 : SimTime = 9.6387e-02 : StepElapsed = 3.60e-03 s : CellsPS = 2.84e+05
+Step =    330 : SimTime = 9.6680e-02 : StepElapsed = 1.07e-03 s : CellsPS = 9.60e+05
+Step =    331 : SimTime = 9.6973e-02 : StepElapsed = 4.18e-04 s : CellsPS = 2.45e+06
+Step =    332 : SimTime = 9.7266e-02 : StepElapsed = 1.50e-03 s : CellsPS = 6.84e+05
+Step =    333 : SimTime = 9.7559e-02 : StepElapsed = 1.76e-03 s : CellsPS = 5.83e+05
+Step =    334 : SimTime = 9.7852e-02 : StepElapsed = 5.11e-04 s : CellsPS = 2.00e+06
+Step =    335 : SimTime = 9.8145e-02 : StepElapsed = 1.06e-02 s : CellsPS = 9.65e+04
+Step =    336 : SimTime = 9.8437e-02 : StepElapsed = 2.38e-04 s : CellsPS = 4.29e+06
+Step =    337 : SimTime = 9.8730e-02 : StepElapsed = 4.51e-02 s : CellsPS = 2.27e+04
+Step =    338 : SimTime = 9.9023e-02 : StepElapsed = 5.16e-04 s : CellsPS = 1.98e+06
+Step =    339 : SimTime = 9.9316e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.73e+06
+Step =    340 : SimTime = 9.9609e-02 : StepElapsed = 4.10e-04 s : CellsPS = 2.50e+06
+Step =    341 : SimTime = 9.9902e-02 : StepElapsed = 5.07e-04 s : CellsPS = 2.02e+06
+Step =    342 : SimTime = 1.0020e-01 : StepElapsed = 3.68e-04 s : CellsPS = 2.78e+06
+Simulation complete...
+Total execution time = 6.28e-01 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=2.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb2b349b0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=2.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb2cb49b0>
+Step =      1 : SimTime = 2.3437e-03 : StepElapsed = 6.08e-04 s : CellsPS = 1.68e+06
+Step =      2 : SimTime = 4.6875e-03 : StepElapsed = 1.75e-04 s : CellsPS = 5.84e+06
+Step =      3 : SimTime = 7.0312e-03 : StepElapsed = 1.95e-04 s : CellsPS = 5.26e+06
+Step =      4 : SimTime = 9.3750e-03 : StepElapsed = 1.60e-04 s : CellsPS = 6.40e+06
+Step =      5 : SimTime = 1.1719e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =      6 : SimTime = 1.4063e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.63e+06
+Step =      7 : SimTime = 1.6406e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.14e+06
+Step =      8 : SimTime = 1.8750e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.60e+06
+Step =      9 : SimTime = 2.1094e-02 : StepElapsed = 2.25e-04 s : CellsPS = 4.56e+06
+Step =     10 : SimTime = 2.3437e-02 : StepElapsed = 2.59e-03 s : CellsPS = 3.96e+05
+Step =     11 : SimTime = 2.5781e-02 : StepElapsedRank 1 of 4 says: Hello from MPI!
+Using CFL=2.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb25b49b0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=2.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa1c9bf80>
+ = 1.65e-04 s : CellsPS = 6.20e+06
+Step =     12 : SimTime = 2.8125e-02 : StepElapsed = 2.17e-04 s : CellsPS = 4.73e+06
+Step =     13 : SimTime = 3.0469e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.39e+06
+Step =     14 : SimTime = 3.2812e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.97e+06
+Step =     15 : SimTime = 3.5156e-02 : StepElapsed = 3.03e-04 s : CellsPS = 3.38e+06
+Step =     16 : SimTime = 3.7500e-02 : StepElapsed = 2.21e-04 s : CellsPS = 4.64e+06
+Step =     17 : SimTime = 3.9844e-02 : StepElapsed = 2.57e-04 s : CellsPS = 3.98e+06
+Step =     18 : SimTime = 4.2187e-02 : StepElapsed = 3.69e-04 s : CellsPS = 2.78e+06
+Step =     19 : SimTime = 4.4531e-02 : StepElapsed = 2.19e-04 s : CellsPS = 4.68e+06
+Step =     20 : SimTime = 4.6875e-02 : StepElapsed = 4.68e-03 s : CellsPS = 2.19e+05
+Step =     21 : SimTime = 4.9219e-02 : StepElapsed = 5.31e-04 s : CellsPS = 1.93e+06
+Step =     22 : SimTime = 5.1562e-02 : StepElapsed = 6.07e-04 s : CellsPS = 1.69e+06
+Step =     23 : SimTime = 5.3906e-02 : StepElapsed = 1.30e-03 s : CellsPS = 7.89e+05
+Step =     24 : SimTime = 5.6250e-02 : StepElapsed = 4.44e-04 s : CellsPS = 2.30e+06
+Step =     25 : SimTime = 5.8594e-02 : StepElapsed = 2.42e-04 s : CellsPS = 4.23e+06
+Step =     26 : SimTime = 6.0937e-02 : StepElapsed = 2.89e-04 s : CellsPS = 3.55e+06
+Step =     27 : SimTime = 6.3281e-02 : StepElapsed = 5.98e-03 s : CellsPS = 1.71e+05
+Step =     28 : SimTime = 6.5625e-02 : StepElapsed = 2.41e-03 s : CellsPS = 4.25e+05
+Step =     29 : SimTime = 6.7969e-02 : StepElapsed = 1.09e-03 s : CellsPS = 9.37e+05
+Step =     30 : SimTime = 7.0312e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =     31 : SimTime = 7.2656e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.04e+06
+Step =     32 : SimTime = 7.5000e-02 : StepElapsed = 1.92e-03 s : CellsPS = 5.35e+05
+Step =     33 : SimTime = 7.7344e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.11e+06
+Step =     34 : SimTime = 7.9688e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.56e+06
+Step =     35 : SimTime = 8.2031e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.30e+06
+Step =     36 : SimTime = 8.4375e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.38e+06
+Step =     37 : SimTime = 8.6719e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.19e+06
+Step =     38 : SimTime = 8.9063e-02 : StepElapsed = 2.65e-03 s : CellsPS = 3.86e+05
+Step =     39 : SimTime = 9.1406e-02 : StepElapsed = 2.91e-04 s : CellsPS = 3.52e+06
+Step =     40 : SimTime = 9.3750e-02 : StepElapsed = 6.63e-03 s : CellsPS = 1.55e+05
+Step =     41 : SimTime = 9.6094e-02 : StepElapsed = 4.93e-04 s : CellsPS = 2.08e+06
+Step =     42 : SimTime = 9.8438e-02 : StepElapsed = 2.48e-04 s : CellsPS = 4.13e+06
+Step =     43 : SimTime = 1.0078e-01 : StepElapsed = 4.20e-03 s : CellsPS = 2.44e+05
+Simulation complete...
+Total execution time = 6.95e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+[inference] Loading model from /workspaces/pearc_2026_tutorial/model on cpu...
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=9.9 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb35449b0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=9.9 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff8cc149b0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=9.9 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff9bf8d8b0>
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=9.9 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffbb8a49b0>
+Step =      1 : SimTime = 9.6680e-03 : StepElapsed = 6.30e-03 s : CellsPS = 1.62e+05
+Step =      2 : SimTime = 1.9336e-02 : StepElapsed = 5.95e-03 s : CellsPS = 1.72e+05
+Step =      3 : SimTime = 2.9004e-02 : StepElapsed = 2.40e-03 s : CellsPS = 4.27e+05
+Step =      4 : SimTime = 3.8672e-02 : StepElapsed = 5.53e-03 s : CellsPS = 1.85e+05
+Step =      5 : SimTime = 4.8340e-02 : StepElapsed = 1.62e-02 s : CellsPS = 6.32e+04
+Step =      6 : SimTime = 5.8008e-02 : StepElapsed = 3.73e-03 s : CellsPS = 2.75e+05
+Step =      7 : SimTime = 6.7676e-02 : StepElapsed = 2.24e-02 s : CellsPS = 4.57e+04
+Step =      8 : SimTime = 7.7344e-02 : StepElapsed = 1.17e-02 s : CellsPS = 8.78e+04
+Step =      9 : SimTime = 8.7012e-02 : StepElapsed = 8.93e-03 s : CellsPS = 1.15e+05
+Step =     10 : SimTime = 9.6680e-02 : StepElapsed = 3.13e-02 s : CellsPS = 3.27e+04
+Step =     11 : SimTime = 1.0635e-01 : StepElapsed = 1.39e-02 s : CellsPS = 7.37e+04
+Simulation complete...
+Total execution time = 1.68e-01 seconds
+Got ecodes: [0, 0, 0, 0]
+Loading weights:   0%|          | 0/326 [00:00<?, ?it/s]Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff7f905cd0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff7a565cd0>
+Step =      1 : SimTime = 7.8125e-04 : StepElapsed = 5.18e-03 s : CellsPS = 1.98e+05
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb09949e0>
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff68035cd0>
+Step =      2 : SimTime = 1.5625e-03 : StepElapsed = 6.06e-03 s : CellsPS = 1.69e+05
+Step =      3 : SimTime = 2.3438e-03 : StepElapsed = 4.40e-03 s : CellsPS = 2.32e+05
+Step =      4 : SimTime = 3.1250e-03 : StepElapsed = 3.76e-03 s : CellsPS = 2.73e+05
+Step =      5 : SimTime = 3.9062e-03 : StepElapsed = 4.98e-03 s : CellsPS = 2.06e+05
+Step =      6 : SimTime = 4.6875e-03 : StepElapsed = 2.50e-04 s : CellsPS = 4.10e+06
+Step =      7 : SimTime = 5.4687e-03 : StepElapsed = 8.75e-03 s : CellsPS = 1.17e+05
+Step =      8 : SimTime = 6.2500e-03 : StepElapsed = 1.41e-04 s : CellsPS = 7.27e+06
+Step =      9 : SimTime = 7.0312e-03 : StepElapsed = 1.07e-02 s : CellsPS = 9.54e+04
+Step =     10 : SimTime = 7.8125e-03 : StepElapsed = 1.01e-02 s : CellsPS = 1.01e+05
+Step =     11 : SimTime = 8.5937e-03 : StepElapsed = 1.58e-04 s : CellsPS = 6.49e+06
+Step =     12 : SimTime = 9.3750e-03 : StepElapsed = 9.79e-03 s : CellsPS = 1.05e+05
+Step =     13 : SimTime = 1.0156e-02 : StepElapsed = 2.17e-03 s : CellsPS = 4.73e+05
+Step =     14 : SimTime = 1.0938e-02 : StepElapsed = 6.02e-03 s : CellsPS = 1.70e+05
+Step =     15 : SimTime = 1.1719e-02 : StepElapsed = 7.00e-03 s : CellsPS = 1.46e+05
+Step =     16 : SimTime = 1.2500e-02 : StepElapsed = 4.98e-03 s : CellsPS = 2.06e+05
+Step =     17 : SimTime = 1.3281e-02 : StepElapsed = 6.85e-03 s : CellsPS = 1.49e+05
+Step =     18 : SimTime = 1.4063e-02 : StepElapsed = 6.80e-03 s : CellsPS = 1.51e+05
+Step =     19 : SimTime = 1.4844e-02 : StepElapsed = 9.97e-03 s : CellsPS = 1.03e+05
+Step =     20 : SimTime = 1.5625e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.83e+06
+Step =     21 : SimTime = 1.6406e-02 : StepElapsed = 9.40e-03 s : CellsPS = 1.09e+05
+Step =     22 : SimTime = 1.7188e-02 : StepElapsed = 9.39e-03 s : CellsPS = 1.09e+05
+Step =     23 : SimTime = 1.7969e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.78e+06
+Step =     24 : SimTime = 1.8750e-02 : StepElapsed = 8.95e-03 s : CellsPS = 1.14e+05
+Step =     25 : SimTime = 1.9531e-02 : StepElapsed = 2.07e-03 s : CellsPS = 4.95e+05
+Step =     26 : SimTime = 2.0313e-02 : StepElapsed = 8.95e-03 s : CellsPS = 1.14e+05
+Step =     27 : SimTime = 2.1094e-02 : StepElapsed = 1.28e-02 s : CellsPS = 8.00e+04
+Step =     28 : SimTime = 2.1875e-02 : StepElapsed = 4.38e-03 s : CellsPS = 2.34e+05
+Step =     29 : SimTime = 2.2656e-02 : StepElapsed = 9.68e-03 s : CellsPS = 1.06e+05
+Step =     30 : SimTime = 2.3438e-02 : StepElapsed = 6.84e-03 s : CellsPS = 1.50e+05
+Step =     31 : SimTime = 2.4219e-02 : StepElapsed = 5.31e-03 s : CellsPS = 1.93e+05
+Step =     32 : SimTime = 2.5000e-02 : StepElapsed = 5.73e-03 s : CellsPS = 1.79e+05
+Step =     33 : SimTime = 2.5781e-02 : StepElapsed = 5.90e-03 s : CellsPS = 1.74e+05
+Step =     34 : SimTime = 2.6563e-02 : StepElapsed = 5.99e-03 s : CellsPS = 1.71e+05
+Step =     35 : SimTime = 2.7344e-02 : StepElapsed = 5.94e-03 s : CellsPS = 1.72e+05
+Step =     36 : SimTime = 2.8125e-02 : StepElapsed = 6.13e-03 s : CellsPS = 1.67e+05
+Step =     37 : SimTime = 2.8906e-02 : StepElapsed = 5.86e-03 s : CellsPS = 1.75e+05
+Step =     38 : SimTime = 2.9688e-02 : StepElapsed = 5.62e-03 s : CellsPS = 1.82e+05
+Step =     39 : SimTime = 3.0469e-02 : StepElapsed = 6.04e-03 s : CellsPS = 1.69e+05
+Step =     40 : SimTime = 3.1250e-02 : StepElapsed = 6.49e-03 s : CellsPS = 1.58e+05
+Step =     41 : SimTime = 3.2031e-02 : StepElapsed = 7.97e-03 s : CellsPS = 1.29e+05
+Step =     42 : SimTime = 3.2813e-02 : StepElapsed = 4.29e-03 s : CellsPS = 2.38e+05
+Step =     43 : SimTime = 3.3594e-02 : StepElapsed = 5.92e-03 s : CellsPS = 1.73e+05
+Step =     44 : SimTime = 3.4375e-02 : StepElapsed = 5.21e-03 s : CellsPS = 1.97e+05
+Step =     45 : SimTime = 3.5156e-02 : StepElapsed = 7.67e-03 s : CellsPS = 1.33e+05
+Step =     46 : SimTime = 3.5937e-02 : StepElapsed = 8.80e-03 s : CellsPS = 1.16e+05
+Step =     47 : SimTime = 3.6719e-02 : StepElapsed = 5.86e-03 s : CellsPS = 1.75e+05
+Step =     48 : SimTime = 3.7500e-02 : StepElapsed = 6.21e-03 s : CellsPS = 1.65e+05
+Step =     49 : SimTime = 3.8281e-02 : StepElapsed = 5.74e-03 s : CellsPS = 1.78e+05
+Step =     50 : SimTime = 3.9062e-02 : StepElapsed = 5.87e-03 s : CellsPS = 1.74e+05
+Step =     51 : SimTime = 3.9844e-02 : StepElapsed = 5.92e-03 s : CellsPS = 1.73e+05
+Step =     52 : SimTime = 4.0625e-02 : StepElapsed = 5.76e-03 s : CellsPS = 1.78e+05
+Step =     53 : SimTime = 4.1406e-02 : StepElapsed = 5.93e-03 s : CellsPS = 1.73e+05
+Step =     54 : SimTime = 4.2187e-02 : StepElapsed = 7.26e-03 s : CellsPS = 1.41e+05
+Step =     55 : SimTime = 4.2969e-02 : StepElapsed = 4.29e-03 s : CellsPS = 2.38e+05
+Step =     56 : SimTime = 4.3750e-02 : StepElapsed = 6.14e-03 s : CellsPS = 1.67e+05
+Step =     57 : SimTime = 4.4531e-02 : StepElapsed = 5.57e-03 s : CellsPS = 1.84e+05
+Step =     58 : SimTime = 4.5312e-02 : StepElapsed = 5.70e-03 s : CellsPS = 1.80e+05
+Step =     59 : SimTime = 4.6094e-02 : StepElapsed = 6.39e-03 s : CellsPS = 1.60e+05
+Step =     60 : SimTime = 4.6875e-02 : StepElapsed = 5.35e-03 s : CellsPS = 1.91e+05
+Step =     61 : SimTime = 4.7656e-02 : StepElapsed = 6.64e-03 s : CellsPS = 1.54e+05
+Step =     62 : SimTime = 4.8437e-02 : StepElapsed = 5.01e-03 s : CellsPS = 2.05e+05
+Step =     63 : SimTime = 4.9219e-02 : StepElapsed = 5.94e-03 s : CellsPS = 1.72e+05
+Step =     64 : SimTime = 5.0000e-02 : StepElapsed = 5.78e-03 s : CellsPS = 1.77e+05
+Step =     65 : SimTime = 5.0781e-02 : StepElapsed = 5.96e-03 s : CellsPS = 1.72e+05
+Step =     66 : SimTime = 5.1562e-02 : StepElapsed = 7.44e-03 s : CellsPS = 1.38e+05
+Step =     67 : SimTime = 5.2344e-02 : StepElapsed = 6.37e-03 s : CellsPS = 1.61e+05
+Step =     68 : SimTime = 5.3125e-02 : StepElapsed = 5.74e-03 s : CellsPS = 1.78e+05
+Step =     69 : SimTime = 5.3906e-02 : StepElapsed = 6.04e-03 s : CellsPS = 1.70e+05
+Step =     70 : SimTime = 5.4687e-02 : StepElapsed = 6.00e-03 s : CellsPS = 1.71e+05
+Step =     71 : SimTime = 5.5469e-02 : StepElapsed = 5.95e-03 s : CellsPS = 1.72e+05
+Step =     72 : SimTime = 5.6250e-02 : StepElapsed = 6.01e-03 s : CellsPS = 1.70e+05
+Step =     73 : SimTime = 5.7031e-02 : StepElapsed = 6.13e-03 s : CellsPS = 1.67e+05
+Step =     74 : SimTime = 5.7812e-02 : StepElapsed = 5.73e-03 s : CellsPS = 1.79e+05
+Step =     75 : SimTime = 5.8594e-02 : StepElapsed = 5.92e-03 s : CellsPS = 1.73e+05
+Step =     76 : SimTime = 5.9375e-02 : StepElapsed = 5.98e-03 s : CellsPS = 1.71e+05
+Step =     77 : SimTime = 6.0156e-02 : StepElapsed = 6.75e-03 s : CellsPS = 1.52e+05
+Step =     78 : SimTime = 6.0937e-02 : StepElapsed = 5.47e-03 s : CellsPS = 1.87e+05
+Step =     79 : SimTime = 6.1719e-02 : StepElapsed = 5.77e-03 s : CellsPS = 1.78e+05
+Step =     80 : SimTime = 6.2500e-02 : StepElapsed = 6.16e-03 s : CellsPS = 1.66e+05
+Step =     81 : SimTime = 6.3281e-02 : StepElapsed = 6.39e-03 s : CellsPS = 1.60e+05
+Step =     82 : SimTime = 6.4062e-02 : StepElapsed = 6.28e-03 s : CellsPS = 1.63e+05
+Step =     83 : SimTime = 6.4844e-02 : StepElapsed = 6.73e-03 s : CellsPS = 1.52e+05
+Step =     84 : SimTime = 6.5625e-02 : StepElapsed = 9.19e-03 s : CellsPS = 1.11e+05
+Step =     85 : SimTime = 6.6406e-02 : StepElapsed = 6.00e-03 s : CellsPS = 1.71e+05
+Step =     86 : SimTime = 6.7187e-02 : StepElapsed = 6.05e-03 s : CellsPS = 1.69e+05
+Step =     87 : SimTime = 6.7969e-02 : StepElapsed = 5.75e-03 s : CellsPS = 1.78e+05
+Step =     88 : SimTime = 6.8750e-02 : StepElapsed = 5.81e-03 s : CellsPS = 1.76e+05
+Step =     89 : SimTime = 6.9531e-02 : StepElapsed = 5.91e-03 s : CellsPS = 1.73e+05
+Step =     90 : SimTime = 7.0312e-02 : StepElapsed = 5.99e-03 s : CellsPS = 1.71e+05
+Step =     91 : SimTime = 7.1094e-02 : StepElapsed = 5.82e-03 s : CellsPS = 1.76e+05
+Step =     92 : SimTime = 7.1875e-02 : StepElapsed = 5.81e-03 s : CellsPS = 1.76e+05
+Step =     93 : SimTime = 7.2656e-02 : StepElapsed = 6.90e-03 s : CellsPS = 1.48e+05
+Step =     94 : SimTime = 7.3437e-02 : StepElapsed = 4.80e-03 s : CellsPS = 2.13e+05
+Step =     95 : SimTime = 7.4219e-02 : StepElapsed = 5.83e-03 s : CellsPS = 1.76e+05
+Step =     96 : SimTime = 7.5000e-02 : StepElapsed = 5.69e-03 s : CellsPS = 1.80e+05
+Step =     97 : SimTime = 7.5781e-02 : StepElapsed = 5.85e-03 s : CellsPS = 1.75e+05
+Step =     98 : SimTime = 7.6562e-02 : StepElapsed = 5.62e-03 s : CellsPS = 1.82e+05
+Step =     99 : SimTime = 7.7344e-02 : StepElapsed = 5.51e-03 s : CellsPS = 1.86e+05
+Step =    100 : SimTime = 7.8125e-02 : StepElapsed = 6.03e-03 s : CellsPS = 1.70e+05
+Step =    101 : SimTime = 7.8906e-02 : StepElapsed = 5.57e-03 s : CellsPS = 1.84e+05
+Step =    102 : SimTime = 7.9687e-02 : StepElapsed = 7.34e-03 s : CellsPS = 1.40e+05
+Step =    103 : SimTime = 8.0469e-02 : StepElapsed = 5.91e-03 s : CellsPS = 1.73e+05
+Step =    104 : SimTime = 8.1250e-02 : StepElapsed = 6.39e-03 s : CellsPS = 1.60e+05
+Step =    105 : SimTime = 8.2031e-02 : StepElapsed = 6.06e-03 s : CellsPS = 1.69e+05
+Step =    106 : SimTime = 8.2812e-02 : StepElapsed = 1.09e-02 s : CellsPS = 9.40e+04
+Step =    107 : SimTime = 8.3594e-02 : StepElapsed = 4.44e-03 s : CellsPS = 2.30e+05
+Step =    108 : SimTime = 8.4375e-02 : StepElapsed = 1.76e-03 s : CellsPS = 5.81e+05
+Step =    109 : SimTime = 8.5156e-02 : StepElapsed = 5.44e-03 s : CellsPS = 1.88e+05
+Step =    110 : SimTime = 8.5937e-02 : StepElapsed = 5.56e-03 s : CellsPS = 1.84e+05
+Step =    111 : SimTime = 8.6719e-02 : StepElapsed = 5.95e-03 s : CellsPS = 1.72e+05
+Step =    112 : SimTime = 8.7500e-02 : StepElapsed = 5.67e-03 s : CellsPS = 1.81e+05
+Step =    113 : SimTime = 8.8281e-02 : StepElapsed = 5.83e-03 s : CellsPS = 1.76e+05
+Step =    114 : SimTime = 8.9062e-02 : StepElapsed = 5.96e-03 s : CellsPS = 1.72e+05
+Step =    115 : SimTime = 8.9844e-02 : StepElapsed = 5.75e-03 s : CellsPS = 1.78e+05
+Step =    116 : SimTime = 9.0625e-02 : StepElapsed = 6.08e-03 s : CellsPS = 1.69e+05
+Step =    117 : SimTime = 9.1406e-02 : StepElapsed = 5.88e-03 s : CellsPS = 1.74e+05
+Step =    118 : SimTime = 9.2187e-02 : StepElapsed = 5.73e-03 s : CellsPS = 1.79e+05
+Step =    119 : SimTime = 9.2969e-02 : StepElapsed = 6.39e-03 s : CellsPS = 1.60e+05
+Step =    120 : SimTime = 9.3750e-02 : StepElapsed = 5.68e-03 s : CellsPS = 1.80e+05
+Step =    121 : SimTime = 9.4531e-02 : StepElapsed = 5.93e-03 s : CellsPS = 1.73e+05
+Step =    122 : SimTime = 9.5312e-02 : StepElapsed = 5.96e-03 s : CellsPS = 1.72e+05
+Step =    123 : SimTime = 9.6094e-02 : StepElapsed = 6.12e-03 s : CellsPS = 1.67e+05
+Step =    124 : SimTime = 9.6875e-02 : StepElapsed = 5.09e-03 s : CellsPS = 2.01e+05
+Step =    125 : SimTime = 9.7656e-02 : StepElapsed = 4.85e-03 s : CellsPS = 2.11e+05
+Step =    126 : SimTime = 9.8437e-02 : StepElapsed = 5.09e-03 s : CellsPS = 2.01e+05
+Step =    127 : SimTime = 9.9219e-02 : StepElapsed = 5.76e-03 s : CellsPS = 1.78e+05
+Step =    128 : SimTime = 1.0000e-01 : StepElapsed = 6.06e-03 s : CellsPS = 1.69e+05
+Step =    129 : SimTime = 1.0078e-01 : StepElapsed = 5.51e-03 s : CellsPS = 1.86e+05
+Simulation complete...
+Total execution time = 8.53e-01 seconds
+Got ecodes: [0, 0, 0, 0]
+============================================================
+Iteration 1/2
+============================================================
+Request: Check the latest CFD result arrays for NaNs and report which CFL values were stable and which produced NaNs. Choose the next set of CFL values, increasing CFL for stable ranks and decreasing it for ranks that produced NaNs.
+
+Loading weights:   0%|          | 1/326 [00:12<1:06:49, 12.34s/it]Loading weights:   1%|          | 2/326 [00:12<28:32,  5.29s/it]  Loading weights:   3%|▎         | 9/326 [00:12<04:07,  1.28it/s]Loading weights:   7%|▋         | 23/326 [00:12<01:11,  4.27it/s]Loading weights:   9%|▉         | 30/326 [00:13<00:49,  5.96it/s]Loading weights:  11%|█         | 36/326 [00:13<00:37,  7.83it/s]Loading weights:  13%|█▎        | 43/326 [00:13<00:26, 10.68it/s]Loading weights:  15%|█▍        | 48/326 [00:13<00:21, 13.22it/s]Loading weights:  22%|██▏       | 73/326 [00:13<00:07, 32.16it/s]Loading weights:  25%|██▌       | 82/326 [00:14<00:12, 18.92it/s]Loading weights:  27%|██▋       | 88/326 [00:15<00:17, 13.70it/s]Loading weights:  29%|██▊       | 93/326 [00:17<00:27,  8.57it/s]Loading weights:  30%|██▉       | 97/326 [00:17<00:24,  9.48it/s]Loading weights:  31%|███       | 100/326 [00:17<00:22, 10.19it/s]Loading weights:  32%|███▏      | 103/326 [00:19<00:41,  5.44it/s]Loading weights:  32%|███▏      | 105/326 [00:19<00:37,  5.97it/s]Loading weights:  34%|███▎      | 110/326 [00:19<00:25,  8.44it/s]Loading weights:  35%|███▍      | 113/326 [00:20<00:37,  5.62it/s]Loading weights:  36%|███▌      | 116/326 [00:21<00:30,  6.82it/s]Loading weights:  36%|███▌      | 118/326 [00:21<00:29,  7.10it/s]Loading weights:  37%|███▋      | 120/326 [00:21<00:32,  6.31it/s]Loading weights:  37%|███▋      | 122/326 [00:21<00:29,  6.84it/s]Loading weights:  38%|███▊      | 124/326 [00:22<00:25,  7.81it/s]Loading weights:  40%|███▉      | 129/326 [00:23<00:32,  6.05it/s]Loading weights:  40%|████      | 131/326 [00:24<00:48,  4.05it/s]Loading weights:  42%|████▏     | 137/326 [00:24<00:26,  7.10it/s]Loading weights:  43%|████▎     | 139/326 [00:24<00:27,  6.87it/s]Loading weights:  45%|████▌     | 147/326 [00:26<00:32,  5.46it/s]Loading weights:  46%|████▌     | 149/326 [00:27<00:37,  4.77it/s]Loading weights:  46%|████▌     | 150/326 [00:27<00:36,  4.84it/s]Loading weights:  46%|████▋     | 151/326 [00:27<00:39,  4.40it/s]Loading weights:  47%|████▋     | 152/326 [00:28<00:37,  4.60it/s]Loading weights:  47%|████▋     | 153/326 [00:28<00:40,  4.30it/s]Loading weights:  48%|████▊     | 156/326 [00:28<00:32,  5.27it/s]Loading weights:  48%|████▊     | 157/326 [00:29<00:43,  3.87it/s]Loading weights:  48%|████▊     | 158/326 [00:29<00:41,  4.06it/s]Loading weights:  49%|████▉     | 159/326 [00:29<00:36,  4.64it/s]Loading weights:  49%|████▉     | 160/326 [00:29<00:32,  5.06it/s]Loading weights:  51%|█████     | 166/326 [00:29<00:17,  8.93it/s]Loading weights:  53%|█████▎    | 174/326 [00:32<00:33,  4.55it/s]Loading weights:  55%|█████▌    | 180/326 [00:32<00:21,  6.83it/s]Loading weights:  56%|█████▌    | 183/326 [00:33<00:28,  5.02it/s]Loading weights:  58%|█████▊    | 188/326 [00:35<00:31,  4.33it/s]Loading weights:  58%|█████▊    | 190/326 [00:35<00:27,  4.88it/s]Loading weights:  59%|█████▉    | 192/326 [00:36<00:31,  4.20it/s]Loading weights:  61%|██████    | 199/326 [00:36<00:16,  7.59it/s]Loading weights:  62%|██████▏   | 202/326 [00:36<00:14,  8.31it/s]Loading weights:  63%|██████▎   | 204/326 [00:36<00:15,  7.90it/s]Loading weights:  63%|██████▎   | 206/326 [00:36<00:13,  8.68it/s]Loading weights:  64%|██████▍   | 208/326 [00:37<00:12,  9.14it/s]Loading weights:  64%|██████▍   | 210/326 [00:39<00:33,  3.47it/s]Loading weights:  65%|██████▌   | 212/326 [00:39<00:28,  4.02it/s]Loading weights:  66%|██████▌   | 214/326 [00:39<00:21,  5.10it/s]Loading weights:  66%|██████▋   | 216/326 [00:39<00:17,  6.31it/s]Loading weights:  67%|██████▋   | 219/326 [00:40<00:27,  3.88it/s]Loading weights:  68%|██████▊   | 223/326 [00:40<00:17,  5.93it/s]Loading weights:  70%|██████▉   | 228/326 [00:40<00:11,  8.91it/s]Loading weights:  71%|███████   | 230/326 [00:43<00:29,  3.25it/s]Loading weights:  73%|███████▎  | 239/326 [00:44<00:16,  5.14it/s]Loading weights:  75%|███████▌  | 246/326 [00:44<00:10,  7.31it/s]Loading weights:  77%|███████▋  | 250/326 [00:44<00:08,  8.80it/s]Loading weights:  77%|███████▋  | 252/326 [00:44<00:07,  9.45it/s]Loading weights:  78%|███████▊  | 254/326 [00:47<00:22,  3.20it/s]Loading weights:  79%|███████▉  | 259/326 [00:47<00:13,  4.87it/s]Loading weights:  81%|████████  | 264/326 [00:48<00:10,  5.88it/s]Loading weights:  82%|████████▏ | 266/326 [00:48<00:09,  6.37it/s]Loading weights:  82%|████████▏ | 268/326 [00:48<00:08,  7.09it/s]Loading weights:  84%|████████▍ | 275/326 [00:49<00:07,  6.77it/s]Loading weights:  87%|████████▋ | 282/326 [00:49<00:04, 10.29it/s]Loading weights:  88%|████████▊ | 286/326 [00:49<00:03, 12.55it/s]Loading weights:  89%|████████▊ | 289/326 [00:49<00:02, 13.54it/s]Loading weights:  90%|████████▉ | 292/326 [00:51<00:07,  4.52it/s]Loading weights:  90%|█████████ | 294/326 [00:52<00:06,  5.06it/s]Loading weights:  92%|█████████▏| 300/326 [00:52<00:03,  8.34it/s]Loading weights:  94%|█████████▎| 305/326 [00:52<00:01, 10.90it/s]Loading weights:  94%|█████████▍| 308/326 [00:52<00:01, 12.54it/s]Loading weights:  95%|█████████▌| 311/326 [00:53<00:01,  7.91it/s]Loading weights:  98%|█████████▊| 318/326 [00:54<00:00,  8.38it/s]Loading weights: 100%|██████████| 326/326 [00:54<00:00,  6.01it/s]
+[inference] Model ready — serving requests.
+
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+[inference][debug] schema_hint=yes tools=yes raw_output='{"response": {"type": "tool_request", "tool_calls": [{"name": "scan_all_ranks", "args": {}}]}}'
+[inference][debug] payload='{"response": {"type": "tool_request", "tool_calls": [{"name": "scan_all_ranks", "args": {}}]}}'
+[tool] Result for key: cfl_0.3_rank0: {'has_nans': np.False_, 'max_value': np.float64(1.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.3_rank1: {'has_nans': np.False_, 'max_value': np.float64(1.0), 'min_value': np.float64(-2.9826216189002254e-60)}
+[tool] Result for key: cfl_0.3_rank2: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.3_rank3: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_2.4_rank0: {'has_nans': np.True_, 'max_value': np.float64(5.402089789225298e+23), 'min_value': np.float64(-5.2466050888169935e+23)}
+[tool] Result for key: cfl_9.9_rank0: {'has_nans': np.True_, 'max_value': np.float64(12539710463388.508), 'min_value': np.float64(-11748928330917.176)}
+[tool] Result for key: cfl_0.8_rank0: {'has_nans': np.False_, 'max_value': np.float64(311.04947135372095), 'min_value': np.float64(-276.6793143477437)}
+[tool] Result for key: cfl_0.8_rank1: {'has_nans': np.False_, 'max_value': np.float64(277.67931434705247), 'min_value': np.float64(-310.0494713464436)}
+[tool] Result for key: cfl_0.8_rank2: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.8_rank3: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] scan_all_ranks() -> {'keys_with_nans': [2.4, 9.9], 'keys_without_nans': [0.3, 0.8], 'report': 'Stable CFLs (no NaNs): [0.3, 0.8]. Unstable CFLs (produced NaNs): [2.4, 9.9].'}
+[inference][debug] schema_hint=yes tools=yes raw_output='{"response": {"type": "final_answer", "content": "Stable CFLs (no NaNs): [0.3, 0.8]. Unstable CFLs (produced NaNs): [2.4, 9.9]."}}'
+[inference][debug] payload='{"response": {"type": "final_answer", "content": "Stable CFLs (no NaNs): [0.3, 0.8]. Unstable CFLs (produced NaNs): [2.4, 9.9]."}}'
+[inference][debug] schema_hint=no tools=no raw_output='0.4, 0.8, 1.2, 1.6'
+[inference][debug] payload='0.4, 0.8, 1.2, 1.6'
+[fn] run_experiments_node -> cfl_values=[0.4, 0.8, 1.2, 1.6]
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffebf5c1040>
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffebf411c70>
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffebf411cd0>
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffebf411be0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffba7b49e0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff963449e0>
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa97c49e0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff683b02c0>
+Step =      1 : SimTime = 3.9063e-04 : StepElapsed = 3.41e-03 s : CellsPS = 3.00e+05
+Step =      2 : SimTime = 7.8125e-04 : StepElapsed = 1.75e-03 s : CellsPS = 5.86e+05
+Step =      3 : SimTime = 1.1719e-03 : StepElapsed = 6.28e-04 s : CellsPS = 1.63e+06
+Step =      4 : SimTime = 1.5625e-03 : StepElapsed = 9.46e-04 s : CellsPS = 1.08e+06
+Step =      5 : SimTime = 1.9531e-03 : StepElapsed = 1.52e-03 s : CellsPS = 6.76e+05
+Step =      6 : SimTime = 2.3437e-03 : StepElapsed = 9.87e-04 s : CellsPS = 1.04e+06
+Step =      7 : SimTime = 2.7344e-03 : StepElapsed = 6.05e-04 s : CellsPS = 1.69e+06
+Step =      8 : SimTime = 3.1250e-03 : StepElapsed = 4.27e-04 s : CellsPS = 2.40e+06
+Step =      9 : SimTime = 3.5156e-03 : StepElapsed = 1.41e-04 s : CellsPS = 7.28e+06
+Step =     10 : SimTime = 3.9062e-03 : StepElapsed = 1.99e-04 s : CellsPS = 5.15e+06
+Step =     11 : SimTime = 4.2969e-03 : StepElapsed = 2.53e-04 s : CellsPS = 4.05e+06
+Step =     12 : SimTime = 4.6875e-03 : StepElapsed = 1.81e-04 s : CellsPS = 5.65e+06
+Step =     13 : SimTime = 5.0781e-03 : StepElapsed = 1.92e-04 s : CellsPS = 5.34e+06
+Step =     14 : SimTime = 5.4688e-03 : StepElapsed = 2.65e-04 s : CellsPS = 3.87e+06
+Step =     15 : SimTime = 5.8594e-03 : StepElapsed = 1.47e-04 s : CellsPS = 6.97e+06
+Step =     16 : SimTime = 6.2500e-03 : StepElapsed = 2.05e-04 s : CellsPS = 4.98e+06
+Step =     17 : SimTime = 6.6406e-03 : StepElapsed = 1.89e-04 s : CellsPS = 5.41e+06
+Step =     18 : SimTime = 7.0313e-03 : StepElapsed = 1.90e-04 s : CellsPS = 5.40e+06
+Step =     19 : SimTime = 7.4219e-03 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =     20 : SimTime = 7.8125e-03 : StepElapsed = 2.00e-04 s : CellsPS = 5.12e+06
+Step =     21 : SimTime = 8.2031e-03 : StepElapsed = 2.66e-04 s : CellsPS = 3.85e+06
+Step =     22 : SimTime = 8.5938e-03 : StepElapsed = 3.72e-04 s : CellsPS = 2.76e+06
+Step =     23 : SimTime = 8.9844e-03 : StepElapsed = 2.99e-04 s : CellsPS = 3.42e+06
+Step =     24 : SimTime = 9.3750e-03 : StepElapsed = 1.79e-04 s : CellsPS = 5.73e+06
+Step =     25 : SimTime = 9.7656e-03 : StepElapsed = 2.62e-04 s : CellsPS = 3.91e+06
+Step =     26 : SimTime = 1.0156e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.67e+06
+Step =     27 : SimTime = 1.0547e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.69e+06
+Step =     28 : SimTime = 1.0938e-02 : StepElapsed = 2.78e-04 s : CellsPS = 3.69e+06
+Step =     29 : SimTime = 1.1328e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.51e+06
+Step =     30 : SimTime = 1.1719e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.96e+06
+Step =     31 : SimTime = 1.2109e-02 : StepElapsed = 2.64e-04 s : CellsPS = 3.88e+06
+Step =     32 : SimTime = 1.2500e-02 : StepElapsed = 1.89e-04 s : CellsPS = 5.41e+06
+Step =     33 : SimTime = 1.2891e-02 : StepElapsed = 3.56e-04 s : CellsPS = 2.88e+06
+Step =     34 : SimTime = 1.3281e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.23e+06
+Step =     35 : SimTime = 1.3672e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.47e+06
+Step =     36 : SimTime = 1.4063e-02 : StepElapsed = 3.22e-04 s : CellsPS = 3.18e+06
+Step =     37 : SimTime = 1.4453e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.31e+06
+Step =     38 : SimTime = 1.4844e-02 : StepElapsed = 2.04e-04 s : CellsPS = 5.02e+06
+Step =     39 : SimTime = 1.5234e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.59e+06
+Step =     40 : SimTime = 1.5625e-02 : StepElapsed = 1.66e-04 s : CellsPS = 6.19e+06
+Step =     41 : SimTime = 1.6016e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.33e+06
+Step =     42 : SimTime = 1.6406e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.49e+06
+Step =     43 : SimTime = 1.6797e-02 : StepElapsed = 2.96e-04 s : CellsPS = 3.46e+06
+Step =     44 : SimTime = 1.7188e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.92e+06
+Step =     45 : SimTime = 1.7578e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =     46 : SimTime = 1.7969e-02 : StepElapsed = 7.49e-04 s : CellsPS = 1.37e+06
+Step =     47 : SimTime = 1.8359e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.99e+06
+Step =     48 : SimTime = 1.8750e-02 : StepElapsed = 2.60e-03 s : CellsPS = 3.94e+05
+Step =     49 : SimTime = 1.9141e-02 : StepElapsed = 3.90e-04 s : CellsPS = 2.63e+06
+Step =     50 : SimTime = 1.9531e-02 : StepElapsed = 1.29e-03 s : CellsPS = 7.92e+05
+Step =     51 : SimTime = 1.9922e-02 : StepElapsed = 1.76e-03 s : CellsPS = 5.80e+05
+Step =     52 : SimTime = 2.0312e-02 : StepElapsed = 7.97e-04 s : CellsPS = 1.28e+06
+Step =     53 : SimTime = 2.0703e-02 : StepElapsed = 4.63e-04 s : CellsPS = 2.21e+06
+Step =     54 : SimTime = 2.1094e-02 : StepElapsed = 6.08e-04 s : CellsPS = 1.69e+06
+Step =     55 : SimTime = 2.1484e-02 : StepElapsed = 1.85e-04 s : CellsPS = 5.52e+06
+Step =     56 : SimTime = 2.1875e-02 : StepElapsed = 8.40e-04 s : CellsPS = 1.22e+06
+Step =     57 : SimTime = 2.2266e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.29e+06
+Step =     58 : SimTime = 2.2656e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =     59 : SimTime = 2.3047e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.91e+06
+Step =     60 : SimTime = 2.3437e-02 : StepElapsed = 9.16e-04 s : CellsPS = 1.12e+06
+Step =     61 : SimTime = 2.3828e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.07e+06
+Step =     62 : SimTime = 2.4219e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.82e+06
+Step =     63 : SimTime = 2.4609e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =     64 : SimTime = 2.5000e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.72e+06
+Step =     65 : SimTime = 2.5391e-02 : StepElapsed = 2.66e-04 s : CellsPS = 3.85e+06
+Step =     66 : SimTime = 2.5781e-02 : StepElapsed = 2.07e-04 s : CellsPS = 4.95e+06
+Step =     67 : SimTime = 2.6172e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.10e+06
+Step =     68 : SimTime = 2.6562e-02 : StepElapsed = 8.19e-04 s : CellsPS = 1.25e+06
+Step =     69 : SimTime = 2.6953e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.23e+06
+Step =     70 : SimTime = 2.7344e-02 : StepElapsed = 1.88e-04 s : CellsPS = 5.44e+06
+Step =     71 : SimTime = 2.7734e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =     72 : SimTime = 2.8125e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.65e+06
+Step =     73 : SimTime = 2.8516e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.64e+06
+Step =     74 : SimTime = 2.8906e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.38e+06
+Step =     75 : SimTime = 2.9297e-02 : StepElapsed = 1.08e-03 s : CellsPS = 9.46e+05
+Step =     76 : SimTime = 2.9687e-02 : StepElapsed = 9.45e-04 s : CellsPS = 1.08e+06
+Step =     77 : SimTime = 3.0078e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.81e+06
+Step =     78 : SimTime = 3.0469e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.74e+06
+Step =     79 : SimTime = 3.0859e-02 : StepElapsed = 2.20e-04 s : CellsPS = 4.66e+06
+Step =     80 : SimTime = 3.1250e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.84e+06
+Step =     81 : SimTime = 3.1641e-02 : StepElapsed = 7.79e-04 s : CellsPS = 1.31e+06
+Step =     82 : SimTime = 3.2031e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.13e+06
+Step =     83 : SimTime = 3.2422e-02 : StepElapsed = 1.01e-03 s : CellsPS = 1.02e+06
+Step =     84 : SimTime = 3.2812e-02 : StepElapsed = 1.90e-04 s : CellsPS = 5.38e+06
+Step =     85 : SimTime = 3.3203e-02 : StepElapsed = 2.07e-04 s : CellsPS = 4.94e+06
+Step =     86 : SimTime = 3.3594e-02 : StepElapsed = 3.00e-04 s : CellsPS = 3.41e+06
+Step =     87 : SimTime = 3.3984e-02 : StepElapsed = 4.34e-03 s : CellsPS = 2.36e+05
+Step =     88 : SimTime = 3.4375e-02 : StepElapsed = 1.29e-03 s : CellsPS = 7.97e+05
+Step =     89 : SimTime = 3.4766e-02 : StepElapsed = 2.48e-03 s : CellsPS = 4.13e+05
+Step =     90 : SimTime = 3.5156e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.24e+06
+Step =     91 : SimTime = 3.5547e-02 : StepElapsed = 1.14e-03 s : CellsPS = 9.00e+05
+Step =     92 : SimTime = 3.5937e-02 : StepElapsed = 2.85e-04 s : CellsPS = 3.60e+06
+Step =     93 : SimTime = 3.6328e-02 : StepElapsed = 3.10e-04 s : CellsPS = 3.31e+06
+Step =     94 : SimTime = 3.6719e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.20e+06
+Step =     95 : SimTime = 3.7109e-02 : StepElapsed = 2.90e-04 s : CellsPS = 3.53e+06
+Step =     96 : SimTime = 3.7500e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.72e+06
+Step =     97 : SimTime = 3.7891e-02 : StepElapsed = 2.18e-04 s : CellsPS = 4.70e+06
+Step =     98 : SimTime = 3.8281e-02 : StepElapsed = 1.89e-04 s : CellsPS = 5.42e+06
+Step =     99 : SimTime = 3.8672e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.78e+06
+Step =    100 : SimTime = 3.9062e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.79e+06
+Step =    101 : SimTime = 3.9453e-02 : StepElapsed = 3.17e-04 s : CellsPS = 3.23e+06
+Step =    102 : SimTime = 3.9844e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.64e+06
+Step =    103 : SimTime = 4.0234e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.31e+06
+Step =    104 : SimTime = 4.0625e-02 : StepElapsed = 1.85e-04 s : CellsPS = 5.53e+06
+Step =    105 : SimTime = 4.1016e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.57e+06
+Step =    106 : SimTime = 4.1406e-02 : StepElapsed = 1.92e-04 s : CellsPS = 5.34e+06
+Step =    107 : SimTime = 4.1797e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.78e+06
+Step =    108 : SimTime = 4.2187e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.68e+06
+Step =    109 : SimTime = 4.2578e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =    110 : SimTime = 4.2969e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.88e+06
+Step =    111 : SimTime = 4.3359e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.73e+06
+Step =    112 : SimTime = 4.3750e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.81e+06
+Step =    113 : SimTime = 4.4141e-02 : StepElapsed = 2.35e-04 s : CellsPS = 4.35e+06
+Step =    114 : SimTime = 4.4531e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.06e+06
+Step =    115 : SimTime = 4.4922e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.62e+06
+Step =    116 : SimTime = 4.5312e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =    117 : SimTime = 4.5703e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.40e+06
+Step =    118 : SimTime = 4.6094e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.78e+06
+Step =    119 : SimTime = 4.6484e-02 : StepElapsed = 2.52e-04 s : CellsPS = 4.06e+06
+Step =    120 : SimTime = 4.6875e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.68e+06
+Step =    121 : SimTime = 4.7266e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =    122 : SimTime = 4.7656e-02 : StepElapsed = 2.05e-04 s : CellsPS = 5.00e+06
+Step =    123 : SimTime = 4.8047e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.28e+06
+Step =    124 : SimTime = 4.8437e-02 : StepElapsed = 2.33e-04 s : CellsPS = 4.40e+06
+Step =    125 : SimTime = 4.8828e-02 : StepElapsed = 2.97e-04 s : CellsPS = 3.45e+06
+Step =    126 : SimTime = 4.9219e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.36e+06
+Step =    127 : SimTime = 4.9609e-02 : StepElapsed = 2.09e-04 s : CellsPS = 4.91e+06
+Step =    128 : SimTime = 5.0000e-02 : StepElapsed = 2.31e-04 s : CellsPS = 4.43e+06
+Step =    129 : SimTime = 5.0391e-02 : StepElapsed = 1.92e-04 s : CellsPS = 5.33e+06
+Step =    130 : SimTime = 5.0781e-02 : StepElapsed = 2.62e-04 s : CellsPS = 3.91e+06
+Step =    131 : SimTime = 5.1172e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.57e+06
+Step =    132 : SimTime = 5.1562e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.45e+06
+Step =    133 : SimTime = 5.1953e-02 : StepElapsed = 1.92e-04 s : CellsPS = 5.33e+06
+Step =    134 : SimTime = 5.2344e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.65e+06
+Step =    135 : SimTime = 5.2734e-02 : StepElapsed = 2.44e-04 s : CellsPS = 4.20e+06
+Step =    136 : SimTime = 5.3125e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.70e+06
+Step =    137 : SimTime = 5.3516e-02 : StepElapsed = 1.94e-04 s : CellsPS = 5.27e+06
+Step =    138 : SimTime = 5.3906e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.46e+06
+Step =    139 : SimTime = 5.4297e-02 : StepElapsed = 4.50e-04 s : CellsPS = 2.28e+06
+Step =    140 : SimTime = 5.4687e-02 : StepElapsed = 3.43e-04 s : CellsPS = 2.98e+06
+Step =    141 : SimTime = 5.5078e-02 : StepElapsed = 2.26e-04 s : CellsPS = 4.53e+06
+Step =    142 : SimTime = 5.5469e-02 : StepElapsed = 2.27e-04 s : CellsPS = 4.51e+06
+Step =    143 : SimTime = 5.5859e-02 : StepElapsed = 1.98e-04 s : CellsPS = 5.18e+06
+Step =    144 : SimTime = 5.6250e-02 : StepElapsed = 2.77e-04 s : CellsPS = 3.69e+06
+Step =    145 : SimTime = 5.6641e-02 : StepElapsed = 2.73e-04 s : CellsPS = 3.75e+06
+Step =    146 : SimTime = 5.7031e-02 : StepElapsed = 2.16e-04 s : CellsPS = 4.73e+06
+Step =    147 : SimTime = 5.7422e-02 : StepElapsed = 2.36e-04 s : CellsPS = 4.33e+06
+Step =    148 : SimTime = 5.7812e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.64e+06
+Step =    149 : SimTime = 5.8203e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =    150 : SimTime = 5.8594e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.37e+06
+Step =    151 : SimTime = 5.8984e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.79e+06
+Step =    152 : SimTime = 5.9375e-02 : StepElapsed = 2.09e-04 s : CellsPS = 4.89e+06
+Step =    153 : SimTime = 5.9766e-02 : StepElapsed = 2.97e-04 s : CellsPS = 3.45e+06
+Step =    154 : SimTime = 6.0156e-02 : StepElapsed = 1.89e-04 s : CellsPS = 5.41e+06
+Step =    155 : SimTime = 6.0547e-02 : StepElapsed = 2.04e-04 s : CellsPS = 5.03e+06
+Step =    156 : SimTime = 6.0937e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.27e+06
+Step =    157 : SimTime = 6.1328e-02 : StepElapsed = 1.89e-04 s : CellsPS = 5.43e+06
+Step =    158 : SimTime = 6.1719e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.24e+06
+Step =    159 : SimTime = 6.2109e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.38e+06
+Step =    160 : SimTime = 6.2500e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.36e+06
+Step =    161 : SimTime = 6.2891e-02 : StepElapsed = 2.49e-04 s : CellsPS = 4.11e+06
+Step =    162 : SimTime = 6.3281e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.66e+06
+Step =    163 : SimTime = 6.3672e-02 : StepElapsed = 4.67e-04 s : CellsPS = 2.19e+06
+Step =    164 : SimTime = 6.4062e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.31e+06
+Step =    165 : SimTime = 6.4453e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.77e+06
+Step =    166 : SimTime = 6.4844e-02 : StepElapsed = 2.21e-04 s : CellsPS = 4.63e+06
+Step =    167 : SimTime = 6.5234e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.70e+06
+Step =    168 : SimTime = 6.5625e-02 : StepElapsed = 2.33e-04 s : CellsPS = 4.39e+06
+Step =    169 : SimTime = 6.6016e-02 : StepElapsed = 1.78e-04 s : CellsPS = 5.74e+06
+Step =    170 : SimTime = 6.6406e-02 : StepElapsed = 2.30e-04 s : CellsPS = 4.46e+06
+Step =    171 : SimTime = 6.6797e-02 : StepElapsed = 2.69e-04 s : CellsPS = 3.81e+06
+Step =    172 : SimTime = 6.7187e-02 : StepElapsed = 3.83e-04 s : CellsPS = 2.67e+06
+Step =    173 : SimTime = 6.7578e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =    174 : SimTime = 6.7969e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.36e+06
+Step =    175 : SimTime = 6.8359e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.26e+06
+Step =    176 : SimTime = 6.8750e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.73e+06
+Step =    177 : SimTime = 6.9141e-02 : StepElapsed = 5.98e-04 s : CellsPS = 1.71e+06
+Step =    178 : SimTime = 6.9531e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.06e+06
+Step =    179 : SimTime = 6.9922e-02 : StepElapsed = 2.97e-04 s : CellsPS = 3.45e+06
+Step =    180 : SimTime = 7.0312e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.07e+06
+Step =    181 : SimTime = 7.0703e-02 : StepElapsed = 4.75e-04 s : CellsPS = 2.16e+06
+Step =    182 : SimTime = 7.1094e-02 : StepElapsed = 2.66e-04 s : CellsPS = 3.86e+06
+Step =    183 : SimTime = 7.1484e-02 : StepElapsed = 2.99e-04 s : CellsPS = 3.43e+06
+Step =    184 : SimTime = 7.1875e-02 : StepElapsed = 2.26e-04 s : CellsPS = 4.54e+06
+Step =    185 : SimTime = 7.2266e-02 : StepElapsed = 4.62e-04 s : CellsPS = 2.21e+06
+Step =    186 : SimTime = 7.2656e-02 : StepElapsed = 2.41e-04 s : CellsPS = 4.25e+06
+Step =    187 : SimTime = 7.3047e-02 : StepElapsed = 3.14e-04 s : CellsPS = 3.26e+06
+Step =    188 : SimTime = 7.3437e-02 : StepElapsed = 2.35e-04 s : CellsPS = 4.36e+06
+Step =    189 : SimTime = 7.3828e-02 : StepElapsed = 6.89e-04 s : CellsPS = 1.49e+06
+Step =    190 : SimTime = 7.4219e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =    191 : SimTime = 7.4609e-02 : StepElapsed = 2.47e-04 s : CellsPS = 4.14e+06
+Step =    192 : SimTime = 7.5000e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.83e+06
+Step =    193 : SimTime = 7.5391e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.83e+06
+Step =    194 : SimTime = 7.5781e-02 : StepElapsed = 7.31e-04 s : CellsPS = 1.40e+06
+Step =    195 : SimTime = 7.6172e-02 : StepElapsed = 2.48e-04 s : CellsPS = 4.13e+06
+Step =    196 : SimTime = 7.6563e-02 : StepElapsed = 2.71e-03 s : CellsPS = 3.78e+05
+Step =    197 : SimTime = 7.6953e-02 : StepElapsed = 8.63e-04 s : CellsPS = 1.19e+06
+Step =    198 : SimTime = 7.7344e-02 : StepElapsed = 1.06e-03 s : CellsPS = 9.69e+05
+Step =    199 : SimTime = 7.7734e-02 : StepElapsed = 8.14e-04 s : CellsPS = 1.26e+06
+Step =    200 : SimTime = 7.8125e-02 : StepElapsed = 8.40e-04 s : CellsPS = 1.22e+06
+Step =    201 : SimTime = 7.8516e-02 : StepElapsed = 5.62e-04 s : CellsPS = 1.82e+06
+Step =    202 : SimTime = 7.8906e-02 : StepElapsed = 6.71e-04 s : CellsPS = 1.53e+06
+Step =    203 : SimTime = 7.9297e-02 : StepElapsed = 1.20e-03 s : CellsPS = 8.54e+05
+Step =    204 : SimTime = 7.9688e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.62e+06
+Step =    205 : SimTime = 8.0078e-02 : StepElapsed = 2.56e-04 s : CellsPS = 4.01e+06
+Step =    206 : SimTime = 8.0469e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.24e+06
+Step =    207 : SimTime = 8.0859e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.85e+06
+Step =    208 : SimTime = 8.1250e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.85e+06
+Step =    209 : SimTime = 8.1641e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.72e+06
+Step =    210 : SimTime = 8.2031e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.51e+06
+Step =    211 : SimTime = 8.2422e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.14e+06
+Step =    212 : SimTime = 8.2813e-02 : StepElapsed = 9.59e-04 s : CellsPS = 1.07e+06
+Step =    213 : SimTime = 8.3203e-02 : StepElapsed = 2.69e-04 s : CellsPS = 3.80e+06
+Step =    214 : SimTime = 8.3594e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.02e+06
+Step =    215 : SimTime = 8.3984e-02 : StepElapsed = 2.59e-04 s : CellsPS = 3.95e+06
+Step =    216 : SimTime = 8.4375e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.66e+06
+Step =    217 : SimTime = 8.4766e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.14e+06
+Step =    218 : SimTime = 8.5156e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.56e+06
+Step =    219 : SimTime = 8.5547e-02 : StepElapsed = 3.99e-04 s : CellsPS = 2.56e+06
+Step =    220 : SimTime = 8.5938e-02 : StepElapsed = 4.21e-04 s : CellsPS = 2.43e+06
+Step =    221 : SimTime = 8.6328e-02 : StepElapsed = 3.69e-04 s : CellsPS = 2.78e+06
+Step =    222 : SimTime = 8.6719e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.92e+06
+Step =    223 : SimTime = 8.7109e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =    224 : SimTime = 8.7500e-02 : StepElapsed = 2.84e-04 s : CellsPS = 3.61e+06
+Step =    225 : SimTime = 8.7891e-02 : StepElapsed = 2.24e-04 s : CellsPS = 4.56e+06
+Step =    226 : SimTime = 8.8281e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.62e+06
+Step =    227 : SimTime = 8.8672e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.64e+06
+Step =    228 : SimTime = 8.9063e-02 : StepElapsed = 2.91e-04 s : CellsPS = 3.52e+06
+Step =    229 : SimTime = 8.9453e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.45e+06
+Step =    230 : SimTime = 8.9844e-02 : StepElapsed = 2.87e-04 s : CellsPS = 3.56e+06
+Step =    231 : SimTime = 9.0234e-02 : StepElapsed = 2.12e-04 s : CellsPS = 4.82e+06
+Step =    232 : SimTime = 9.0625e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.62e+06
+Step =    233 : SimTime = 9.1016e-02 : StepElapsed = 2.12e-04 s : CellsPS = 4.84e+06
+Step =    234 : SimTime = 9.1406e-02 : StepElapsed = 2.59e-04 s : CellsPS = 3.96e+06
+Step =    235 : SimTime = 9.1797e-02 : StepElapsed = 2.27e-04 s : CellsPS = 4.51e+06
+Step =    236 : SimTime = 9.2188e-02 : StepElapsed = 1.52e-04 s : CellsPS = 6.73e+06
+Step =    237 : SimTime = 9.2578e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.48e+06
+Step =    238 : SimTime = 9.2969e-02 : StepElapsed = 2.02e-04 s : CellsPS = 5.06e+06
+Step =    239 : SimTime = 9.3359e-02 : StepElapsed = 2.20e-04 s : CellsPS = 4.64e+06
+Step =    240 : SimTime = 9.3750e-02 : StepElapsed = 3.35e-04 s : CellsPS = 3.06e+06
+Step =    241 : SimTime = 9.4141e-02 : StepElapsed = 3.33e-04 s : CellsPS = 3.07e+06
+Step =    242 : SimTime = 9.4531e-02 : StepElapsed = 8.51e-04 s : CellsPS = 1.20e+06
+Step =    243 : SimTime = 9.4922e-02 : StepElapsed = 2.41e-04 s : CellsPS = 4.24e+06
+Step =    244 : SimTime = 9.5313e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.44e+06
+Step =    245 : SimTime = 9.5703e-02 : StepElapsed = 7.71e-04 s : CellsPS = 1.33e+06
+Step =    246 : SimTime = 9.6094e-02 : StepElapsed = 1.19e-03 s : CellsPS = 8.59e+05
+Step =    247 : SimTime = 9.6484e-02 : StepElapsed = 2.03e-04 s : CellsPS = 5.04e+06
+Step =    248 : SimTime = 9.6875e-02 : StepElapsed = 1.17e-03 s : CellsPS = 8.73e+05
+Step =    249 : SimTime = 9.7266e-02 : StepElapsed = 4.55e-04 s : CellsPS = 2.25e+06
+Step =    250 : SimTime = 9.7656e-02 : StepElapsed = 6.42e-04 s : CellsPS = 1.60e+06
+Step =    251 : SimTime = 9.8047e-02 : StepElapsed = 9.89e-04 s : CellsPS = 1.04e+06
+Step =    252 : SimTime = 9.8438e-02 : StepElapsed = 7.17e-03 s : CellsPS = 1.43e+05
+Step =    253 : SimTime = 9.8828e-02 : StepElapsed = 7.67e-04 s : CellsPS = 1.34e+06
+Step =    254 : SimTime = 9.9219e-02 : StepElapsed = 6.01e-04 s : CellsPS = 1.70e+06
+Step =    255 : SimTime = 9.9609e-02 : StepElapsed = 4.05e-04 s : CellsPS = 2.53e+06
+Step =    256 : SimTime = 1.0000e-01 : StepElapsed = 3.78e-04 s : CellsPS = 2.71e+06
+Simulation complete...
+Total execution time = 1.25e-01 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb15849e0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff7fc249e0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa8ee49e0>
+Step =      1 : SimTime = 7.8125e-04 : StepElapsed = 2.86e-04 s : CellsPS = 3.58e+06
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff92f749e0>
+Step =      2 : SimTime = 1.5625e-03 : StepElapsed = 2.21e-04 s : CellsPS = 4.64e+06
+Step =      3 : SimTime = 2.3438e-03 : StepElapsed = 3.98e-04 s : CellsPS = 2.57e+06
+Step =      4 : SimTime = 3.1250e-03 : StepElapsed = 1.77e-04 s : CellsPS = 5.80e+06
+Step =      5 : SimTime = 3.9062e-03 : StepElapsed = 1.51e-04 s : CellsPS = 6.79e+06
+Step =      6 : SimTime = 4.6875e-03 : StepElapsed = 2.03e-04 s : CellsPS = 5.04e+06
+Step =      7 : SimTime = 5.4687e-03 : StepElapsed = 2.03e-04 s : CellsPS = 5.03e+06
+Step =      8 : SimTime = 6.2500e-03 : StepElapsed = 1.82e-04 s : CellsPS = 5.63e+06
+Step =      9 : SimTime = 7.0312e-03 : StepElapsed = 1.89e-04 s : CellsPS = 5.42e+06
+Step =     10 : SimTime = 7.8125e-03 : StepElapsed = 2.13e-04 s : CellsPS = 4.82e+06
+Step =     11 : SimTime = 8.5937e-03 : StepElapsed = 1.51e-04 s : CellsPS = 6.76e+06
+Step =     12 : SimTime = 9.3750e-03 : StepElapsed = 1.44e-04 s : CellsPS = 7.12e+06
+Step =     13 : SimTime = 1.0156e-02 : StepElapsed = 2.67e-04 s : CellsPS = 3.84e+06
+Step =     14 : SimTime = 1.0938e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.52e+06
+Step =     15 : SimTime = 1.1719e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.48e+06
+Step =     16 : SimTime = 1.2500e-02 : StepElapsed = 1.88e-04 s : CellsPS = 5.44e+06
+Step =     17 : SimTime = 1.3281e-02 : StepElapsed = 2.57e-04 s : CellsPS = 3.98e+06
+Step =     18 : SimTime = 1.4063e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.68e+06
+Step =     19 : SimTime = 1.4844e-02 : StepElapsed = 3.12e-04 s : CellsPS = 3.28e+06
+Step =     20 : SimTime = 1.5625e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.77e+06
+Step =     21 : SimTime = 1.6406e-02 : StepElapsed = 1.97e-04 s : CellsPS = 5.19e+06
+Step =     22 : SimTime = 1.7188e-02 : StepElapsed = 2.05e-04 s : CellsPS = 5.00e+06
+Step =     23 : SimTime = 1.7969e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.05e+06
+Step =     24 : SimTime = 1.8750e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.97e+06
+Step =     25 : SimTime = 1.9531e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =     26 : SimTime = 2.0313e-02 : StepElapsed = 2.51e-04 s : CellsPS = 4.07e+06
+Step =     27 : SimTime = 2.1094e-02 : StepElapsed = 6.51e-04 s : CellsPS = 1.57e+06
+Step =     28 : SimTime = 2.1875e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.27e+06
+Step =     29 : SimTime = 2.2656e-02 : StepElapsed = 2.26e-04 s : CellsPS = 4.54e+06
+Step =     30 : SimTime = 2.3438e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.68e+06
+Step =     31 : SimTime = 2.4219e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.23e+06
+Step =     32 : SimTime = 2.5000e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.85e+06
+Step =     33 : SimTime = 2.5781e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.55e+06
+Step =     34 : SimTime = 2.6563e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.22e+06
+Step =     35 : SimTime = 2.7344e-02 : StepElapsed = 6.07e-04 s : CellsPS = 1.69e+06
+Step =     36 : SimTime = 2.8125e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.12e+06
+Step =     37 : SimTime = 2.8906e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.96e+06
+Step =     38 : SimTime = 2.9688e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =     39 : SimTime = 3.0469e-02 : StepElapsed = 2.09e-04 s : CellsPS = 4.89e+06
+Step =     40 : SimTime = 3.1250e-02 : StepElapsed = 1.09e-03 s : CellsPS = 9.38e+05
+Step =     41 : SimTime = 3.2031e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.39e+06
+Step =     42 : SimTime = 3.2813e-02 : StepElapsed = 2.21e-04 s : CellsPS = 4.63e+06
+Step =     43 : SimTime = 3.3594e-02 : StepElapsed = 4.34e-04 s : CellsPS = 2.36e+06
+Step =     44 : SimTime = 3.4375e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =     45 : SimTime = 3.5156e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.82e+06
+Step =     46 : SimTime = 3.5937e-02 : StepElapsed = 2.84e-04 s : CellsPS = 3.61e+06
+Step =     47 : SimTime = 3.6719e-02 : StepElapsed = 2.27e-04 s : CellsPS = 4.51e+06
+Step =     48 : SimTime = 3.7500e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.42e+06
+Step =     49 : SimTime = 3.8281e-02 : StepElapsed = 1.38e-04 s : CellsPS = 7.41e+06
+Step =     50 : SimTime = 3.9062e-02 : StepElapsed = 3.21e-04 s : CellsPS = 3.19e+06
+Step =     51 : SimTime = 3.9844e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.46e+06
+Step =     52 : SimTime = 4.0625e-02 : StepElapsed = 1.46e-03 s : CellsPS = 7.02e+05
+Step =     53 : SimTime = 4.1406e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.22e+06
+Step =     54 : SimTime = 4.2187e-02 : StepElapsed = 1.66e-04 s : CellsPS = 6.16e+06
+Step =     55 : SimTime = 4.2969e-02 : StepElapsed = 6.75e-04 s : CellsPS = 1.52e+06
+Step =     56 : SimTime = 4.3750e-02 : StepElapsed = 2.94e-04 s : CellsPS = 3.48e+06
+Step =     57 : SimTime = 4.4531e-02 : StepElapsed = 2.34e-04 s : CellsPS = 4.38e+06
+Step =     58 : SimTime = 4.5312e-02 : StepElapsed = 2.05e-04 s : CellsPS = 4.99e+06
+Step =     59 : SimTime = 4.6094e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.64e+06
+Step =     60 : SimTime = 4.6875e-02 : StepElapsed = 2.15e-04 s : CellsPS = 4.76e+06
+Step =     61 : SimTime = 4.7656e-02 : StepElapsed = 9.04e-04 s : CellsPS = 1.13e+06
+Step =     62 : SimTime = 4.8437e-02 : StepElapsed = 8.11e-04 s : CellsPS = 1.26e+06
+Step =     63 : SimTime = 4.9219e-02 : StepElapsed = 2.52e-04 s : CellsPS = 4.06e+06
+Step =     64 : SimTime = 5.0000e-02 : StepElapsed = 3.38e-04 s : CellsPS = 3.03e+06
+Step =     65 : SimTime = 5.0781e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.10e+06
+Step =     66 : SimTime = 5.1562e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =     67 : SimTime = 5.2344e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.66e+06
+Step =     68 : SimTime = 5.3125e-02 : StepElapsed = 7.02e-04 s : CellsPS = 1.46e+06
+Step =     69 : SimTime = 5.3906e-02 : StepElapsed = 3.20e-04 s : CellsPS = 3.20e+06
+Step =     70 : SimTime = 5.4687e-02 : StepElapsed = 3.59e-04 s : CellsPS = 2.85e+06
+Step =     71 : SimTime = 5.5469e-02 : StepElapsed = 2.07e-04 s : CellsPS = 4.96e+06
+Step =     72 : SimTime = 5.6250e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.40e+06
+Step =     73 : SimTime = 5.7031e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.63e+06
+Step =     74 : SimTime = 5.7812e-02 : StepElapsed = 1.66e-04 s : CellsPS = 6.18e+06
+Step =     75 : SimTime = 5.8594e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.90e+06
+Step =     76 : SimTime = 5.9375e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.59e+06
+Step =     77 : SimTime = 6.0156e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.36e+06
+Step =     78 : SimTime = 6.0937e-02 : StepElapsed = 1.16e-03 s : CellsPS = 8.80e+05
+Step =     79 : SimTime = 6.1719e-02 : StepElapsed = 2.23e-04 s : CellsPS = 4.58e+06
+Step =     80 : SimTime = 6.2500e-02 : StepElapsed = 3.16e-04 s : CellsPS = 3.24e+06
+Step =     81 : SimTime = 6.3281e-02 : StepElapsed = 5.67e-04 s : CellsPS = 1.81e+06
+Step =     82 : SimTime = 6.4062e-02 : StepElapsed = 4.25e-04 s : CellsPS = 2.41e+06
+Step =     83 : SimTime = 6.4844e-02 : StepElapsed = 2.47e-04 s : CellsPS = 4.15e+06
+Step =     84 : SimTime = 6.5625e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.71e+06
+Step =     85 : SimTime = 6.6406e-02 : StepElapsed = 3.04e-04 s : CellsPS = 3.37e+06
+Step =     86 : SimTime = 6.7187e-02 : StepElapsed = 3.74e-04 s : CellsPS = 2.74e+06
+Step =     87 : SimTime = 6.7969e-02 : StepElapsed = 4.98e-04 s : CellsPS = 2.05e+06
+Step =     88 : SimTime = 6.8750e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.07e+06
+Step =     89 : SimTime = 6.9531e-02 : StepElapsed = 5.48e-04 s : CellsPS = 1.87e+06
+Step =     90 : SimTime = 7.0312e-02 : StepElapsed = 3.42e-04 s : CellsPS = 3.00e+06
+Step =     91 : SimTime = 7.1094e-02 : StepElapsed = 2.59e-04 s : CellsPS = 3.95e+06
+Step =     92 : SimTime = 7.1875e-02 : StepElapsed = 8.37e-04 s : CellsPS = 1.22e+06
+Step =     93 : SimTime = 7.2656e-02 : StepElapsed = 2.39e-04 s : CellsPS = 4.29e+06
+Step =     94 : SimTime = 7.3437e-02 : StepElapsed = 2.85e-04 s : CellsPS = 3.60e+06
+Step =     95 : SimTime = 7.4219e-02 : StepElapsed = 9.51e-04 s : CellsPS = 1.08e+06
+Step =     96 : SimTime = 7.5000e-02 : StepElapsed = 5.84e-04 s : CellsPS = 1.75e+06
+Step =     97 : SimTime = 7.5781e-02 : StepElapsed = 6.24e-04 s : CellsPS = 1.64e+06
+Step =     98 : SimTime = 7.6562e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.30e+06
+Step =     99 : SimTime = 7.7344e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.04e+06
+Step =    100 : SimTime = 7.8125e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.58e+06
+Step =    101 : SimTime = 7.8906e-02 : StepElapsed = 1.97e-04 s : CellsPS = 5.20e+06
+Step =    102 : SimTime = 7.9687e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =    103 : SimTime = 8.0469e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.28e+06
+Step =    104 : SimTime = 8.1250e-02 : StepElapsed = 5.79e-04 s : CellsPS = 1.77e+06
+Step =    105 : SimTime = 8.2031e-02 : StepElapsed = 2.09e-04 s : CellsPS = 4.90e+06
+Step =    106 : SimTime = 8.2812e-02 : StepElapsed = 4.50e-04 s : CellsPS = 2.28e+06
+Step =    107 : SimTime = 8.3594e-02 : StepElapsed = 8.33e-04 s : CellsPS = 1.23e+06
+Step =    108 : SimTime = 8.4375e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.19e+06
+Step =    109 : SimTime = 8.5156e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.03e+06
+Step =    110 : SimTime = 8.5937e-02 : StepElapsed = 3.64e-04 s : CellsPS = 2.81e+06
+Step =    111 : SimTime = 8.6719e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.25e+06
+Step =    112 : SimTime = 8.7500e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.13e+06
+Step =    113 : SimTime = 8.8281e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.23e+06
+Step =    114 : SimTime = 8.9062e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.26e+06
+Step =    115 : SimTime = 8.9844e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.30e+06
+Step =    116 : SimTime = 9.0625e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.31e+06
+Step =    117 : SimTime = 9.1406e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.01e+06
+Step =    118 : SimTime = 9.2187e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.63e+06
+Step =    119 : SimTime = 9.2969e-02 : StepElapsed = 5.14e-04 s : CellsPS = 1.99e+06
+Step =    120 : SimTime = 9.3750e-02 : StepElapsed = 3.61e-04 s : CellsPS = 2.84e+06
+Step =    121 : SimTime = 9.4531e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =    122 : SimTime = 9.5312e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.12e+06
+Step =    123 : SimTime = 9.6094e-02 : StepElapsed = 2.05e-04 s : CellsPS = 4.99e+06
+Step =    124 : SimTime = 9.6875e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.09e+06
+Step =    125 : SimTime = 9.7656e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.35e+06
+Step =    126 : SimTime = 9.8437e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.86e+06
+Step =    127 : SimTime = 9.9219e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.29e+06
+Step =    128 : SimTime = 1.0000e-01 : StepElapsed = 1.50e-04 s : CellsPS = 6.82e+06
+Step =    129 : SimTime = 1.0078e-01 : StepElapsed = 6.25e-04 s : CellsPS = 1.64e+06
+Simulation complete...
+Total execution time = 4.87e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=1.2 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff7482bf50>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=1.2 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff85943f50>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=1.2 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff950f3f50>
+Step =      1 : SimTime = 1.1719e-03 : StepElapsed = 9.86e-04 s : CellsPS = 1.04e+06
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=1.2 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb0b649e0>
+Step =      2 : SimTime = 2.3437e-03 : StepElapsed = 1.40e-04 s : CellsPS = 7.31e+06
+Step =      3 : SimTime = 3.5156e-03 : StepElapsed = 2.67e-03 s : CellsPS = 3.84e+05
+Step =      4 : SimTime = 4.6875e-03 : StepElapsed = 1.99e-03 s : CellsPS = 5.14e+05
+Step =      5 : SimTime = 5.8594e-03 : StepElapsed = 1.32e-04 s : CellsPS = 7.73e+06
+Step =      6 : SimTime = 7.0313e-03 : StepElapsed = 3.63e-04 s : CellsPS = 2.82e+06
+Step =      7 : SimTime = 8.2031e-03 : StepElapsed = 1.78e-04 s : CellsPS = 5.76e+06
+Step =      8 : SimTime = 9.3750e-03 : StepElapsed = 2.15e-04 s : CellsPS = 4.76e+06
+Step =      9 : SimTime = 1.0547e-02 : StepElapsed = 2.17e-04 s : CellsPS = 4.73e+06
+Step =     10 : SimTime = 1.1719e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.71e+06
+Step =     11 : SimTime = 1.2891e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.53e+06
+Step =     12 : SimTime = 1.4062e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.50e+06
+Step =     13 : SimTime = 1.5234e-02 : StepElapsed = 4.84e-04 s : CellsPS = 2.12e+06
+Step =     14 : SimTime = 1.6406e-02 : StepElapsed = 2.56e-04 s : CellsPS = 3.99e+06
+Step =     15 : SimTime = 1.7578e-02 : StepElapsed = 2.14e-04 s : CellsPS = 4.79e+06
+Step =     16 : SimTime = 1.8750e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.36e+06
+Step =     17 : SimTime = 1.9922e-02 : StepElapsed = 4.29e-04 s : CellsPS = 2.39e+06
+Step =     18 : SimTime = 2.1094e-02 : StepElapsed = 2.54e-04 s : CellsPS = 4.03e+06
+Step =     19 : SimTime = 2.2266e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.08e+06
+Step =     20 : SimTime = 2.3437e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.10e+06
+Step =     21 : SimTime = 2.4609e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.67e+06
+Step =     22 : SimTime = 2.5781e-02 : StepElapsed = 1.27e-04 s : CellsPS = 8.06e+06
+Step =     23 : SimTime = 2.6953e-02 : StepElapsed = 1.30e-04 s : CellsPS = 7.89e+06
+Step =     24 : SimTime = 2.8125e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.94e+06
+Step =     25 : SimTime = 2.9297e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.14e+06
+Step =     26 : SimTime = 3.0469e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.15e+06
+Step =     27 : SimTime = 3.1641e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     28 : SimTime = 3.2812e-02 : StepElapsed = 1.30e-04 s : CellsPS = 7.89e+06
+Step =     29 : SimTime = 3.3984e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.22e+06
+Step =     30 : SimTime = 3.5156e-02 : StepElapsed = 1.24e-04 s : CellsPS = 8.29e+06
+Step =     31 : SimTime = 3.6328e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.85e+06
+Step =     32 : SimTime = 3.7500e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.55e+06
+Step =     33 : SimTime = 3.8672e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.66e+06
+Step =     34 : SimTime = 3.9844e-02 : StepElapsed = 2.44e-04 s : CellsPS = 4.20e+06
+Step =     35 : SimTime = 4.1016e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.24e+06
+Step =     36 : SimTime = 4.2188e-02 : StepElapsed = 1.30e-04 s : CellsPS = 7.87e+06
+Step =     37 : SimTime = 4.3359e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.15e+06
+Step =     38 : SimTime = 4.4531e-02 : StepElapsed = 1.28e-04 s : CellsPS = 8.01e+06
+Step =     39 : SimTime = 4.5703e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.51e+06
+Step =     40 : SimTime = 4.6875e-02 : StepElapsed = 2.24e-04 s : CellsPS = 4.58e+06
+Step =     41 : SimTime = 4.8047e-02 : StepElapsed = 1.96e-04 s : CellsPS = 5.22e+06
+Step =     42 : SimTime = 4.9219e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.60e+06
+Step =     43 : SimTime = 5.0391e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.37e+06
+Step =     44 : SimTime = 5.1563e-02 : StepElapsed = 3.86e-04 s : CellsPS = 2.65e+06
+Step =     45 : SimTime = 5.2734e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.24e+06
+Step =     46 : SimTime = 5.3906e-02 : StepElapsed = 3.68e-04 s : CellsPS = 2.79e+06
+Step =     47 : SimTime = 5.5078e-02 : StepElapsed = 1.99e-04 s : CellsPS = 5.15e+06
+Step =     48 : SimTime = 5.6250e-02 : StepElapsed = 2.29e-04 s : CellsPS = 4.48e+06
+Step =     49 : SimTime = 5.7422e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.17e+06
+Step =     50 : SimTime = 5.8594e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.22e+06
+Step =     51 : SimTime = 5.9766e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.17e+06
+Step =     52 : SimTime = 6.0938e-02 : StepElapsed = 1.29e-04 s : CellsPS = 7.94e+06
+Step =     53 : SimTime = 6.2109e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.21e+06
+Step =     54 : SimTime = 6.3281e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.19e+06
+Step =     55 : SimTime = 6.4453e-02 : StepElapsed = 1.24e-04 s : CellsPS = 8.23e+06
+Step =     56 : SimTime = 6.5625e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.69e+06
+Step =     57 : SimTime = 6.6797e-02 : StepElapsed = 2.72e-04 s : CellsPS = 3.77e+06
+Step =     58 : SimTime = 6.7969e-02 : StepElapsed = 2.07e-04 s : CellsPS = 4.96e+06
+Step =     59 : SimTime = 6.9141e-02 : StepElapsed = 1.19e-03 s : CellsPS = 8.57e+05
+Step =     60 : SimTime = 7.0313e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.58e+06
+Step =     61 : SimTime = 7.1484e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.70e+06
+Step =     62 : SimTime = 7.2656e-02 : StepElapsed = 1.28e-04 s : CellsPS = 8.01e+06
+Step =     63 : SimTime = 7.3828e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.21e+06
+Step =     64 : SimTime = 7.5000e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.78e+06
+Step =     65 : SimTime = 7.6172e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.13e+06
+Step =     66 : SimTime = 7.7344e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.54e+06
+Step =     67 : SimTime = 7.8516e-02 : StepElapsed = 2.35e-04 s : CellsPS = 4.36e+06
+Step =     68 : SimTime = 7.9688e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     69 : SimTime = 8.0859e-02 : StepElapsed = 7.38e-04 s : CellsPS = 1.39e+06
+Step =     70 : SimTime = 8.2031e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.25e+06
+Step =     71 : SimTime = 8.3203e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.14e+06
+Step =     72 : SimTime = 8.4375e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     73 : SimTime = 8.5547e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.36e+06
+Step =     74 : SimTime = 8.6719e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.60e+06
+Step =     75 : SimTime = 8.7891e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     76 : SimTime = 8.9063e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.15e+06
+Step =     77 : SimTime = 9.0234e-02 : StepElapsed = 2.06e-04 s : CellsPS = 4.97e+06
+Step =     78 : SimTime = 9.1406e-02 : StepElapsed = 1.28e-04 s : CellsPS = 8.01e+06
+Step =     79 : SimTime = 9.2578e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.10e+06
+Step =     80 : SimTime = 9.3750e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.24e+06
+Step =     81 : SimTime = 9.4922e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.50e+06
+Step =     82 : SimTime = 9.6094e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     83 : SimTime = 9.7266e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.13e+06
+Step =     84 : SimTime = 9.8438e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     85 : SimTime = 9.9609e-02 : StepElapsed = 4.82e-04 s : CellsPS = 2.12e+06
+Step =     86 : SimTime = 1.0078e-01 : StepElapsed = 2.30e-04 s : CellsPS = 4.45e+06
+Simulation complete...
+Total execution time = 2.99e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=1.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff98b249e0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=1.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffad7649e0>
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=1.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff6d26dcd0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=1.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff76d03f50>
+Step =      1 : SimTime = 1.5625e-03 : StepElapsed = 7.02e-04 s : CellsPS = 1.46e+06
+Step =      2 : SimTime = 3.1250e-03 : StepElapsed = 1.79e-04 s : CellsPS = 5.74e+06
+Step =      3 : SimTime = 4.6875e-03 : StepElapsed = 2.20e-04 s : CellsPS = 4.65e+06
+Step =      4 : SimTime = 6.2500e-03 : StepElapsed = 1.55e-04 s : CellsPS = 6.59e+06
+Step =      5 : SimTime = 7.8125e-03 : StepElapsed = 9.79e-04 s : CellsPS = 1.05e+06
+Step =      6 : SimTime = 9.3750e-03 : StepElapsed = 4.12e-04 s : CellsPS = 2.49e+06
+Step =      7 : SimTime = 1.0937e-02 : StepElapsed = 5.27e-04 s : CellsPS = 1.94e+06
+Step =      8 : SimTime = 1.2500e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.90e+06
+Step =      9 : SimTime = 1.4062e-02 : StepElapsed = 1.24e-03 s : CellsPS = 8.25e+05
+Step =     10 : SimTime = 1.5625e-02 : StepElapsed = 4.22e-04 s : CellsPS = 2.42e+06
+Step =     11 : SimTime = 1.7187e-02 : StepElapsed = 3.89e-04 s : CellsPS = 2.63e+06
+Step =     12 : SimTime = 1.8750e-02 : StepElapsed = 6.56e-04 s : CellsPS = 1.56e+06
+Step =     13 : SimTime = 2.0313e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.26e+06
+Step =     14 : SimTime = 2.1875e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.67e+06
+Step =     15 : SimTime = 2.3438e-02 : StepElapsed = 1.29e-04 s : CellsPS = 7.94e+06
+Step =     16 : SimTime = 2.5000e-02 : StepElapsed = 2.60e-04 s : CellsPS = 3.94e+06
+Step =     17 : SimTime = 2.6563e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =     18 : SimTime = 2.8125e-02 : StepElapsed = 1.88e-04 s : CellsPS = 5.43e+06
+Step =     19 : SimTime = 2.9688e-02 : StepElapsed = 7.84e-04 s : CellsPS = 1.31e+06
+Step =     20 : SimTime = 3.1250e-02 : StepElapsed = 3.53e-04 s : CellsPS = 2.90e+06
+Step =     21 : SimTime = 3.2813e-02 : StepElapsed = 2.47e-04 s : CellsPS = 4.15e+06
+Step =     22 : SimTime = 3.4375e-02 : StepElapsed = 2.78e-04 s : CellsPS = 3.68e+06
+Step =     23 : SimTime = 3.5938e-02 : StepElapsed = 1.26e-04 s : CellsPS = 8.12e+06
+Step =     24 : SimTime = 3.7500e-02 : StepElapsed = 3.05e-04 s : CellsPS = 3.36e+06
+Step =     25 : SimTime = 3.9063e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.77e+06
+Step =     26 : SimTime = 4.0625e-02 : StepElapsed = 1.25e-04 s : CellsPS = 8.16e+06
+Step =     27 : SimTime = 4.2188e-02 : StepElapsed = 1.27e-04 s : CellsPS = 8.08e+06
+Step =     28 : SimTime = 4.3750e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.38e+06
+Step =     29 : SimTime = 4.5313e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.66e+06
+Step =     30 : SimTime = 4.6875e-02 : StepElapsed = 3.02e-04 s : CellsPS = 3.39e+06
+Step =     31 : SimTime = 4.8438e-02 : StepElapsed = 2.20e-04 s : CellsPS = 4.66e+06
+Step =     32 : SimTime = 5.0000e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.30e+06
+Step =     33 : SimTime = 5.1563e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =     34 : SimTime = 5.3125e-02 : StepElapsed = 2.13e-04 s : CellsPS = 4.81e+06
+Step =     35 : SimTime = 5.4688e-02 : StepElapsed = 2.57e-04 s : CellsPS = 3.98e+06
+Step =     36 : SimTime = 5.6250e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.57e+06
+Step =     37 : SimTime = 5.7813e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.83e+06
+Step =     38 : SimTime = 5.9375e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.15e+06
+Step =     39 : SimTime = 6.0938e-02 : StepElapsed = 2.06e-04 s : CellsPS = 4.97e+06
+Step =     40 : SimTime = 6.2500e-02 : StepElapsed = 8.04e-04 s : CellsPS = 1.27e+06
+Step =     41 : SimTime = 6.4063e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.20e+06
+Step =     42 : SimTime = 6.5625e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.69e+06
+Step =     43 : SimTime = 6.7188e-02 : StepElapsed = 5.74e-04 s : CellsPS = 1.78e+06
+Step =     44 : SimTime = 6.8750e-02 : StepElapsed = 3.84e-04 s : CellsPS = 2.67e+06
+Step =     45 : SimTime = 7.0312e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.76e+06
+Step =     46 : SimTime = 7.1875e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.53e+06
+Step =     47 : SimTime = 7.3437e-02 : StepElapsed = 1.29e-04 s : CellsPS = 7.96e+06
+Step =     48 : SimTime = 7.5000e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.52e+06
+Step =     49 : SimTime = 7.6562e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.93e+06
+Step =     50 : SimTime = 7.8125e-02 : StepElapsed = 7.24e-04 s : CellsPS = 1.41e+06
+Step =     51 : SimTime = 7.9687e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.70e+06
+Step =     52 : SimTime = 8.1250e-02 : StepElapsed = 2.52e-04 s : CellsPS = 4.07e+06
+Step =     53 : SimTime = 8.2812e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.53e+06
+Step =     54 : SimTime = 8.4375e-02 : StepElapsed = 1.29e-04 s : CellsPS = 7.96e+06
+Step =     55 : SimTime = 8.5937e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.24e+06
+Step =     56 : SimTime = 8.7500e-02 : StepElapsed = 1.05e-03 s : CellsPS = 9.77e+05
+Step =     57 : SimTime = 8.9062e-02 : StepElapsed = 2.57e-04 s : CellsPS = 3.98e+06
+Step =     58 : SimTime = 9.0625e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.64e+06
+Step =     59 : SimTime = 9.2187e-02 : StepElapsed = 4.87e-04 s : CellsPS = 2.10e+06
+Step =     60 : SimTime = 9.3750e-02 : StepElapsed = 1.31e-04 s : CellsPS = 7.79e+06
+Step =     61 : SimTime = 9.5312e-02 : StepElapsed = 5.09e-04 s : CellsPS = 2.01e+06
+Step =     62 : SimTime = 9.6875e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.09e+06
+Step =     63 : SimTime = 9.8437e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.12e+06
+Step =     64 : SimTime = 1.0000e-01 : StepElapsed = 4.38e-04 s : CellsPS = 2.34e+06
+Step =     65 : SimTime = 1.0156e-01 : StepElapsed = 4.65e-04 s : CellsPS = 2.20e+06
+Simulation complete...
+Total execution time = 2.60e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:user_input=Check the latest CFD result arrays for NaNs and report which CFL values were stable and which produced NaNs. Choose the next set of CFL values, increasing CFL for stable ranks and decreasing it for ranks that produced NaNs.
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:global_state=[{'agent_id': 'user', 'answer': 'Check the latest CFD result arrays for NaNs and report which CFL values were stable and which produced NaNs. Choose the next set of CFL values, increasing CFL for stable ranks and decreasing it for ranks that produced NaNs.'}]
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:dispatch_id=684b0935-f965-47af-9b4e-c28024e8c9a5
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:trace:slot:nan_agent=cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:684b0935-f965-47af-9b4e-c28024e8c9a5:trace
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:684b0935-f965-47af-9b4e-c28024e8c9a5:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:global_entry={'agent_id': 'nan_agent', 'answer': 'Stable CFLs (no NaNs): [0.3, 0.8]. Unstable CFLs (produced NaNs): [2.4, 9.9].'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:684b0935-f965-47af-9b4e-c28024e8c9a5:result={'response': 'Stable CFLs (no NaNs): [0.3, 0.8]. Unstable CFLs (produced NaNs): [2.4, 9.9].'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:dispatch_id=2f88560a-21fe-4e83-852f-1f100205a0d3
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:trace:slot:generator_agent=cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:2f88560a-21fe-4e83-852f-1f100205a0d3:trace
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:2f88560a-21fe-4e83-852f-1f100205a0d3:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:global_entry={'agent_id': 'generator_agent', 'answer': '0.4, 0.8, 1.2, 1.6'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:2f88560a-21fe-4e83-852f-1f100205a0d3:result={'response': '0.4, 0.8, 1.2, 1.6'}
+
+--- Latest run ---
+Ran experiments at CFL values [0.4, 0.8, 1.2, 1.6].
+============================================================
+Iteration 2/2
+============================================================
+Request: Check the latest CFD result arrays for NaNs and report which CFL values were stable and which produced NaNs. Choose the next set of CFL values, increasing CFL for stable ranks and decreasing it for ranks that produced NaNs.
+
+[inference][debug] schema_hint=yes tools=yes raw_output='{"response": {"type": "tool_request", "tool_calls": [{"name": "scan_all_ranks", "args": {}}]}}'
+[inference][debug] payload='{"response": {"type": "tool_request", "tool_calls": [{"name": "scan_all_ranks", "args": {}}]}}'
+[tool] Result for key: cfl_0.4_rank0: {'has_nans': np.False_, 'max_value': np.float64(1.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.4_rank1: {'has_nans': np.False_, 'max_value': np.float64(1.0), 'min_value': np.float64(-1.0992715556564868e-44)}
+[tool] Result for key: cfl_0.4_rank2: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.4_rank3: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.8_rank0: {'has_nans': np.False_, 'max_value': np.float64(311.04947135372095), 'min_value': np.float64(-276.6793143477437)}
+[tool] Result for key: cfl_0.8_rank1: {'has_nans': np.False_, 'max_value': np.float64(277.67931434705247), 'min_value': np.float64(-310.0494713464436)}
+[tool] Result for key: cfl_0.8_rank2: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_0.8_rank3: {'has_nans': np.False_, 'max_value': np.float64(0.0), 'min_value': np.float64(0.0)}
+[tool] Result for key: cfl_1.2_rank0: {'has_nans': np.True_, 'max_value': np.float64(227416471796.08408), 'min_value': np.float64(-225675200342.9062)}
+[tool] Result for key: cfl_1.6_rank0: {'has_nans': np.True_, 'max_value': np.float64(1.0116400406963017e+21), 'min_value': np.float64(-9.730074286578648e+20)}
+[tool] scan_all_ranks() -> {'keys_with_nans': [1.2, 1.6], 'keys_without_nans': [0.4, 0.8], 'report': 'Stable CFLs (no NaNs): [0.4, 0.8]. Unstable CFLs (produced NaNs): [1.2, 1.6].'}
+[inference][debug] schema_hint=yes tools=yes raw_output='{"response": {"type": "final_answer", "content": "Stable CFLs (no NaNs): [0.4, 0.8]. Unstable CFLs (produced NaNs): [1.2, 1.6]."}}'
+[inference][debug] payload='{"response": {"type": "final_answer", "content": "Stable CFLs (no NaNs): [0.4, 0.8]. Unstable CFLs (produced NaNs): [1.2, 1.6]."}}'
+[inference][debug] schema_hint=no tools=no raw_output='0.4, 0.8, 0.8, 0.6'
+[inference][debug] payload='0.4, 0.8, 0.8, 0.6'
+[fn] run_experiments_node -> cfl_values=[0.4, 0.8, 0.8, 0.6]
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffec6fe44d0>
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffec6fe79b0>
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffec6fe5cd0>
+Got a job <dragon.workflows.batch.batch.Job object at 0xfffec6fe7890>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa7aa49e0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa7e349e0>
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff82305cd0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.4 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffa4e202c0>
+Step =      1 : SimTime = 3.9063e-04 : StepElapsed = 1.63e-03 s : CellsPS = 6.28e+05
+Step =      2 : SimTime = 7.8125e-04 : StepElapsed = 2.30e-04 s : CellsPS = 4.46e+06
+Step =      3 : SimTime = 1.1719e-03 : StepElapsed = 4.29e-04 s : CellsPS = 2.39e+06
+Step =      4 : SimTime = 1.5625e-03 : StepElapsed = 3.09e-04 s : CellsPS = 3.32e+06
+Step =      5 : SimTime = 1.9531e-03 : StepElapsed = 3.29e-04 s : CellsPS = 3.11e+06
+Step =      6 : SimTime = 2.3437e-03 : StepElapsed = 3.99e-04 s : CellsPS = 2.56e+06
+Step =      7 : SimTime = 2.7344e-03 : StepElapsed = 2.60e-04 s : CellsPS = 3.94e+06
+Step =      8 : SimTime = 3.1250e-03 : StepElapsed = 3.86e-04 s : CellsPS = 2.65e+06
+Step =      9 : SimTime = 3.5156e-03 : StepElapsed = 4.72e-04 s : CellsPS = 2.17e+06
+Step =     10 : SimTime = 3.9062e-03 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =     11 : SimTime = 4.2969e-03 : StepElapsed = 1.03e-03 s : CellsPS = 9.95e+05
+Step =     12 : SimTime = 4.6875e-03 : StepElapsed = 2.04e-04 s : CellsPS = 5.03e+06
+Step =     13 : SimTime = 5.0781e-03 : StepElapsed = 4.03e-04 s : CellsPS = 2.54e+06
+Step =     14 : SimTime = 5.4688e-03 : StepElapsed = 4.11e-04 s : CellsPS = 2.49e+06
+Step =     15 : SimTime = 5.8594e-03 : StepElapsed = 2.07e-04 s : CellsPS = 4.94e+06
+Step =     16 : SimTime = 6.2500e-03 : StepElapsed = 4.20e-04 s : CellsPS = 2.44e+06
+Step =     17 : SimTime = 6.6406e-03 : StepElapsed = 4.98e-04 s : CellsPS = 2.06e+06
+Step =     18 : SimTime = 7.0313e-03 : StepElapsed = 4.63e-04 s : CellsPS = 2.21e+06
+Step =     19 : SimTime = 7.4219e-03 : StepElapsed = 1.53e-04 s : CellsPS = 6.71e+06
+Step =     20 : SimTime = 7.8125e-03 : StepElapsed = 4.32e-04 s : CellsPS = 2.37e+06
+Step =     21 : SimTime = 8.2031e-03 : StepElapsed = 2.65e-04 s : CellsPS = 3.86e+06
+Step =     22 : SimTime = 8.5938e-03 : StepElapsed = 3.84e-04 s : CellsPS = 2.67e+06
+Step =     23 : SimTime = 8.9844e-03 : StepElapsed = 4.03e-04 s : CellsPS = 2.54e+06
+Step =     24 : SimTime = 9.3750e-03 : StepElapsed = 3.23e-04 s : CellsPS = 3.17e+06
+Step =     25 : SimTime = 9.7656e-03 : StepElapsed = 2.50e-04 s : CellsPS = 4.10e+06
+Step =     26 : SimTime = 1.0156e-02 : StepElapsed = 3.76e-04 s : CellsPS = 2.73e+06
+Step =     27 : SimTime = 1.0547e-02 : StepElapsed = 4.32e-04 s : CellsPS = 2.37e+06
+Step =     28 : SimTime = 1.0938e-02 : StepElapsed = 2.20e-04 s : CellsPS = 4.66e+06
+Step =     29 : SimTime = 1.1328e-02 : StepElapsed = 3.88e-04 s : CellsPS = 2.64e+06
+Step =     30 : SimTime = 1.1719e-02 : StepElapsed = 4.47e-04 s : CellsPS = 2.29e+06
+Step =     31 : SimTime = 1.2109e-02 : StepElapsed = 6.45e-04 s : CellsPS = 1.59e+06
+Step =     32 : SimTime = 1.2500e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.15e+06
+Step =     33 : SimTime = 1.2891e-02 : StepElapsed = 3.88e-04 s : CellsPS = 2.64e+06
+Step =     34 : SimTime = 1.3281e-02 : StepElapsed = 4.93e-04 s : CellsPS = 2.08e+06
+Step =     35 : SimTime = 1.3672e-02 : StepElapsed = 4.71e-04 s : CellsPS = 2.18e+06
+Step =     36 : SimTime = 1.4063e-02 : StepElapsed = 5.92e-04 s : CellsPS = 1.73e+06
+Step =     37 : SimTime = 1.4453e-02 : StepElapsed = 4.18e-04 s : CellsPS = 2.45e+06
+Step =     38 : SimTime = 1.4844e-02 : StepElapsed = 3.35e-04 s : CellsPS = 3.05e+06
+Step =     39 : SimTime = 1.5234e-02 : StepElapsed = 5.95e-04 s : CellsPS = 1.72e+06
+Step =     40 : SimTime = 1.5625e-02 : StepElapsed = 1.70e-03 s : CellsPS = 6.04e+05
+Step =     41 : SimTime = 1.6016e-02 : StepElapsed = 2.78e-03 s : CellsPS = 3.68e+05
+Step =     42 : SimTime = 1.6406e-02 : StepElapsed = 8.79e-04 s : CellsPS = 1.17e+06
+Step =     43 : SimTime = 1.6797e-02 : StepElapsed = 2.02e-03 s : CellsPS = 5.08e+05
+Step =     44 : SimTime = 1.7188e-02 : StepElapsed = 6.33e-03 s : CellsPS = 1.62e+05
+Step =     45 : SimTime = 1.7578e-02 : StepElapsed = 8.30e-03 s : CellsPS = 1.23e+05
+Step =     46 : SimTime = 1.7969e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.33e+06
+Step =     47 : SimTime = 1.8359e-02 : StepElapsed = 1.68e-03 s : CellsPS = 6.08e+05
+Step =     48 : SimTime = 1.8750e-02 : StepElapsed = 2.05e-03 s : CellsPS = 4.99e+05
+Step =     49 : SimTime = 1.9141e-02 : StepElapsed = 1.56e-03 s : CellsPS = 6.55e+05
+Step =     50 : SimTime = 1.9531e-02 : StepElapsed = 1.92e-03 s : CellsPS = 5.33e+05
+Step =     51 : SimTime = 1.9922e-02 : StepElapsed = 4.44e-04 s : CellsPS = 2.31e+06
+Step =     52 : SimTime = 2.0312e-02 : StepElapsed = 4.82e-04 s : CellsPS = 2.13e+06
+Step =     53 : SimTime = 2.0703e-02 : StepElapsed = 4.79e-04 s : CellsPS = 2.14e+06
+Step =     54 : SimTime = 2.1094e-02 : StepElapsed = 2.58e-03 s : CellsPS = 3.97e+05
+Step =     55 : SimTime = 2.1484e-02 : StepElapsed = 2.23e-03 s : CellsPS = 4.59e+05
+Step =     56 : SimTime = 2.1875e-02 : StepElapsed = 1.41e-03 s : CellsPS = 7.27e+05
+Step =     57 : SimTime = 2.2266e-02 : StepElapsed = 7.11e-04 s : CellsPS = 1.44e+06
+Step =     58 : SimTime = 2.2656e-02 : StepElapsed = 6.80e-04 s : CellsPS = 1.51e+06
+Step =     59 : SimTime = 2.3047e-02 : StepElapsed = 4.73e-04 s : CellsPS = 2.16e+06
+Step =     60 : SimTime = 2.3437e-02 : StepElapsed = 2.40e-03 s : CellsPS = 4.26e+05
+Step =     61 : SimTime = 2.3828e-02 : StepElapsed = 2.66e-04 s : CellsPS = 3.86e+06
+Step =     62 : SimTime = 2.4219e-02 : StepElapsed = 4.77e-04 s : CellsPS = 2.15e+06
+Step =     63 : SimTime = 2.4609e-02 : StepElapsed = 5.12e-04 s : CellsPS = 2.00e+06
+Step =     64 : SimTime = 2.5000e-02 : StepElapsed = 4.73e-04 s : CellsPS = 2.17e+06
+Step =     65 : SimTime = 2.5391e-02 : StepElapsed = 1.98e-04 s : CellsPS = 5.17e+06
+Step =     66 : SimTime = 2.5781e-02 : StepElapsed = 3.67e-04 s : CellsPS = 2.79e+06
+Step =     67 : SimTime = 2.6172e-02 : StepElapsed = 4.14e-04 s : CellsPS = 2.47e+06
+Step =     68 : SimTime = 2.6562e-02 : StepElapsed = 2.19e-04 s : CellsPS = 4.67e+06
+Step =     69 : SimTime = 2.6953e-02 : StepElapsed = 3.69e-04 s : CellsPS = 2.78e+06
+Step =     70 : SimTime = 2.7344e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.67e+06
+Step =     71 : SimTime = 2.7734e-02 : StepElapsed = 5.26e-04 s : CellsPS = 1.95e+06
+Step =     72 : SimTime = 2.8125e-02 : StepElapsed = 1.35e-03 s : CellsPS = 7.61e+05
+Step =     73 : SimTime = 2.8516e-02 : StepElapsed = 2.48e-04 s : CellsPS = 4.12e+06
+Step =     74 : SimTime = 2.8906e-02 : StepElapsed = 3.72e-04 s : CellsPS = 2.76e+06
+Step =     75 : SimTime = 2.9297e-02 : StepElapsed = 4.14e-04 s : CellsPS = 2.48e+06
+Step =     76 : SimTime = 2.9687e-02 : StepElapsed = 8.25e-04 s : CellsPS = 1.24e+06
+Step =     77 : SimTime = 3.0078e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.82e+06
+Step =     78 : SimTime = 3.0469e-02 : StepElapsed = 2.76e-04 s : CellsPS = 3.71e+06
+Step =     79 : SimTime = 3.0859e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.09e+06
+Step =     80 : SimTime = 3.1250e-02 : StepElapsed = 5.73e-04 s : CellsPS = 1.79e+06
+Step =     81 : SimTime = 3.1641e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.49e+06
+Step =     82 : SimTime = 3.2031e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.99e+06
+Step =     83 : SimTime = 3.2422e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.80e+06
+Step =     84 : SimTime = 3.2812e-02 : StepElapsed = 1.96e-04 s : CellsPS = 5.23e+06
+Step =     85 : SimTime = 3.3203e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.21e+06
+Step =     86 : SimTime = 3.3594e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.70e+06
+Step =     87 : SimTime = 3.3984e-02 : StepElapsed = 1.78e-04 s : CellsPS = 5.74e+06
+Step =     88 : SimTime = 3.4375e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.86e+06
+Step =     89 : SimTime = 3.4766e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.06e+06
+Step =     90 : SimTime = 3.5156e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =     91 : SimTime = 3.5547e-02 : StepElapsed = 2.11e-04 s : CellsPS = 4.84e+06
+Step =     92 : SimTime = 3.5937e-02 : StepElapsed = 2.30e-04 s : CellsPS = 4.45e+06
+Step =     93 : SimTime = 3.6328e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =     94 : SimTime = 3.6719e-02 : StepElapsed = 4.13e-04 s : CellsPS = 2.48e+06
+Step =     95 : SimTime = 3.7109e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.44e+06
+Step =     96 : SimTime = 3.7500e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.82e+06
+Step =     97 : SimTime = 3.7891e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.77e+06
+Step =     98 : SimTime = 3.8281e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.39e+06
+Step =     99 : SimTime = 3.8672e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.77e+06
+Step =    100 : SimTime = 3.9062e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.59e+06
+Step =    101 : SimTime = 3.9453e-02 : StepElapsed = 3.31e-04 s : CellsPS = 3.09e+06
+Step =    102 : SimTime = 3.9844e-02 : StepElapsed = 2.02e-04 s : CellsPS = 5.06e+06
+Step =    103 : SimTime = 4.0234e-02 : StepElapsed = 1.61e-03 s : CellsPS = 6.35e+05
+Step =    104 : SimTime = 4.0625e-02 : StepElapsed = 2.78e-04 s : CellsPS = 3.68e+06
+Step =    105 : SimTime = 4.1016e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.50e+06
+Step =    106 : SimTime = 4.1406e-02 : StepElapsed = 1.98e-04 s : CellsPS = 5.16e+06
+Step =    107 : SimTime = 4.1797e-02 : StepElapsed = 2.94e-04 s : CellsPS = 3.48e+06
+Step =    108 : SimTime = 4.2187e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.13e+06
+Step =    109 : SimTime = 4.2578e-02 : StepElapsed = 5.72e-04 s : CellsPS = 1.79e+06
+Step =    110 : SimTime = 4.2969e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =    111 : SimTime = 4.3359e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.99e+06
+Step =    112 : SimTime = 4.3750e-02 : StepElapsed = 2.09e-04 s : CellsPS = 4.90e+06
+Step =    113 : SimTime = 4.4141e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.96e+06
+Step =    114 : SimTime = 4.4531e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.03e+06
+Step =    115 : SimTime = 4.4922e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.46e+06
+Step =    116 : SimTime = 4.5312e-02 : StepElapsed = 2.31e-04 s : CellsPS = 4.42e+06
+Step =    117 : SimTime = 4.5703e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.53e+06
+Step =    118 : SimTime = 4.6094e-02 : StepElapsed = 4.07e-04 s : CellsPS = 2.51e+06
+Step =    119 : SimTime = 4.6484e-02 : StepElapsed = 2.20e-04 s : CellsPS = 4.66e+06
+Step =    120 : SimTime = 4.6875e-02 : StepElapsed = 3.49e-04 s : CellsPS = 2.93e+06
+Step =    121 : SimTime = 4.7266e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.01e+06
+Step =    122 : SimTime = 4.7656e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.21e+06
+Step =    123 : SimTime = 4.8047e-02 : StepElapsed = 9.37e-04 s : CellsPS = 1.09e+06
+Step =    124 : SimTime = 4.8437e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.98e+06
+Step =    125 : SimTime = 4.8828e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.96e+06
+Step =    126 : SimTime = 4.9219e-02 : StepElapsed = 8.03e-04 s : CellsPS = 1.28e+06
+Step =    127 : SimTime = 4.9609e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.30e+06
+Step =    128 : SimTime = 5.0000e-02 : StepElapsed = 1.03e-03 s : CellsPS = 9.99e+05
+Step =    129 : SimTime = 5.0391e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.52e+06
+Step =    130 : SimTime = 5.0781e-02 : StepElapsed = 9.19e-04 s : CellsPS = 1.11e+06
+Step =    131 : SimTime = 5.1172e-02 : StepElapsed = 8.17e-04 s : CellsPS = 1.25e+06
+Step =    132 : SimTime = 5.1562e-02 : StepElapsed = 3.08e-04 s : CellsPS = 3.33e+06
+Step =    133 : SimTime = 5.1953e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.04e+06
+Step =    134 : SimTime = 5.2344e-02 : StepElapsed = 4.39e-04 s : CellsPS = 2.33e+06
+Step =    135 : SimTime = 5.2734e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.60e+06
+Step =    136 : SimTime = 5.3125e-02 : StepElapsed = 3.36e-04 s : CellsPS = 3.05e+06
+Step =    137 : SimTime = 5.3516e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.60e+06
+Step =    138 : SimTime = 5.3906e-02 : StepElapsed = 3.00e-04 s : CellsPS = 3.41e+06
+Step =    139 : SimTime = 5.4297e-02 : StepElapsed = 1.19e-03 s : CellsPS = 8.60e+05
+Step =    140 : SimTime = 5.4687e-02 : StepElapsed = 4.16e-04 s : CellsPS = 2.46e+06
+Step =    141 : SimTime = 5.5078e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.50e+06
+Step =    142 : SimTime = 5.5469e-02 : StepElapsed = 2.53e-04 s : CellsPS = 4.04e+06
+Step =    143 : SimTime = 5.5859e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.96e+06
+Step =    144 : SimTime = 5.6250e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.99e+06
+Step =    145 : SimTime = 5.6641e-02 : StepElapsed = 4.43e-04 s : CellsPS = 2.31e+06
+Step =    146 : SimTime = 5.7031e-02 : StepElapsed = 6.43e-04 s : CellsPS = 1.59e+06
+Step =    147 : SimTime = 5.7422e-02 : StepElapsed = 2.51e-04 s : CellsPS = 4.08e+06
+Step =    148 : SimTime = 5.7812e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.68e+06
+Step =    149 : SimTime = 5.8203e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.71e+06
+Step =    150 : SimTime = 5.8594e-02 : StepElapsed = 3.35e-04 s : CellsPS = 3.05e+06
+Step =    151 : SimTime = 5.8984e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.00e+06
+Step =    152 : SimTime = 5.9375e-02 : StepElapsed = 4.07e-04 s : CellsPS = 2.52e+06
+Step =    153 : SimTime = 5.9766e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.63e+06
+Step =    154 : SimTime = 6.0156e-02 : StepElapsed = 3.73e-04 s : CellsPS = 2.75e+06
+Step =    155 : SimTime = 6.0547e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.66e+06
+Step =    156 : SimTime = 6.0937e-02 : StepElapsed = 3.07e-04 s : CellsPS = 3.34e+06
+Step =    157 : SimTime = 6.1328e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.94e+06
+Step =    158 : SimTime = 6.1719e-02 : StepElapsed = 2.23e-04 s : CellsPS = 4.59e+06
+Step =    159 : SimTime = 6.2109e-02 : StepElapsed = 2.25e-04 s : CellsPS = 4.56e+06
+Step =    160 : SimTime = 6.2500e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.97e+06
+Step =    161 : SimTime = 6.2891e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.50e+06
+Step =    162 : SimTime = 6.3281e-02 : StepElapsed = 1.90e-04 s : CellsPS = 5.39e+06
+Step =    163 : SimTime = 6.3672e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.77e+06
+Step =    164 : SimTime = 6.4062e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.90e+06
+Step =    165 : SimTime = 6.4453e-02 : StepElapsed = 1.94e-04 s : CellsPS = 5.26e+06
+Step =    166 : SimTime = 6.4844e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.91e+06
+Step =    167 : SimTime = 6.5234e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.89e+06
+Step =    168 : SimTime = 6.5625e-02 : StepElapsed = 3.05e-04 s : CellsPS = 3.35e+06
+Step =    169 : SimTime = 6.6016e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.88e+06
+Step =    170 : SimTime = 6.6406e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.82e+06
+Step =    171 : SimTime = 6.6797e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.26e+06
+Step =    172 : SimTime = 6.7187e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.94e+06
+Step =    173 : SimTime = 6.7578e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.47e+06
+Step =    174 : SimTime = 6.7969e-02 : StepElapsed = 3.18e-04 s : CellsPS = 3.22e+06
+Step =    175 : SimTime = 6.8359e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.31e+06
+Step =    176 : SimTime = 6.8750e-02 : StepElapsed = 2.44e-04 s : CellsPS = 4.20e+06
+Step =    177 : SimTime = 6.9141e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.81e+06
+Step =    178 : SimTime = 6.9531e-02 : StepElapsed = 2.76e-04 s : CellsPS = 3.71e+06
+Step =    179 : SimTime = 6.9922e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.86e+06
+Step =    180 : SimTime = 7.0312e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.60e+06
+Step =    181 : SimTime = 7.0703e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.74e+06
+Step =    182 : SimTime = 7.1094e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.13e+06
+Step =    183 : SimTime = 7.1484e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =    184 : SimTime = 7.1875e-02 : StepElapsed = 2.73e-04 s : CellsPS = 3.75e+06
+Step =    185 : SimTime = 7.2266e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.40e+06
+Step =    186 : SimTime = 7.2656e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.83e+06
+Step =    187 : SimTime = 7.3047e-02 : StepElapsed = 4.50e-04 s : CellsPS = 2.27e+06
+Step =    188 : SimTime = 7.3437e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.20e+06
+Step =    189 : SimTime = 7.3828e-02 : StepElapsed = 1.12e-03 s : CellsPS = 9.16e+05
+Step =    190 : SimTime = 7.4219e-02 : StepElapsed = 1.99e-04 s : CellsPS = 5.14e+06
+Step =    191 : SimTime = 7.4609e-02 : StepElapsed = 4.06e-04 s : CellsPS = 2.52e+06
+Step =    192 : SimTime = 7.5000e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.01e+06
+Step =    193 : SimTime = 7.5391e-02 : StepElapsed = 2.76e-04 s : CellsPS = 3.71e+06
+Step =    194 : SimTime = 7.5781e-02 : StepElapsed = 2.59e-04 s : CellsPS = 3.95e+06
+Step =    195 : SimTime = 7.6172e-02 : StepElapsed = 1.21e-03 s : CellsPS = 8.46e+05
+Step =    196 : SimTime = 7.6563e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.31e+06
+Step =    197 : SimTime = 7.6953e-02 : StepElapsed = 6.07e-04 s : CellsPS = 1.69e+06
+Step =    198 : SimTime = 7.7344e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.73e+06
+Step =    199 : SimTime = 7.7734e-02 : StepElapsed = 6.45e-04 s : CellsPS = 1.59e+06
+Step =    200 : SimTime = 7.8125e-02 : StepElapsed = 3.60e-04 s : CellsPS = 2.84e+06
+Step =    201 : SimTime = 7.8516e-02 : StepElapsed = 5.78e-04 s : CellsPS = 1.77e+06
+Step =    202 : SimTime = 7.8906e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =    203 : SimTime = 7.9297e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.63e+06
+Step =    204 : SimTime = 7.9688e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.71e+06
+Step =    205 : SimTime = 8.0078e-02 : StepElapsed = 2.26e-04 s : CellsPS = 4.53e+06
+Step =    206 : SimTime = 8.0469e-02 : StepElapsed = 2.34e-04 s : CellsPS = 4.38e+06
+Step =    207 : SimTime = 8.0859e-02 : StepElapsed = 2.15e-04 s : CellsPS = 4.77e+06
+Step =    208 : SimTime = 8.1250e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.30e+06
+Step =    209 : SimTime = 8.1641e-02 : StepElapsed = 4.46e-04 s : CellsPS = 2.30e+06
+Step =    210 : SimTime = 8.2031e-02 : StepElapsed = 3.19e-04 s : CellsPS = 3.21e+06
+Step =    211 : SimTime = 8.2422e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.58e+06
+Step =    212 : SimTime = 8.2813e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.13e+06
+Step =    213 : SimTime = 8.3203e-02 : StepElapsed = 3.84e-04 s : CellsPS = 2.67e+06
+Step =    214 : SimTime = 8.3594e-02 : StepElapsed = 3.90e-04 s : CellsPS = 2.62e+06
+Step =    215 : SimTime = 8.3984e-02 : StepElapsed = 2.17e-04 s : CellsPS = 4.72e+06
+Step =    216 : SimTime = 8.4375e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.73e+06
+Step =    217 : SimTime = 8.4766e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.64e+06
+Step =    218 : SimTime = 8.5156e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.22e+06
+Step =    219 : SimTime = 8.5547e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.11e+06
+Step =    220 : SimTime = 8.5938e-02 : StepElapsed = 2.89e-04 s : CellsPS = 3.55e+06
+Step =    221 : SimTime = 8.6328e-02 : StepElapsed = 5.41e-04 s : CellsPS = 1.89e+06
+Step =    222 : SimTime = 8.6719e-02 : StepElapsed = 6.45e-04 s : CellsPS = 1.59e+06
+Step =    223 : SimTime = 8.7109e-02 : StepElapsed = 3.45e-04 s : CellsPS = 2.97e+06
+Step =    224 : SimTime = 8.7500e-02 : StepElapsed = 2.59e-04 s : CellsPS = 3.96e+06
+Step =    225 : SimTime = 8.7891e-02 : StepElapsed = 4.56e-04 s : CellsPS = 2.24e+06
+Step =    226 : SimTime = 8.8281e-02 : StepElapsed = 6.67e-04 s : CellsPS = 1.54e+06
+Step =    227 : SimTime = 8.8672e-02 : StepElapsed = 2.77e-04 s : CellsPS = 3.69e+06
+Step =    228 : SimTime = 8.9063e-02 : StepElapsed = 2.13e-04 s : CellsPS = 4.81e+06
+Step =    229 : SimTime = 8.9453e-02 : StepElapsed = 2.42e-04 s : CellsPS = 4.23e+06
+Step =    230 : SimTime = 8.9844e-02 : StepElapsed = 2.02e-04 s : CellsPS = 5.06e+06
+Step =    231 : SimTime = 9.0234e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.99e+06
+Step =    232 : SimTime = 9.0625e-02 : StepElapsed = 4.54e-04 s : CellsPS = 2.25e+06
+Step =    233 : SimTime = 9.1016e-02 : StepElapsed = 2.40e-04 s : CellsPS = 4.27e+06
+Step =    234 : SimTime = 9.1406e-02 : StepElapsed = 3.77e-04 s : CellsPS = 2.72e+06
+Step =    235 : SimTime = 9.1797e-02 : StepElapsed = 1.90e-04 s : CellsPS = 5.38e+06
+Step =    236 : SimTime = 9.2188e-02 : StepElapsed = 3.07e-04 s : CellsPS = 3.33e+06
+Step =    237 : SimTime = 9.2578e-02 : StepElapsed = 2.27e-04 s : CellsPS = 4.51e+06
+Step =    238 : SimTime = 9.2969e-02 : StepElapsed = 1.04e-03 s : CellsPS = 9.88e+05
+Step =    239 : SimTime = 9.3359e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.30e+06
+Step =    240 : SimTime = 9.3750e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.36e+06
+Step =    241 : SimTime = 9.4141e-02 : StepElapsed = 1.18e-03 s : CellsPS = 8.70e+05
+Step =    242 : SimTime = 9.4531e-02 : StepElapsed = 6.22e-04 s : CellsPS = 1.65e+06
+Step =    243 : SimTime = 9.4922e-02 : StepElapsed = 2.99e-04 s : CellsPS = 3.43e+06
+Step =    244 : SimTime = 9.5313e-02 : StepElapsed = 2.32e-04 s : CellsPS = 4.41e+06
+Step =    245 : SimTime = 9.5703e-02 : StepElapsed = 2.88e-04 s : CellsPS = 3.55e+06
+Step =    246 : SimTime = 9.6094e-02 : StepElapsed = 2.45e-04 s : CellsPS = 4.18e+06
+Step =    247 : SimTime = 9.6484e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.01e+06
+Step =    248 : SimTime = 9.6875e-02 : StepElapsed = 1.12e-03 s : CellsPS = 9.16e+05
+Step =    249 : SimTime = 9.7266e-02 : StepElapsed = 3.39e-04 s : CellsPS = 3.02e+06
+Step =    250 : SimTime = 9.7656e-02 : StepElapsed = 2.23e-04 s : CellsPS = 4.60e+06
+Step =    251 : SimTime = 9.8047e-02 : StepElapsed = 5.00e-04 s : CellsPS = 2.05e+06
+Step =    252 : SimTime = 9.8438e-02 : StepElapsed = 1.03e-03 s : CellsPS = 9.97e+05
+Step =    253 : SimTime = 9.8828e-02 : StepElapsed = 5.64e-04 s : CellsPS = 1.82e+06
+Step =    254 : SimTime = 9.9219e-02 : StepElapsed = 1.00e-03 s : CellsPS = 1.02e+06
+Step =    255 : SimTime = 9.9609e-02 : StepElapsed = 4.50e-04 s : CellsPS = 2.28e+06
+Step =    256 : SimTime = 1.0000e-01 : StepElapsed = 5.81e-04 s : CellsPS = 1.76e+06
+Simulation complete...
+Total execution time = 1.37e-01 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff960749e0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff71a93f50>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff8de23f50>
+Step =      1 : SimTime = 7.8125e-04 : StepElapsed = 5.57e-03 s : CellsPS = 1.84e+05
+Step =      2 : SimTime = 1.5625e-03 : StepElapsed = 1.59e-04 s : CellsPS = 6.44e+06
+Step =      3 : SimTime = 2.3438e-03 : StepElapsed = 1.37e-03 s : CellsPS = 7.47e+05
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff6b723f50>
+Step =      4 : SimTime = 3.1250e-03 : StepElapsed = 6.38e-03 s : CellsPS = 1.61e+05
+Step =      5 : SimTime = 3.9062e-03 : StepElapsed = 5.63e-03 s : CellsPS = 1.82e+05
+Step =      6 : SimTime = 4.6875e-03 : StepElapsed = 5.89e-03 s : CellsPS = 1.74e+05
+Step =      7 : SimTime = 5.4687e-03 : StepElapsed = 8.97e-03 s : CellsPS = 1.14e+05
+Step =      8 : SimTime = 6.2500e-03 : StepElapsed = 6.53e-03 s : CellsPS = 1.57e+05
+Step =      9 : SimTime = 7.0312e-03 : StepElapsed = 2.61e-04 s : CellsPS = 3.92e+06
+Step =     10 : SimTime = 7.8125e-03 : StepElapsed = 2.01e-04 s : CellsPS = 5.08e+06
+Step =     11 : SimTime = 8.5937e-03 : StepElapsed = 5.81e-04 s : CellsPS = 1.76e+06
+Step =     12 : SimTime = 9.3750e-03 : StepElapsed = 2.01e-04 s : CellsPS = 5.09e+06
+Step =     13 : SimTime = 1.0156e-02 : StepElapsed = 7.44e-04 s : CellsPS = 1.38e+06
+Step =     14 : SimTime = 1.0938e-02 : StepElapsed = 3.17e-04 s : CellsPS = 3.23e+06
+Step =     15 : SimTime = 1.1719e-02 : StepElapsed = 2.08e-03 s : CellsPS = 4.92e+05
+Step =     16 : SimTime = 1.2500e-02 : StepElapsed = 3.16e-04 s : CellsPS = 3.24e+06
+Step =     17 : SimTime = 1.3281e-02 : StepElapsed = 1.01e-03 s : CellsPS = 1.01e+06
+Step =     18 : SimTime = 1.4063e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.33e+06
+Step =     19 : SimTime = 1.4844e-02 : StepElapsed = 8.95e-04 s : CellsPS = 1.14e+06
+Step =     20 : SimTime = 1.5625e-02 : StepElapsed = 4.68e-04 s : CellsPS = 2.19e+06
+Step =     21 : SimTime = 1.6406e-02 : StepElapsed = 4.82e-04 s : CellsPS = 2.13e+06
+Step =     22 : SimTime = 1.7188e-02 : StepElapsed = 4.31e-04 s : CellsPS = 2.38e+06
+Step =     23 : SimTime = 1.7969e-02 : StepElapsed = 1.42e-03 s : CellsPS = 7.19e+05
+Step =     24 : SimTime = 1.8750e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.77e+06
+Step =     25 : SimTime = 1.9531e-02 : StepElapsed = 5.16e-04 s : CellsPS = 1.98e+06
+Step =     26 : SimTime = 2.0313e-02 : StepElapsed = 3.69e-04 s : CellsPS = 2.78e+06
+Step =     27 : SimTime = 2.1094e-02 : StepElapsed = 6.57e-04 s : CellsPS = 1.56e+06
+Step =     28 : SimTime = 2.1875e-02 : StepElapsed = 5.52e-04 s : CellsPS = 1.86e+06
+Step =     29 : SimTime = 2.2656e-02 : StepElapsed = 4.10e-04 s : CellsPS = 2.50e+06
+Step =     30 : SimTime = 2.3438e-02 : StepElapsed = 4.91e-04 s : CellsPS = 2.09e+06
+Step =     31 : SimTime = 2.4219e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.10e+06
+Step =     32 : SimTime = 2.5000e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.72e+06
+Step =     33 : SimTime = 2.5781e-02 : StepElapsed = 1.30e-04 s : CellsPS = 7.89e+06
+Step =     34 : SimTime = 2.6563e-02 : StepElapsed = 1.30e-04 s : CellsPS = 7.90e+06
+Step =     35 : SimTime = 2.7344e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.85e+06
+Step =     36 : SimTime = 2.8125e-02 : StepElapsed = 8.62e-04 s : CellsPS = 1.19e+06
+Step =     37 : SimTime = 2.8906e-02 : StepElapsed = 8.44e-04 s : CellsPS = 1.21e+06
+Step =     38 : SimTime = 2.9688e-02 : StepElapsed = 6.18e-04 s : CellsPS = 1.66e+06
+Step =     39 : SimTime = 3.0469e-02 : StepElapsed = 2.97e-04 s : CellsPS = 3.45e+06
+Step =     40 : SimTime = 3.1250e-02 : StepElapsed = 3.19e-04 s : CellsPS = 3.21e+06
+Step =     41 : SimTime = 3.2031e-02 : StepElapsed = 3.58e-04 s : CellsPS = 2.86e+06
+Step =     42 : SimTime = 3.2813e-02 : StepElapsed = 3.56e-04 s : CellsPS = 2.88e+06
+Step =     43 : SimTime = 3.3594e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.75e+06
+Step =     44 : SimTime = 3.4375e-02 : StepElapsed = 2.50e-04 s : CellsPS = 4.10e+06
+Step =     45 : SimTime = 3.5156e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.90e+06
+Step =     46 : SimTime = 3.5937e-02 : StepElapsed = 3.35e-04 s : CellsPS = 3.06e+06
+Step =     47 : SimTime = 3.6719e-02 : StepElapsed = 2.13e-04 s : CellsPS = 4.81e+06
+Step =     48 : SimTime = 3.7500e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.22e+06
+Step =     49 : SimTime = 3.8281e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.65e+06
+Step =     50 : SimTime = 3.9062e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.25e+06
+Step =     51 : SimTime = 3.9844e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.75e+06
+Step =     52 : SimTime = 4.0625e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.47e+06
+Step =     53 : SimTime = 4.1406e-02 : StepElapsed = 1.38e-04 s : CellsPS = 7.40e+06
+Step =     54 : SimTime = 4.2187e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.53e+06
+Step =     55 : SimTime = 4.2969e-02 : StepElapsed = 1.32e-04 s : CellsPS = 7.73e+06
+Step =     56 : SimTime = 4.3750e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.95e+06
+Step =     57 : SimTime = 4.4531e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.84e+06
+Step =     58 : SimTime = 4.5312e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.46e+06
+Step =     59 : SimTime = 4.6094e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.62e+06
+Step =     60 : SimTime = 4.6875e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.51e+06
+Step =     61 : SimTime = 4.7656e-02 : StepElapsed = 1.33e-04 s : CellsPS = 7.70e+06
+Step =     62 : SimTime = 4.8437e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.31e+06
+Step =     63 : SimTime = 4.9219e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.24e+06
+Step =     64 : SimTime = 5.0000e-02 : StepElapsed = 1.36e-04 s : CellsPS = 7.52e+06
+Step =     65 : SimTime = 5.0781e-02 : StepElapsed = 2.03e-04 s : CellsPS = 5.06e+06
+Step =     66 : SimTime = 5.1562e-02 : StepElapsed = 2.58e-04 s : CellsPS = 3.97e+06
+Step =     67 : SimTime = 5.2344e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.69e+06
+Step =     68 : SimTime = 5.3125e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.63e+06
+Step =     69 : SimTime = 5.3906e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.66e+06
+Step =     70 : SimTime = 5.4687e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.65e+06
+Step =     71 : SimTime = 5.5469e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.61e+06
+Step =     72 : SimTime = 5.6250e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.08e+06
+Step =     73 : SimTime = 5.7031e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.10e+06
+Step =     74 : SimTime = 5.7812e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.52e+06
+Step =     75 : SimTime = 5.8594e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.57e+06
+Step =     76 : SimTime = 5.9375e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.59e+06
+Step =     77 : SimTime = 6.0156e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.62e+06
+Step =     78 : SimTime = 6.0937e-02 : StepElapsed = 1.34e-04 s : CellsPS = 7.62e+06
+Step =     79 : SimTime = 6.1719e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.61e+06
+Step =     80 : SimTime = 6.2500e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.47e+06
+Step =     81 : SimTime = 6.3281e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.71e+06
+Step =     82 : SimTime = 6.4062e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.56e+06
+Step =     83 : SimTime = 6.4844e-02 : StepElapsed = 1.28e-03 s : CellsPS = 7.97e+05
+Step =     84 : SimTime = 6.5625e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =     85 : SimTime = 6.6406e-02 : StepElapsed = 1.91e-03 s : CellsPS = 5.37e+05
+Step =     86 : SimTime = 6.7187e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.19e+06
+Step =     87 : SimTime = 6.7969e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.01e+06
+Step =     88 : SimTime = 6.8750e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.62e+06
+Step =     89 : SimTime = 6.9531e-02 : StepElapsed = 1.08e-03 s : CellsPS = 9.45e+05
+Step =     90 : SimTime = 7.0312e-02 : StepElapsed = 4.30e-04 s : CellsPS = 2.38e+06
+Step =     91 : SimTime = 7.1094e-02 : StepElapsed = 5.12e-04 s : CellsPS = 2.00e+06
+Step =     92 : SimTime = 7.1875e-02 : StepElapsed = 3.83e-04 s : CellsPS = 2.67e+06
+Step =     93 : SimTime = 7.2656e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.10e+06
+Step =     94 : SimTime = 7.3437e-02 : StepElapsed = 4.23e-04 s : CellsPS = 2.42e+06
+Step =     95 : SimTime = 7.4219e-02 : StepElapsed = 6.29e-04 s : CellsPS = 1.63e+06
+Step =     96 : SimTime = 7.5000e-02 : StepElapsed = 5.96e-04 s : CellsPS = 1.72e+06
+Step =     97 : SimTime = 7.5781e-02 : StepElapsed = 5.57e-04 s : CellsPS = 1.84e+06
+Step =     98 : SimTime = 7.6562e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.09e+06
+Step =     99 : SimTime = 7.7344e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.23e+06
+Step =    100 : SimTime = 7.8125e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.97e+06
+Step =    101 : SimTime = 7.8906e-02 : StepElapsed = 1.38e-04 s : CellsPS = 7.45e+06
+Step =    102 : SimTime = 7.9687e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.46e+06
+Step =    103 : SimTime = 8.0469e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.05e+06
+Step =    104 : SimTime = 8.1250e-02 : StepElapsed = 5.49e-04 s : CellsPS = 1.86e+06
+Step =    105 : SimTime = 8.2031e-02 : StepElapsed = 2.93e-04 s : CellsPS = 3.50e+06
+Step =    106 : SimTime = 8.2812e-02 : StepElapsed = 2.85e-04 s : CellsPS = 3.60e+06
+Step =    107 : SimTime = 8.3594e-02 : StepElapsed = 7.54e-04 s : CellsPS = 1.36e+06
+Step =    108 : SimTime = 8.4375e-02 : StepElapsed = 1.89e-04 s : CellsPS = 5.43e+06
+Step =    109 : SimTime = 8.5156e-02 : StepElapsed = 2.16e-04 s : CellsPS = 4.75e+06
+Step =    110 : SimTime = 8.5937e-02 : StepElapsed = 2.25e-04 s : CellsPS = 4.55e+06
+Step =    111 : SimTime = 8.6719e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =    112 : SimTime = 8.7500e-02 : StepElapsed = 2.10e-04 s : CellsPS = 4.88e+06
+Step =    113 : SimTime = 8.8281e-02 : StepElapsed = 1.85e-04 s : CellsPS = 5.54e+06
+Step =    114 : SimTime = 8.9062e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.49e+06
+Step =    115 : SimTime = 8.9844e-02 : StepElapsed = 2.96e-04 s : CellsPS = 3.46e+06
+Step =    116 : SimTime = 9.0625e-02 : StepElapsed = 3.42e-04 s : CellsPS = 2.99e+06
+Step =    117 : SimTime = 9.1406e-02 : StepElapsed = 1.22e-03 s : CellsPS = 8.37e+05
+Step =    118 : SimTime = 9.2187e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.25e+06
+Step =    119 : SimTime = 9.2969e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.77e+06
+Step =    120 : SimTime = 9.3750e-02 : StepElapsed = 2.21e-04 s : CellsPS = 4.62e+06
+Step =    121 : SimTime = 9.4531e-02 : StepElapsed = 3.12e-04 s : CellsPS = 3.28e+06
+Step =    122 : SimTime = 9.5312e-02 : StepElapsed = 3.72e-04 s : CellsPS = 2.76e+06
+Step =    123 : SimTime = 9.6094e-02 : StepElapsed = 2.78e-04 s : CellsPS = 3.68e+06
+Step =    124 : SimTime = 9.6875e-02 : StepElapsed = 4.53e-04 s : CellsPS = 2.26e+06
+Step =    125 : SimTime = 9.7656e-02 : StepElapsed = 2.25e-03 s : CellsPS = 4.55e+05
+Step =    126 : SimTime = 9.8437e-02 : StepElapsed = 2.33e-04 s : CellsPS = 4.40e+06
+Step =    127 : SimTime = 9.9219e-02 : StepElapsed = 1.98e-04 s : CellsPS = 5.18e+06
+Step =    128 : SimTime = 1.0000e-01 : StepElapsed = 1.44e-04 s : CellsPS = 7.14e+06
+Step =    129 : SimTime = 1.0078e-01 : StepElapsed = 8.61e-04 s : CellsPS = 1.19e+06
+Simulation complete...
+Total execution time = 9.20e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb33f49e0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffbd8c49e0>
+Step =      1 : SimTime = 7.8125e-04 : StepElapsed = 5.63e-04 s : CellsPS = 1.82e+06
+Step =      2 : SimTime = 1.5625e-03 : StepElapsed = 1.69e-04 s : CellsPS = 6.06e+06
+Step =      3 : SimTime = 2.3438e-03 : StepElapsed = 1.73e-04 s : CellsPS = 5.92e+06
+Step =      4 : SimTime = 3.1250e-03 : StepElapsed = 1.57e-04 s : CellsPS = 6.51e+06
+Step =      5 : SimTime = 3.9062e-03 : StepElapsed = 1.72e-04 s : CellsPS = 5.95e+06
+Step =      6 : SimTime = 4.6875e-03 : StepElapsed = 9.85e-04 s : CellsPS = 1.04e+06
+Step =      7 : SimTime = 5.4687e-03 : StepElapsed = 5.02e-04 s : CellsPS = 2.04e+06
+Step =      8 : SimTime = 6.2500e-03 : StepElapsed = 1.96e-04 s : CellsPS = 5.23e+06
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff931d5cd0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.8 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff9e9b02c0>
+Step =      9 : SimTime = 7.0312e-03 : StepElapsed = 5.70e-04 s : CellsPS = 1.80e+06
+Step =     10 : SimTime = 7.8125e-03 : StepElapsed = 1.59e-04 s : CellsPS = 6.43e+06
+Step =     11 : SimTime = 8.5937e-03 : StepElapsed = 4.22e-04 s : CellsPS = 2.42e+06
+Step =     12 : SimTime = 9.3750e-03 : StepElapsed = 2.11e-03 s : CellsPS = 4.85e+05
+Step =     13 : SimTime = 1.0156e-02 : StepElapsed = 2.80e-04 s : CellsPS = 3.66e+06
+Step =     14 : SimTime = 1.0938e-02 : StepElapsed = 3.09e-04 s : CellsPS = 3.31e+06
+Step =     15 : SimTime = 1.1719e-02 : StepElapsed = 2.03e-04 s : CellsPS = 5.03e+06
+Step =     16 : SimTime = 1.2500e-02 : StepElapsed = 3.82e-04 s : CellsPS = 2.68e+06
+Step =     17 : SimTime = 1.3281e-02 : StepElapsed = 2.52e-04 s : CellsPS = 4.06e+06
+Step =     18 : SimTime = 1.4063e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.65e+06
+Step =     19 : SimTime = 1.4844e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.47e+06
+Step =     20 : SimTime = 1.5625e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.93e+06
+Step =     21 : SimTime = 1.6406e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.13e+06
+Step =     22 : SimTime = 1.7188e-02 : StepElapsed = 2.19e-04 s : CellsPS = 4.68e+06
+Step =     23 : SimTime = 1.7969e-02 : StepElapsed = 1.96e-04 s : CellsPS = 5.21e+06
+Step =     24 : SimTime = 1.8750e-02 : StepElapsed = 3.63e-04 s : CellsPS = 2.82e+06
+Step =     25 : SimTime = 1.9531e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.33e+06
+Step =     26 : SimTime = 2.0313e-02 : StepElapsed = 1.94e-04 s : CellsPS = 5.28e+06
+Step =     27 : SimTime = 2.1094e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.07e+06
+Step =     28 : SimTime = 2.1875e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =     29 : SimTime = 2.2656e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.38e+06
+Step =     30 : SimTime = 2.3438e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =     31 : SimTime = 2.4219e-02 : StepElapsed = 2.39e-04 s : CellsPS = 4.28e+06
+Step =     32 : SimTime = 2.5000e-02 : StepElapsed = 3.40e-04 s : CellsPS = 3.01e+06
+Step =     33 : SimTime = 2.5781e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.46e+06
+Step =     34 : SimTime = 2.6563e-02 : StepElapsed = 3.74e-04 s : CellsPS = 2.73e+06
+Step =     35 : SimTime = 2.7344e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.25e+06
+Step =     36 : SimTime = 2.8125e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.50e+06
+Step =     37 : SimTime = 2.8906e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.51e+06
+Step =     38 : SimTime = 2.9688e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.30e+06
+Step =     39 : SimTime = 3.0469e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.91e+06
+Step =     40 : SimTime = 3.1250e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.51e+06
+Step =     41 : SimTime = 3.2031e-02 : StepElapsed = 2.26e-04 s : CellsPS = 4.53e+06
+Step =     42 : SimTime = 3.2813e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.70e+06
+Step =     43 : SimTime = 3.3594e-02 : StepElapsed = 2.86e-04 s : CellsPS = 3.58e+06
+Step =     44 : SimTime = 3.4375e-02 : StepElapsed = 1.29e-03 s : CellsPS = 7.95e+05
+Step =     45 : SimTime = 3.5156e-02 : StepElapsed = 3.21e-04 s : CellsPS = 3.19e+06
+Step =     46 : SimTime = 3.5937e-02 : StepElapsed = 1.08e-03 s : CellsPS = 9.52e+05
+Step =     47 : SimTime = 3.6719e-02 : StepElapsed = 2.45e-04 s : CellsPS = 4.18e+06
+Step =     48 : SimTime = 3.7500e-02 : StepElapsed = 3.46e-04 s : CellsPS = 2.96e+06
+Step =     49 : SimTime = 3.8281e-02 : StepElapsed = 3.03e-04 s : CellsPS = 3.38e+06
+Step =     50 : SimTime = 3.9062e-02 : StepElapsed = 1.35e-04 s : CellsPS = 7.61e+06
+Step =     51 : SimTime = 3.9844e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.83e+06
+Step =     52 : SimTime = 4.0625e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.38e+06
+Step =     53 : SimTime = 4.1406e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.47e+06
+Step =     54 : SimTime = 4.2187e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.67e+06
+Step =     55 : SimTime = 4.2969e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.91e+06
+Step =     56 : SimTime = 4.3750e-02 : StepElapsed = 1.38e-04 s : CellsPS = 7.41e+06
+Step =     57 : SimTime = 4.4531e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.03e+06
+Step =     58 : SimTime = 4.5312e-02 : StepElapsed = 1.41e-04 s : CellsPS = 7.28e+06
+Step =     59 : SimTime = 4.6094e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.66e+06
+Step =     60 : SimTime = 4.6875e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.36e+06
+Step =     61 : SimTime = 4.7656e-02 : StepElapsed = 2.35e-04 s : CellsPS = 4.35e+06
+Step =     62 : SimTime = 4.8437e-02 : StepElapsed = 2.22e-04 s : CellsPS = 4.60e+06
+Step =     63 : SimTime = 4.9219e-02 : StepElapsed = 1.44e-04 s : CellsPS = 7.11e+06
+Step =     64 : SimTime = 5.0000e-02 : StepElapsed = 1.43e-04 s : CellsPS = 7.18e+06
+Step =     65 : SimTime = 5.0781e-02 : StepElapsed = 1.37e-04 s : CellsPS = 7.45e+06
+Step =     66 : SimTime = 5.1562e-02 : StepElapsed = 3.20e-04 s : CellsPS = 3.20e+06
+Step =     67 : SimTime = 5.2344e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.97e+06
+Step =     68 : SimTime = 5.3125e-02 : StepElapsed = 2.36e-04 s : CellsPS = 4.34e+06
+Step =     69 : SimTime = 5.3906e-02 : StepElapsed = 1.68e-04 s : CellsPS = 6.10e+06
+Step =     70 : SimTime = 5.4687e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.13e+06
+Step =     71 : SimTime = 5.5469e-02 : StepElapsed = 5.57e-04 s : CellsPS = 1.84e+06
+Step =     72 : SimTime = 5.6250e-02 : StepElapsed = 1.23e-03 s : CellsPS = 8.35e+05
+Step =     73 : SimTime = 5.7031e-02 : StepElapsed = 1.78e-04 s : CellsPS = 5.76e+06
+Step =     74 : SimTime = 5.7812e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =     75 : SimTime = 5.8594e-02 : StepElapsed = 1.90e-04 s : CellsPS = 5.40e+06
+Step =     76 : SimTime = 5.9375e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.68e+06
+Step =     77 : SimTime = 6.0156e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.64e+06
+Step =     78 : SimTime = 6.0937e-02 : StepElapsed = 1.71e-04 s : CellsPS = 6.00e+06
+Step =     79 : SimTime = 6.1719e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.59e+06
+Step =     80 : SimTime = 6.2500e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.45e+06
+Step =     81 : SimTime = 6.3281e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.03e+06
+Step =     82 : SimTime = 6.4062e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.59e+06
+Step =     83 : SimTime = 6.4844e-02 : StepElapsed = 2.00e-04 s : CellsPS = 5.13e+06
+Step =     84 : SimTime = 6.5625e-02 : StepElapsed = 2.08e-04 s : CellsPS = 4.93e+06
+Step =     85 : SimTime = 6.6406e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.47e+06
+Step =     86 : SimTime = 6.7187e-02 : StepElapsed = 4.95e-04 s : CellsPS = 2.07e+06
+Step =     87 : SimTime = 6.7969e-02 : StepElapsed = 7.25e-04 s : CellsPS = 1.41e+06
+Step =     88 : SimTime = 6.8750e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.74e+06
+Step =     89 : SimTime = 6.9531e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.45e+06
+Step =     90 : SimTime = 7.0312e-02 : StepElapsed = 2.63e-04 s : CellsPS = 3.89e+06
+Step =     91 : SimTime = 7.1094e-02 : StepElapsed = 1.75e-04 s : CellsPS = 5.86e+06
+Step =     92 : SimTime = 7.1875e-02 : StepElapsed = 2.18e-03 s : CellsPS = 4.70e+05
+Step =     93 : SimTime = 7.2656e-02 : StepElapsed = 1.81e-04 s : CellsPS = 5.65e+06
+Step =     94 : SimTime = 7.3437e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.37e+06
+Step =     95 : SimTime = 7.4219e-02 : StepElapsed = 6.47e-04 s : CellsPS = 1.58e+06
+Step =     96 : SimTime = 7.5000e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.60e+06
+Step =     97 : SimTime = 7.5781e-02 : StepElapsed = 2.01e-04 s : CellsPS = 5.10e+06
+Step =     98 : SimTime = 7.6562e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =     99 : SimTime = 7.7344e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.13e+06
+Step =    100 : SimTime = 7.8125e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.74e+06
+Step =    101 : SimTime = 7.8906e-02 : StepElapsed = 6.44e-04 s : CellsPS = 1.59e+06
+Step =    102 : SimTime = 7.9687e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.59e+06
+Step =    103 : SimTime = 8.0469e-02 : StepElapsed = 4.17e-04 s : CellsPS = 2.46e+06
+Step =    104 : SimTime = 8.1250e-02 : StepElapsed = 1.06e-03 s : CellsPS = 9.67e+05
+Step =    105 : SimTime = 8.2031e-02 : StepElapsed = 7.52e-04 s : CellsPS = 1.36e+06
+Step =    106 : SimTime = 8.2812e-02 : StepElapsed = 3.19e-04 s : CellsPS = 3.21e+06
+Step =    107 : SimTime = 8.3594e-02 : StepElapsed = 1.76e-04 s : CellsPS = 5.82e+06
+Step =    108 : SimTime = 8.4375e-02 : StepElapsed = 4.27e-04 s : CellsPS = 2.40e+06
+Step =    109 : SimTime = 8.5156e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.30e+06
+Step =    110 : SimTime = 8.5937e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.05e+06
+Step =    111 : SimTime = 8.6719e-02 : StepElapsed = 1.83e-04 s : CellsPS = 5.61e+06
+Step =    112 : SimTime = 8.7500e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.34e+06
+Step =    113 : SimTime = 8.8281e-02 : StepElapsed = 1.94e-04 s : CellsPS = 5.29e+06
+Step =    114 : SimTime = 8.9062e-02 : StepElapsed = 2.19e-04 s : CellsPS = 4.67e+06
+Step =    115 : SimTime = 8.9844e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.54e+06
+Step =    116 : SimTime = 9.0625e-02 : StepElapsed = 2.12e-04 s : CellsPS = 4.84e+06
+Step =    117 : SimTime = 9.1406e-02 : StepElapsed = 1.84e-04 s : CellsPS = 5.56e+06
+Step =    118 : SimTime = 9.2187e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =    119 : SimTime = 9.2969e-02 : StepElapsed = 3.56e-04 s : CellsPS = 2.88e+06
+Step =    120 : SimTime = 9.3750e-02 : StepElapsed = 3.01e-04 s : CellsPS = 3.40e+06
+Step =    121 : SimTime = 9.4531e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.32e+06
+Step =    122 : SimTime = 9.5312e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.31e+06
+Step =    123 : SimTime = 9.6094e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.95e+06
+Step =    124 : SimTime = 9.6875e-02 : StepElapsed = 2.69e-04 s : CellsPS = 3.81e+06
+Step =    125 : SimTime = 9.7656e-02 : StepElapsed = 3.59e-04 s : CellsPS = 2.85e+06
+Step =    126 : SimTime = 9.8437e-02 : StepElapsed = 1.95e-04 s : CellsPS = 5.25e+06
+Step =    127 : SimTime = 9.9219e-02 : StepElapsed = 1.72e-04 s : CellsPS = 5.94e+06
+Step =    128 : SimTime = 1.0000e-01 : StepElapsed = 1.58e-04 s : CellsPS = 6.48e+06
+Step =    129 : SimTime = 1.0078e-01 : StepElapsed = 2.23e-04 s : CellsPS = 4.60e+06
+Simulation complete...
+Total execution time = 5.30e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+Rank 3 of 4 says: Hello from MPI!
+Using CFL=0.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff680002c0>
+Rank 2 of 4 says: Hello from MPI!
+Using CFL=0.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff8bfb49e0>
+Rank 1 of 4 says: Hello from MPI!
+Using CFL=0.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffffb94249e0>
+Rank 0 of 4 says: Hello from MPI!
+Using CFL=0.6 and provided DDict=<dragon.data.ddict.ddict.DDict object at 0xffff7c573f50>
+Step =      1 : SimTime = 5.8594e-04 : StepElapsed = 2.02e-04 s : CellsPS = 5.08e+06
+Step =      2 : SimTime = 1.1719e-03 : StepElapsed = 1.67e-04 s : CellsPS = 6.14e+06
+Step =      3 : SimTime = 1.7578e-03 : StepElapsed = 1.46e-04 s : CellsPS = 7.02e+06
+Step =      4 : SimTime = 2.3437e-03 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =      5 : SimTime = 2.9297e-03 : StepElapsed = 1.73e-04 s : CellsPS = 5.93e+06
+Step =      6 : SimTime = 3.5156e-03 : StepElapsed = 1.57e-04 s : CellsPS = 6.51e+06
+Step =      7 : SimTime = 4.1016e-03 : StepElapsed = 1.98e-04 s : CellsPS = 5.16e+06
+Step =      8 : SimTime = 4.6875e-03 : StepElapsed = 3.53e-04 s : CellsPS = 2.90e+06
+Step =      9 : SimTime = 5.2734e-03 : StepElapsed = 1.73e-04 s : CellsPS = 5.91e+06
+Step =     10 : SimTime = 5.8594e-03 : StepElapsed = 2.00e-04 s : CellsPS = 5.11e+06
+Step =     11 : SimTime = 6.4453e-03 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =     12 : SimTime = 7.0312e-03 : StepElapsed = 1.52e-04 s : CellsPS = 6.76e+06
+Step =     13 : SimTime = 7.6172e-03 : StepElapsed = 1.40e-04 s : CellsPS = 7.29e+06
+Step =     14 : SimTime = 8.2031e-03 : StepElapsed = 1.52e-04 s : CellsPS = 6.75e+06
+Step =     15 : SimTime = 8.7891e-03 : StepElapsed = 1.98e-04 s : CellsPS = 5.18e+06
+Step =     16 : SimTime = 9.3750e-03 : StepElapsed = 1.69e-04 s : CellsPS = 6.08e+06
+Step =     17 : SimTime = 9.9609e-03 : StepElapsed = 2.63e-04 s : CellsPS = 3.89e+06
+Step =     18 : SimTime = 1.0547e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.37e+06
+Step =     19 : SimTime = 1.1133e-02 : StepElapsed = 2.52e-04 s : CellsPS = 4.07e+06
+Step =     20 : SimTime = 1.1719e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.72e+06
+Step =     21 : SimTime = 1.2305e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.47e+06
+Step =     22 : SimTime = 1.2891e-02 : StepElapsed = 2.33e-04 s : CellsPS = 4.39e+06
+Step =     23 : SimTime = 1.3477e-02 : StepElapsed = 1.84e-04 s : CellsPS = 5.58e+06
+Step =     24 : SimTime = 1.4062e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.34e+06
+Step =     25 : SimTime = 1.4648e-02 : StepElapsed = 2.28e-04 s : CellsPS = 4.50e+06
+Step =     26 : SimTime = 1.5234e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.45e+06
+Step =     27 : SimTime = 1.5820e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.42e+06
+Step =     28 : SimTime = 1.6406e-02 : StepElapsed = 3.53e-04 s : CellsPS = 2.90e+06
+Step =     29 : SimTime = 1.6992e-02 : StepElapsed = 1.31e-04 s : CellsPS = 7.83e+06
+Step =     30 : SimTime = 1.7578e-02 : StepElapsed = 1.97e-04 s : CellsPS = 5.19e+06
+Step =     31 : SimTime = 1.8164e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =     32 : SimTime = 1.8750e-02 : StepElapsed = 2.80e-04 s : CellsPS = 3.65e+06
+Step =     33 : SimTime = 1.9336e-02 : StepElapsed = 2.86e-04 s : CellsPS = 3.58e+06
+Step =     34 : SimTime = 1.9922e-02 : StepElapsed = 6.07e-04 s : CellsPS = 1.69e+06
+Step =     35 : SimTime = 2.0508e-02 : StepElapsed = 5.52e-04 s : CellsPS = 1.86e+06
+Step =     36 : SimTime = 2.1094e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.63e+06
+Step =     37 : SimTime = 2.1680e-02 : StepElapsed = 6.05e-04 s : CellsPS = 1.69e+06
+Step =     38 : SimTime = 2.2266e-02 : StepElapsed = 2.73e-04 s : CellsPS = 3.75e+06
+Step =     39 : SimTime = 2.2852e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.06e+06
+Step =     40 : SimTime = 2.3438e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.53e+06
+Step =     41 : SimTime = 2.4023e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.03e+06
+Step =     42 : SimTime = 2.4609e-02 : StepElapsed = 5.07e-04 s : CellsPS = 2.02e+06
+Step =     43 : SimTime = 2.5195e-02 : StepElapsed = 3.79e-04 s : CellsPS = 2.70e+06
+Step =     44 : SimTime = 2.5781e-02 : StepElapsed = 6.77e-04 s : CellsPS = 1.51e+06
+Step =     45 : SimTime = 2.6367e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.59e+06
+Step =     46 : SimTime = 2.6953e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =     47 : SimTime = 2.7539e-02 : StepElapsed = 1.40e-04 s : CellsPS = 7.30e+06
+Step =     48 : SimTime = 2.8125e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.90e+06
+Step =     49 : SimTime = 2.8711e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.05e+06
+Step =     50 : SimTime = 2.9297e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.40e+06
+Step =     51 : SimTime = 2.9883e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.90e+06
+Step =     52 : SimTime = 3.0469e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.90e+06
+Step =     53 : SimTime = 3.1055e-02 : StepElapsed = 1.85e-04 s : CellsPS = 5.55e+06
+Step =     54 : SimTime = 3.1641e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.61e+06
+Step =     55 : SimTime = 3.2227e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.20e+06
+Step =     56 : SimTime = 3.2813e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.33e+06
+Step =     57 : SimTime = 3.3398e-02 : StepElapsed = 3.15e-03 s : CellsPS = 3.25e+05
+Step =     58 : SimTime = 3.3984e-02 : StepElapsed = 2.53e-04 s : CellsPS = 4.05e+06
+Step =     59 : SimTime = 3.4570e-02 : StepElapsed = 7.45e-04 s : CellsPS = 1.37e+06
+Step =     60 : SimTime = 3.5156e-02 : StepElapsed = 4.94e-04 s : CellsPS = 2.07e+06
+Step =     61 : SimTime = 3.5742e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.36e+06
+Step =     62 : SimTime = 3.6328e-02 : StepElapsed = 1.84e-04 s : CellsPS = 5.58e+06
+Step =     63 : SimTime = 3.6914e-02 : StepElapsed = 3.30e-03 s : CellsPS = 3.10e+05
+Step =     64 : SimTime = 3.7500e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.07e+06
+Step =     65 : SimTime = 3.8086e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.41e+06
+Step =     66 : SimTime = 3.8672e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.53e+06
+Step =     67 : SimTime = 3.9258e-02 : StepElapsed = 1.39e-04 s : CellsPS = 7.37e+06
+Step =     68 : SimTime = 3.9844e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.15e+06
+Step =     69 : SimTime = 4.0430e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.88e+06
+Step =     70 : SimTime = 4.1016e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.96e+06
+Step =     71 : SimTime = 4.1602e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.30e+06
+Step =     72 : SimTime = 4.2188e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.85e+06
+Step =     73 : SimTime = 4.2773e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.58e+06
+Step =     74 : SimTime = 4.3359e-02 : StepElapsed = 1.69e-04 s : CellsPS = 6.05e+06
+Step =     75 : SimTime = 4.3945e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.95e+06
+Step =     76 : SimTime = 4.4531e-02 : StepElapsed = 2.02e-04 s : CellsPS = 5.07e+06
+Step =     77 : SimTime = 4.5117e-02 : StepElapsed = 1.70e-04 s : CellsPS = 6.02e+06
+Step =     78 : SimTime = 4.5703e-02 : StepElapsed = 2.74e-04 s : CellsPS = 3.74e+06
+Step =     79 : SimTime = 4.6289e-02 : StepElapsed = 6.26e-03 s : CellsPS = 1.64e+05
+Step =     80 : SimTime = 4.6875e-02 : StepElapsed = 3.25e-04 s : CellsPS = 3.15e+06
+Step =     81 : SimTime = 4.7461e-02 : StepElapsed = 2.15e-04 s : CellsPS = 4.77e+06
+Step =     82 : SimTime = 4.8047e-02 : StepElapsed = 1.80e-04 s : CellsPS = 5.69e+06
+Step =     83 : SimTime = 4.8633e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.43e+06
+Step =     84 : SimTime = 4.9219e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.80e+06
+Step =     85 : SimTime = 4.9805e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.94e+06
+Step =     86 : SimTime = 5.0391e-02 : StepElapsed = 1.66e-04 s : CellsPS = 6.17e+06
+Step =     87 : SimTime = 5.0977e-02 : StepElapsed = 1.47e-04 s : CellsPS = 6.96e+06
+Step =     88 : SimTime = 5.1563e-02 : StepElapsed = 2.30e-04 s : CellsPS = 4.44e+06
+Step =     89 : SimTime = 5.2148e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.05e+06
+Step =     90 : SimTime = 5.2734e-02 : StepElapsed = 1.86e-04 s : CellsPS = 5.52e+06
+Step =     91 : SimTime = 5.3320e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.85e+06
+Step =     92 : SimTime = 5.3906e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.02e+06
+Step =     93 : SimTime = 5.4492e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.88e+06
+Step =     94 : SimTime = 5.5078e-02 : StepElapsed = 7.00e-03 s : CellsPS = 1.46e+05
+Step =     95 : SimTime = 5.5664e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.87e+06
+Step =     96 : SimTime = 5.6250e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.20e+06
+Step =     97 : SimTime = 5.6836e-02 : StepElapsed = 2.35e-04 s : CellsPS = 4.36e+06
+Step =     98 : SimTime = 5.7422e-02 : StepElapsed = 1.91e-04 s : CellsPS = 5.36e+06
+Step =     99 : SimTime = 5.8008e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.80e+06
+Step =    100 : SimTime = 5.8594e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.62e+06
+Step =    101 : SimTime = 5.9180e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.88e+06
+Step =    102 : SimTime = 5.9766e-02 : StepElapsed = 1.93e-04 s : CellsPS = 5.31e+06
+Step =    103 : SimTime = 6.0352e-02 : StepElapsed = 1.48e-04 s : CellsPS = 6.91e+06
+Step =    104 : SimTime = 6.0938e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.49e+06
+Step =    105 : SimTime = 6.1523e-02 : StepElapsed = 1.49e-04 s : CellsPS = 6.87e+06
+Step =    106 : SimTime = 6.2109e-02 : StepElapsed = 1.64e-04 s : CellsPS = 6.23e+06
+Step =    107 : SimTime = 6.2695e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.54e+06
+Step =    108 : SimTime = 6.3281e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.76e+06
+Step =    109 : SimTime = 6.3867e-02 : StepElapsed = 1.60e-04 s : CellsPS = 6.41e+06
+Step =    110 : SimTime = 6.4453e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.67e+06
+Step =    111 : SimTime = 6.5039e-02 : StepElapsed = 1.59e-04 s : CellsPS = 6.45e+06
+Step =    112 : SimTime = 6.5625e-02 : StepElapsed = 1.82e-04 s : CellsPS = 5.63e+06
+Step =    113 : SimTime = 6.6211e-02 : StepElapsed = 1.38e-04 s : CellsPS = 7.40e+06
+Step =    114 : SimTime = 6.6797e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =    115 : SimTime = 6.7383e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.54e+06
+Step =    116 : SimTime = 6.7969e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.36e+06
+Step =    117 : SimTime = 6.8555e-02 : StepElapsed = 1.50e-04 s : CellsPS = 6.81e+06
+Step =    118 : SimTime = 6.9141e-02 : StepElapsed = 1.79e-04 s : CellsPS = 5.72e+06
+Step =    119 : SimTime = 6.9727e-02 : StepElapsed = 1.46e-04 s : CellsPS = 7.03e+06
+Step =    120 : SimTime = 7.0313e-02 : StepElapsed = 1.61e-04 s : CellsPS = 6.35e+06
+Step =    121 : SimTime = 7.0898e-02 : StepElapsed = 1.51e-04 s : CellsPS = 6.78e+06
+Step =    122 : SimTime = 7.1484e-02 : StepElapsed = 1.58e-04 s : CellsPS = 6.48e+06
+Step =    123 : SimTime = 7.2070e-02 : StepElapsed = 2.35e-04 s : CellsPS = 4.36e+06
+Step =    124 : SimTime = 7.2656e-02 : StepElapsed = 2.63e-04 s : CellsPS = 3.89e+06
+Step =    125 : SimTime = 7.3242e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =    126 : SimTime = 7.3828e-02 : StepElapsed = 1.33e-03 s : CellsPS = 7.71e+05
+Step =    127 : SimTime = 7.4414e-02 : StepElapsed = 5.27e-04 s : CellsPS = 1.94e+06
+Step =    128 : SimTime = 7.5000e-02 : StepElapsed = 5.03e-04 s : CellsPS = 2.03e+06
+Step =    129 : SimTime = 7.5586e-02 : StepElapsed = 4.20e-04 s : CellsPS = 2.44e+06
+Step =    130 : SimTime = 7.6172e-02 : StepElapsed = 5.91e-04 s : CellsPS = 1.73e+06
+Step =    131 : SimTime = 7.6758e-02 : StepElapsed = 4.33e-04 s : CellsPS = 2.36e+06
+Step =    132 : SimTime = 7.7344e-02 : StepElapsed = 1.77e-04 s : CellsPS = 5.78e+06
+Step =    133 : SimTime = 7.7930e-02 : StepElapsed = 2.28e-04 s : CellsPS = 4.50e+06
+Step =    134 : SimTime = 7.8516e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.70e+06
+Step =    135 : SimTime = 7.9102e-02 : StepElapsed = 2.81e-04 s : CellsPS = 3.64e+06
+Step =    136 : SimTime = 7.9687e-02 : StepElapsed = 2.24e-04 s : CellsPS = 4.58e+06
+Step =    137 : SimTime = 8.0273e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.56e+06
+Step =    138 : SimTime = 8.0859e-02 : StepElapsed = 4.98e-04 s : CellsPS = 2.06e+06
+Step =    139 : SimTime = 8.1445e-02 : StepElapsed = 2.56e-04 s : CellsPS = 3.99e+06
+Step =    140 : SimTime = 8.2031e-02 : StepElapsed = 1.23e-03 s : CellsPS = 8.32e+05
+Step =    141 : SimTime = 8.2617e-02 : StepElapsed = 4.64e-04 s : CellsPS = 2.21e+06
+Step =    142 : SimTime = 8.3203e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.66e+06
+Step =    143 : SimTime = 8.3789e-02 : StepElapsed = 1.84e-04 s : CellsPS = 5.55e+06
+Step =    144 : SimTime = 8.4375e-02 : StepElapsed = 1.45e-04 s : CellsPS = 7.06e+06
+Step =    145 : SimTime = 8.4961e-02 : StepElapsed = 1.73e-04 s : CellsPS = 5.94e+06
+Step =    146 : SimTime = 8.5547e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.53e+06
+Step =    147 : SimTime = 8.6133e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.20e+06
+Step =    148 : SimTime = 8.6719e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.55e+06
+Step =    149 : SimTime = 8.7305e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.27e+06
+Step =    150 : SimTime = 8.7891e-02 : StepElapsed = 1.56e-04 s : CellsPS = 6.55e+06
+Step =    151 : SimTime = 8.8477e-02 : StepElapsed = 3.84e-04 s : CellsPS = 2.67e+06
+Step =    152 : SimTime = 8.9062e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.20e+06
+Step =    153 : SimTime = 8.9648e-02 : StepElapsed = 2.98e-04 s : CellsPS = 3.44e+06
+Step =    154 : SimTime = 9.0234e-02 : StepElapsed = 1.38e-04 s : CellsPS = 7.40e+06
+Step =    155 : SimTime = 9.0820e-02 : StepElapsed = 1.71e-04 s : CellsPS = 5.98e+06
+Step =    156 : SimTime = 9.1406e-02 : StepElapsed = 1.54e-04 s : CellsPS = 6.63e+06
+Step =    157 : SimTime = 9.1992e-02 : StepElapsed = 1.65e-04 s : CellsPS = 6.20e+06
+Step =    158 : SimTime = 9.2578e-02 : StepElapsed = 1.55e-04 s : CellsPS = 6.59e+06
+Step =    159 : SimTime = 9.3164e-02 : StepElapsed = 1.63e-04 s : CellsPS = 6.28e+06
+Step =    160 : SimTime = 9.3750e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.71e+06
+Step =    161 : SimTime = 9.4336e-02 : StepElapsed = 1.74e-04 s : CellsPS = 5.89e+06
+Step =    162 : SimTime = 9.4922e-02 : StepElapsed = 1.57e-04 s : CellsPS = 6.54e+06
+Step =    163 : SimTime = 9.5508e-02 : StepElapsed = 1.67e-04 s : CellsPS = 6.15e+06
+Step =    164 : SimTime = 9.6094e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.69e+06
+Step =    165 : SimTime = 9.6680e-02 : StepElapsed = 1.62e-04 s : CellsPS = 6.32e+06
+Step =    166 : SimTime = 9.7266e-02 : StepElapsed = 1.53e-04 s : CellsPS = 6.68e+06
+Step =    167 : SimTime = 9.7852e-02 : StepElapsed = 1.87e-04 s : CellsPS = 5.46e+06
+Step =    168 : SimTime = 9.8437e-02 : StepElapsed = 4.76e-04 s : CellsPS = 2.15e+06
+Step =    169 : SimTime = 9.9023e-02 : StepElapsed = 2.39e-04 s : CellsPS = 4.29e+06
+Step =    170 : SimTime = 9.9609e-02 : StepElapsed = 1.42e-04 s : CellsPS = 7.22e+06
+Step =    171 : SimTime = 1.0020e-01 : StepElapsed = 1.79e-04 s : CellsPS = 5.71e+06
+Simulation complete...
+Total execution time = 7.22e-02 seconds
+Got ecodes: [0, 0, 0, 0]
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:user_input=Check the latest CFD result arrays for NaNs and report which CFL values were stable and which produced NaNs. Choose the next set of CFL values, increasing CFL for stable ranks and decreasing it for ranks that produced NaNs.
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:global_state=[{'agent_id': 'user', 'answer': 'Check the latest CFD result arrays for NaNs and report which CFL values were stable and which produced NaNs. Choose the next set of CFL values, increasing CFL for stable ranks and decreasing it for ranks that produced NaNs.'}]
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:dispatch_id=fce46ee4-d215-408a-a7b9-3c6827435fe9
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:trace:slot:nan_agent=cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:fce46ee4-d215-408a-a7b9-3c6827435fe9:trace
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:684b0935-f965-47af-9b4e-c28024e8c9a5:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:global_entry={'agent_id': 'nan_agent', 'answer': 'Stable CFLs (no NaNs): [0.4, 0.8]. Unstable CFLs (produced NaNs): [1.2, 1.6].'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:684b0935-f965-47af-9b4e-c28024e8c9a5:result={'response': 'Stable CFLs (no NaNs): [0.3, 0.8]. Unstable CFLs (produced NaNs): [2.4, 9.9].'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:dispatch_id=0be717bc-1179-4a37-9fa2-461510d78274
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:trace:slot:generator_agent=cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:0be717bc-1179-4a37-9fa2-461510d78274:trace
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:2f88560a-21fe-4e83-852f-1f100205a0d3:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:global_entry={'agent_id': 'generator_agent', 'answer': '0.4, 0.8, 0.8, 0.6'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:2f88560a-21fe-4e83-852f-1f100205a0d3:result={'response': '0.4, 0.8, 1.2, 1.6'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:run_experiments:dispatch_id=fn-run-experiments-cd711499
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:run_experiments:fn-run-experiments-cd711499:result={'response': 'Ran experiments at CFL values [0.4, 0.8, 1.2, 1.6].'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:run_experiments:fn-run-experiments-cd711499:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:fce46ee4-d215-408a-a7b9-3c6827435fe9:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:nan_agent:fce46ee4-d215-408a-a7b9-3c6827435fe9:result={'response': 'Stable CFLs (no NaNs): [0.4, 0.8]. Unstable CFLs (produced NaNs): [1.2, 1.6].'}
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:0be717bc-1179-4a37-9fa2-461510d78274:status=TaskStatus.DONE
+[fn] run_experiments_node -> cd711499-9637-4c33-aa11-b9280fcb1124:generator_agent:0be717bc-1179-4a37-9fa2-461510d78274:result={'response': '0.4, 0.8, 0.8, 0.6'}
+
+--- Latest run ---
+Ran experiments at CFL values [0.4, 0.8, 0.8, 0.6].
+
+[teardown] Agent stopped.
+[inference] Shutdown signalled — inference service stopping.
+[teardown] Inference service stopped.
+[teardown] Data store (DDict) destroyed.
++++ head proc exited, code 0

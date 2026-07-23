@@ -85,7 +85,7 @@ from dragon.native.queue import Queue
 from dragon.workflows.batch import Batch
 
 NUM_RANKS = 4
-NUM_ITERATIONS = 1          # number of CFL search rounds
+NUM_ITERATIONS = 2          # number of CFL search rounds
 CFL_CRITICAL = 1.0          # hidden stability limit: CFL > this -> NaNs
 # ===========================================================================
 # Model location
@@ -123,6 +123,41 @@ MAX_NEW_TOKENS = int(os.environ.get("DRAGON_MAX_NEW_TOKENS", "1024"))
 # the closure (and the captured DDict handle) to the agent process, where the
 # DDict auto-attaches, so ``data_store[key]`` works there transparently.
 # ===========================================================================
+
+def _extract_first_json_object(text: str) -> str | None:
+    """Return the first balanced ``{...}`` JSON object substring, or None.
+
+    Greedy decoding sometimes appends stray tokens after a complete envelope
+    (especially when we prime a ``tool_request`` — the model closes the JSON
+    and then keeps going).  ``json.loads`` rejects that trailing text, so we
+    scan for the first brace-balanced object (respecting string literals and
+    escapes) and hand just that slice to the parser.
+    """
+    start = text.find("{")
+    if start == -1:
+        return None
+    depth = 0
+    in_str = False
+    esc = False
+    for i in range(start, len(text)):
+        c = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                in_str = False
+        elif c == '"':
+            in_str = True
+        elif c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
+    return None
+
 
 def _coerce_to_envelope(text: str) -> str:
     """Normalize raw model output into a schema-valid response envelope.
@@ -162,6 +197,19 @@ def _coerce_to_envelope(text: str) -> str:
     except (json.JSONDecodeError, TypeError):
         pass
 
+    # Case 2b: a valid envelope followed by trailing tokens — common when we
+    # prime a tool_request and greedy decoding keeps generating past the
+    # closing braces.  Extract the first balanced object and use it if it
+    # validates as a response envelope.
+    candidate = _extract_first_json_object(cleaned)
+    if candidate is not None:
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, dict) and "response" in parsed:
+                return candidate
+        except (json.JSONDecodeError, TypeError):
+            pass
+
     # Case 3: prose (or malformed JSON) — wrap as a final answer so the
     # agent's loop accepts it and stops instead of returning empty text.
     envelope = {
@@ -181,51 +229,69 @@ def _check_nans(values: list) -> dict:
             # None, strings, etc. can't be a valid number → treat as NaN-like.
             nan_indices.append(i)
 
+    max_value = max(values)
+    min_value = min(values)
+    considered_nans = max_value > 10**6 or min_value < -10**6
     return {
-        "has_nans": len(nan_indices) > 0,
-        "nan_count": len(nan_indices),
-        "nan_indices": nan_indices,
-        "total_values": len(values),
+        "has_nans": len(nan_indices) > 0 or considered_nans,
+        "max_value": max_value,
+        "min_value": min_value,
     }
 
 
-def scan_all_ranks(data_store, num_ranks: int) -> dict:
-    """Scan every rank array for NaNs and return a complete report.
+def make_scan_all_ranks(data_store, num_ranks: int):
+    """Build a zero-argument ``scan_all_ranks`` tool bound to a DDict.
 
-    Checks keys in the shared data store in a single call, persists each rank's NaN flag, and reports which ranks blew up (NaNs) and which were stable.  Use this tool exactly once, then report its 'report' field as your final answer.
-
-    :returns: Dict with 'keys_with_nans' (CFLs that produced NaNs),
-        'keys_without_nans' (stable CFLs), and 'report' (a ready-to-use
-        human-readable summary string covering every rank).
+    ``ToolRegistry.register`` derives the tool's name, description, and JSON
+    parameter schema from the callable's ``__name__``, ``__doc__``, and
+    ``inspect.signature`` (see ``FunctionTool``).  A ``functools.partial``
+    exposes none of those, so registering one raises
+    ``AttributeError: 'functools.partial' object has no attribute '__name__'``.
+    Returning a *named* closure fixes that: ``data_store`` and ``num_ranks``
+    are captured (and cloudpickled to the agent process, where the DDict
+    auto-attaches), leaving a tool the LLM invokes with no arguments.
     """
 
-    cfl_values = list(data_store["cfl_values"])
-    cfls_with_nans = []
-    cfls_without_nans = []
-    for cfl in cfl_values:
-        keyp1 = f"cfl_{cfl}"
-        for i in range(num_ranks):
-            # Must match the key the MPI solver writes in mpi4py_example.py:
-            # f"cfl_{cfl}_rank{rank}" (no underscore before the rank index).
-            key = keyp1 + f"_rank{i}"
-            result = _check_nans(data_store[key])
-            if result["has_nans"]:
-                cfls_with_nans.append(cfl)
-                break
-        else:
-            cfls_without_nans.append(cfl)
+    def scan_all_ranks() -> dict:
+        """Scan every rank array for NaNs and return a complete report.
 
-    report = (
-        f"Stable CFLs (no NaNs): {cfls_without_nans or 'none'}. "
-        f"Unstable CFLs (produced NaNs): {cfls_with_nans or 'none'}."
-    )
-    out = {
-        "keys_with_nans": cfls_with_nans,
-        "keys_without_nans": cfls_without_nans,
-        "report": report,
-    }
-    print(f"[tool] scan_all_ranks() -> {out}", flush=True)
-    return out
+        Checks keys in the shared data store in a single call, persists each rank's NaN flag, and reports which ranks blew up (NaNs) and which were stable.  Use this tool exactly once, then report its 'report' field as your final answer.
+
+        :returns: Dict with 'keys_with_nans' (CFLs that produced NaNs),
+            'keys_without_nans' (stable CFLs), and 'report' (a ready-to-use
+            human-readable summary string covering every rank).
+        """
+
+        cfl_values = list(data_store["cfl_values"])
+        cfls_with_nans = []
+        cfls_without_nans = []
+        for cfl in cfl_values:
+            keyp1 = f"cfl_{cfl}"
+            for i in range(num_ranks):
+                # Must match the key the MPI solver writes in mpi4py_example.py:
+                # f"cfl_{cfl}_rank{rank}" (no underscore before the rank index).
+                key = keyp1 + f"_rank{i}"
+                result = _check_nans(data_store[key])
+                print(f"[tool] Result for key: {key}: {result}", flush=True)
+                if result["has_nans"]:
+                    cfls_with_nans.append(cfl)
+                    break
+            else:
+                cfls_without_nans.append(cfl)
+
+        report = (
+            f"Stable CFLs (no NaNs): {cfls_without_nans or 'none'}. "
+            f"Unstable CFLs (produced NaNs): {cfls_with_nans or 'none'}."
+        )
+        out = {
+            "keys_with_nans": cfls_with_nans,
+            "keys_without_nans": cfls_without_nans,
+            "report": report,
+        }
+        print(f"[tool] scan_all_ranks() -> {out}", flush=True)
+        return out
+
+    return scan_all_ranks
 
 # ===========================================================================
 # Experiment execution as a plain-function DAG node (no LLM)
@@ -439,6 +505,28 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
                     tokenize=False,
                 )
 
+            # --- Force the first tool-using turn to be a real tool call ------
+            # This backend ignores the guided-decoding json_schema hint, so a
+            # small model often skips straight to a fabricated final_answer
+            # (e.g. content="<tool_result_from_scan_all_ranks>") without ever
+            # invoking the tool.  When tools are available AND no tool result
+            # has come back yet, prefill the assistant turn with the opening of
+            # a tool_request envelope; greedy decoding then continues from the
+            # primer and emits an actual tool call.  The primer stops at the
+            # tool "name" so the model still chooses which tool to invoke.
+            #
+            # Real tool results are appended by the agent loop as
+            # {"role": "tool", ...} messages, so their presence is the signal
+            # that the model has what it needs and may now answer — in which
+            # case we do NOT prime and let it produce a final_answer.
+            primer = ""
+            tool_result_seen = any(
+                isinstance(m, dict) and m.get("role") == "tool" for m in messages
+            )
+            if tools and not tool_result_seen:
+                primer = '{"response": {"type": "tool_request", "tool_calls": [{"name": "'
+                prompt_text += primer
+
             model_inputs = tokenizer([prompt_text], return_tensors="pt").to(model.device)
             with torch.inference_mode():
                 generated = model.generate(
@@ -448,6 +536,11 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
                 )
             new_ids = generated[0][len(model_inputs.input_ids[0]):]
             text = tokenizer.decode(new_ids, skip_special_tokens=True).strip()
+
+            # Re-attach the primer so the returned text is the complete
+            # envelope (the model only generated the continuation).
+            if primer:
+                text = primer + text
 
             # --- DEBUG: show exactly what the model emitted --------------------
             # The agent's tool-calling loop requires STRICT schema-valid JSON
@@ -500,7 +593,7 @@ def main(init_cfls, num_ranks):
     batch = Batch(results_ddict_mem=int(10 * 1024 * 1024))
 
     partial_run_experiments_node = partial(run_experiments_node, batch, data_store.serialize(), num_ranks)
-    partial_scan_all_ranks = partial(scan_all_ranks, data_store, num_ranks)
+    scan_all_ranks_tool = make_scan_all_ranks(data_store, num_ranks)
 
     # Generator agent proposes CFL numbers as plain text (NO tools) — the
     # run_experiments function node in the pipeline parses that list and runs
@@ -512,7 +605,7 @@ def main(init_cfls, num_ranks):
     # nan_rank_i flags, and returns a ready-made report.  This keeps the
     # agent's job to "call once, relay the report", which small models
     # perform far more reliably than an N-step detect_nans loop.
-    nan_registry.register(partial_scan_all_ranks)
+    nan_registry.register(scan_all_ranks_tool)
 
     print("[startup] Launching lightweight inference service...", flush=True)
     #CPW: maybe something for them to plug in
@@ -636,38 +729,42 @@ def main(init_cfls, num_ranks):
         )
 
         try:
+            # A single, static command drives every round.  The pipeline is
+            # nan_agent -> generator_agent -> run_experiments, so each round the
+            # NaN checker scans whatever the most recent experiments wrote to the
+            # DDict (the bootstrap run below on round 0, or the previous round's
+            # run_experiments output), the generator reads that report directly
+            # via its DAG dependency and proposes the next CFLs, and
+            # run_experiments runs them.  No per-round prompt shuttling is needed.
+            user_input = (
+                "Check the latest CFD result arrays for NaNs and report which "
+                "CFL values were stable and which produced NaNs. "
+                "Choose the next set of CFL values, increasing CFL for "
+                "stable ranks and decreasing it for ranks that produced "
+                "NaNs."
+            )
+
             for iteration in range(NUM_ITERATIONS):
                 if iteration == 0:
+                    # Bootstrap: run the user-provided CFLs once so the NaN
+                    # checker has results to scan on the first pipeline pass.
                     data_store["cfl_values"] = init_cfls
                     run_experiments_node(batch, data_store.serialize(),  num_ranks, None)
-                else:
-                    # Feed the NaN agent's own report from the previous round
-                    # straight back to the generator — the framework already
-                    # hands each agent its upstream's output, so no manual
-                    # DDict shuttling is needed for this feedback path.
-                    user_input = (
-                        "The NaN checker reported this for the previous round:\n"
-                        f"{prev_report}\n\n"
-                        "Choose the next set of CFL values, increasing CFL for "
-                        "stable ranks and decreasing it for ranks that produced "
-                        f"NaNs.  Reply with only {num_ranks} comma-separated "
-                        "numbers."
-                    )
 
                 print("=" * 60, flush=True)
                 print(f"Iteration {iteration + 1}/{NUM_ITERATIONS}", flush=True)
                 print("=" * 60, flush=True)
                 print(f"Request: {user_input}\n", flush=True)
 
-                # The pipeline's terminal node is the NaN agent, so `result`
-                # is its report — feed it into the next round's generator.
+                # run() returns the terminal node's result — here run_experiments,
+                # i.e. a summary of the most recent CFL values that were run.
                 result = orchestrator.run(user_input=user_input, batch=batch)
-                prev_report = (
+                summary = (
                     result.get("response", str(result))
                     if isinstance(result, dict) else str(result)
                 )
-                print("\n--- NaN agent report ---", flush=True)
-                print(prev_report, flush=True)
+                print("\n--- Latest run ---", flush=True)
+                print(summary, flush=True)
 
         except Exception as exc:
             import traceback
