@@ -8,28 +8,37 @@
         "--ulimit", // These two lines allow core files in the container.
         "core=-1", // Helpful in debugging.
         "--shm-size=6gb",
-        "--memory=12GB",
+        "--memory=8GB",
         "--cap-add=SYS_PTRACE"
     ],
     "onCreateCommand": [],
     // remove the slow git status from the prompt.
     "postStartCommand": "git config codespaces-theme.hide-status 1",
-    "containerEnv": {
-        "OMP_NUM_THREADS": "8",
-        "OMP_PROC_BIND": "close",
-        "OMP_PLACES": "cores",
-        "OPENBLAS_NUM_THREADS": "8"
-    },
-    "settings": {
-        "terminal.integrated.profiles.linux": {
-            "bash (login)": {
-                "path": "/bin/bash",
-                "args": [
-                    "-li"
-                ]
-            }
-        },
-        "terminal.integrated.defaultProfile.linux": "bash (login)"
+    "postAttachCommand": "bash .vscode/dragon-jupyter-autostart.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash (login)": {
+                        "path": "/bin/bash",
+                        "args": [
+                            "-li"
+                        ]
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "bash (login)"
+            },
+            "extensions": [
+                "donjayamanne.git-extension-pack",
+                "mhutchie.git-graph",
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools-themes",
+                "njpwerner.autodocstring", // allow automatic docstrings in Python
+                "jebbs.plantuml" // support .puml UML diagrams for the docs
+            ]
+        }
     },
     // Uncomment if you set up vscode in Dockerfile and want
     // to run as non-root vscode in devcontainer

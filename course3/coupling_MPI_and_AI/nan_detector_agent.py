@@ -111,6 +111,52 @@ MAX_NEW_TOKENS = int(os.environ.get("DRAGON_MAX_NEW_TOKENS", "1024"))
 # DDict auto-attaches, so ``data_store[key]`` works there transparently.
 # ===========================================================================
 
+def _coerce_to_envelope(text: str) -> str:
+    """Normalize raw model output into a schema-valid response envelope.
+
+    This backend does NOT enforce guided decoding, so a small model may
+    break the required JSON contract — most commonly by emitting free-form
+    prose (or a ``<think>`` trace / markdown fence) on the turn where it
+    means to give its final answer.  The agent's parser then sees no valid
+    ``{"response": {...}}`` object, manufactures an *empty* ``final_answer``,
+    and the agent returns no text.
+
+    To make the tool-calling loop robust against that, we:
+
+    1. Strip any ``<think>...</think>`` block and ```` ``` ```` code fences.
+    2. If what remains parses as JSON containing a ``"response"`` key, pass
+       it through unchanged (a well-formed tool_request or final_answer).
+    3. Otherwise treat the text as the model's final answer and wrap it in a
+       ``final_answer`` envelope so the loop terminates with real content.
+
+    :param text: Raw decoded model output.
+    :returns: A JSON string that satisfies the agent's ResponseModel schema.
+    """
+    import json
+    import re
+
+    cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+    # Strip a leading ```json / ``` fence and trailing ``` if present.
+    fence = re.match(r"^```(?:json)?\s*(.*?)\s*```$", cleaned, flags=re.DOTALL)
+    if fence:
+        cleaned = fence.group(1).strip()
+
+    # Case 2: already a valid response envelope — leave it untouched.
+    try:
+        parsed = json.loads(cleaned)
+        if isinstance(parsed, dict) and "response" in parsed:
+            return cleaned
+    except (json.JSONDecodeError, TypeError):
+        pass
+
+    # Case 3: prose (or malformed JSON) — wrap as a final answer so the
+    # agent's loop accepts it and stops instead of returning empty text.
+    envelope = {
+        "response": {"type": "final_answer", "content": cleaned or text.strip()}
+    }
+    return json.dumps(envelope)
+
+
 def _check_nans(values: list) -> dict:
     """Core NaN check shared by the tool and the ultralight service."""
     nan_indices = []
@@ -152,6 +198,63 @@ def make_detect_nans(data_store):
         return result
 
     return detect_nans
+
+
+def make_scan_all_ranks(data_store, num_ranks: int):
+    """Build a ``scan_all_ranks`` tool that checks every rank in one call.
+
+    Small models are unreliable at multi-step tool loops (call detect_nans,
+    observe, call again, ..., then format a final answer).  They tend to stop
+    after the first call and hallucinate the rest — exactly what SmolLM3 does
+    here.  Collapsing the work into a **single** no-argument tool call turns
+    the agent's job into "call once, then report", which small models handle
+    far more reliably.  The tool also returns a ready-made ``report`` string,
+    so even a weak final turn just relays correct, tool-derived text.
+
+    :param data_store: A Dragon ``DDict`` holding per-rank arrays by key.
+    :param num_ranks: Number of ranks (keys are 'rank_0' .. 'rank_{N-1}').
+    :returns: A ``scan_all_ranks()`` callable ready for ToolRegistry.register.
+    """
+
+    def scan_all_ranks() -> dict:
+        """Scan every rank array for NaNs and return a complete report.
+
+        Checks keys 'rank_0' through 'rank_{N-1}' in the shared data store
+        in a single call.  Use this tool exactly once, then report its
+        'report' field as your final answer.
+
+        :returns: Dict with 'keys_with_nans' (list of rank keys that contain
+            NaNs), 'per_key' (per-rank NaN details), and 'report' (a
+            ready-to-use human-readable summary string).
+        """
+        per_key = {}
+        keys_with_nans = []
+        for i in range(num_ranks):
+            key = f"rank_{i}"
+            result = _check_nans(data_store[key])
+            per_key[key] = result
+            if result["has_nans"]:
+                keys_with_nans.append(key)
+
+        if keys_with_nans:
+            parts = [
+                f"{k} has {per_key[k]['nan_count']} NaN(s) at "
+                f"indices {per_key[k]['nan_indices']}"
+                for k in keys_with_nans
+            ]
+            report = "; ".join(parts) + "."
+        else:
+            report = "No ranks contain NaN values."
+
+        out = {
+            "keys_with_nans": keys_with_nans,
+            "per_key": per_key,
+            "report": report,
+        }
+        print(f"[tool] scan_all_ranks() -> {out}", flush=True)
+        return out
+
+    return scan_all_ranks
 
 
 # ===========================================================================
@@ -215,7 +318,6 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
                     tools=tools,
                     add_generation_prompt=True,
                     tokenize=False,
-                    #enable_thinking=True,
                     enable_thinking=False,
                 )
             except TypeError:
@@ -236,8 +338,26 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
             new_ids = generated[0][len(model_inputs.input_ids[0]):]
             text = tokenizer.decode(new_ids, skip_special_tokens=True).strip()
 
+            # --- DEBUG: show exactly what the model emitted --------------------
+            # The agent's tool-calling loop requires STRICT schema-valid JSON
+            # (ResponseModel.model_validate_json).  This backend does NOT honor
+            # the json_schema/guided-decoding hint (request[5]), so the model
+            # is free to emit <think> traces, markdown fences, or prose — any of
+            # which make the parser fail and the agent produce no final answer.
+            # Print the raw output so we can see whether it is valid JSON.
+            print(
+                f"[inference][debug] schema_hint={'yes' if len(request) > 5 and request[5] else 'no'} "
+                f"tools={'yes' if tools else 'no'} raw_output={text!r}",
+                flush=True,
+            )
+
+            # Coerce non-schema output (prose / think trace / fenced JSON) into
+            # a valid response envelope so a format-breaking "final" turn still
+            # terminates the agent loop with real text instead of empty output.
+            envelope = _coerce_to_envelope(text)
+
             # The agent's DragonQueueLLMProxy accepts a dict with "assistant".
-            response_queue.put({"assistant": text})
+            response_queue.put({"assistant": envelope})
         except Exception as exc:  # noqa: BLE001 — report failure to the agent
             # Returning the exception lets the proxy re-raise it agent-side.
             response_queue.put(exc)
@@ -333,25 +453,14 @@ pipeline = Pipeline(nodes=[
     PipelineNode(
         agent_id="nan_agent",
         task_description=(
-            "You are a data-quality assistant.  Results from a number of MPI "
-            "ranks are stored in the shared data store.  The user tells you "
-            "how many ranks there are; each rank's array is stored under a "
-            "key of the form 'rank_i', where i counts from 0 up to "
-            "num_ranks - 1.  Derive the full list of keys yourself from that "
-            "count.\n\n"
-            "WORKFLOW:\n"
-            "  1. Call detect_nans once for EACH key, passing only the key "
-            "string (e.g. 'rank_0').  Check each key exactly once and never "
-            "re-check a key you have already checked.\n"
-            "  2. As soon as every key has been checked, STOP calling tools "
-            "and give your final answer in that same turn (do not call any "
-            "tool when giving the final answer).\n\n"
-            "FINAL ANSWER:\n"
-            "  - Write plain text, not JSON.\n"
-            "  - Report ONLY the keys whose arrays contain NaNs, with the NaN "
-            "count and indices for each.  Do NOT mention keys that are clean.\n"
-            "  - Example: 'rank_1 has 1 NaN at index 2; rank_3 has 2 NaNs at "
-            "indices 1 and 3.'"
+            "You are a data-quality assistant.  Per-rank result arrays are "
+            "stored in the shared data store.\n\n"
+            "WORKFLOW (do this exactly):\n"
+            "  1. Call the scan_all_ranks tool ONCE.  It takes no arguments "
+            "and checks every rank in a single call.\n"
+            "  2. Take the 'report' string from the tool result and return it "
+            "verbatim as your final answer.  Do NOT call any tool again and "
+            "do NOT invent numbers — use only the tool's output."
         ),
         depends_on=[],
     ),
@@ -386,8 +495,12 @@ async def main():
         data_store[_key] = _arr
     data_keys = list(rank_arrays)
 
+    num_ranks = len(data_keys)
     registry = ToolRegistry()
-    registry.register(make_detect_nans(data_store))
+    # Single-call tool: checks every rank in one shot and returns a ready-made
+    # report.  This keeps the agent's job to "call once, relay the report",
+    # which small models perform far more reliably than an N-step tool loop.
+    registry.register(make_scan_all_ranks(data_store, num_ranks))
 
     print("[startup] Launching lightweight inference service...", flush=True)
     inference_proc = Process(
@@ -404,18 +517,17 @@ async def main():
                 agent_id="nan_agent",
                 name="NaN Detector",
                 role=(
-                    "You are a data-quality assistant.  You scan per-rank "
-                    "arrays for NaN values by calling detect_nans once per "
-                    "key, then report only the ranks whose arrays contain "
-                    "NaNs."
+                    "You are a data-quality assistant.  You call the "
+                    "scan_all_ranks tool exactly once and report its 'report' "
+                    "string verbatim as your answer."
                 ),
                 inference_queue=input_queue,
                 # Single agent, one request at a time — no need for the
                 # proxy's default pool of 32 response channels.
                 max_concurrent_requests=1,
-                # Four keys to check — allow enough tool-call iterations for
-                # one detect_nans call per key plus the final answer.
-                max_tool_call_iterations=15,
+                # One tool call + one final answer is all that is needed now,
+                # but leave headroom in case the model retries the tool once.
+                max_tool_call_iterations=6,
             ),
             "tool_registry": registry,
             "shutdown_event": Event(),
@@ -442,13 +554,10 @@ async def main():
             pipeline=pipeline,
         )
 
-        num_ranks = len(data_keys)
         user_input = (
             f"Result arrays from {num_ranks} MPI ranks are stored in the "
-            "shared data store.  Each rank's array is under a key of the form "
-            f"'rank_i' for i from 0 to {num_ranks - 1}.  Work out the keys "
-            "yourself, check each one, and report only the ranks whose arrays "
-            "contain NaN values."
+            "shared data store.  Call the scan_all_ranks tool once, then "
+            "report its 'report' string as your answer."
         )
 
         batch = Batch(results_ddict_mem=int(10*1024*1024))
