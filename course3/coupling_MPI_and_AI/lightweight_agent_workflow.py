@@ -1,21 +1,39 @@
 """
+Lightweight multi-agent CFL search driven by a single local model.
+
 Architecture::
 
     Main Process
-      └── lightweight_inference_service (Dragon Process)
-            └── AutoModelForCausalLM.generate()   ← plain transformers
+      ├── lightweight_inference_service (Dragon Process)
+      │     └── AutoModelForCausalLM.generate()   ← plain transformers
+      ├── nan_agent        (Dragon Process) ─┐ both agents share the one
+      └── generator_agent  (Dragon Process) ─┘ inference service via a queue
 
-    Iterative CFL search (looped)::
-        generator_agent  ──►  nan_agent
-          │ run_cfl_experiments   │ detect_nans (per rank)
-          ▼                       ▼
-        picks CFLs + simulates    flags which ranks blew up
+    Pipeline DAG (run once per search round by DAGOrchestrator)::
 
-    Each round the generator uses the previous round's NaN results to push
-    toward the largest CFL that does not produce NaNs.
+        nan_agent ─────────► generator_agent ─────────► run_experiments
+          │ scan_all_ranks     │ propose CFLs             │ run_experiments_node
+          ▼ (one tool call)    ▼ (plain text, no tools)   ▼ (plain fn, no LLM)
+        reports which CFLs     comma-separated list of    parses the CFL text and
+        were stable vs which   new CFLs, one per rank      runs one MPI job per CFL,
+        produced NaNs                                       writing cfl_{v}_rank{i}
+                                                            arrays to the shared DDict
+
+    * nan_agent calls the ``scan_all_ranks`` tool exactly once and returns its
+      report verbatim (which CFLs were stable, which produced NaNs).
+    * generator_agent reads that report over its DAG dependency and replies
+      with a plain comma-separated list of new CFLs — it makes no tool calls.
+    * run_experiments is a plain-function node (not an LLM): it parses the
+      generator's CFL text and launches one MPI job per CFL via ``queue_job``,
+      writing per-rank result arrays back to the shared DDict.
+
+    Each round the generator pushes toward the largest CFL that does not
+    produce NaNs, using the previous round's scan results.  Iteration 0 is
+    bootstrapped by running the user-provided CFLs once so the first
+    nan_agent pass has arrays to scan.
 
 Usage::
-    dragon nan_detector_agent.py
+    dragon lightweight_agent_workflow.py
 """
 
 import asyncio
@@ -52,6 +70,7 @@ from inference_utils import lightweight_inference_service, _parse_cfls
 
 NUM_RANKS = 4
 NUM_ITERATIONS = 2          # number of CFL search rounds
+CFL_CRITICAL = 1.0          # hidden stability limit: CFL > this -> NaNs
 # ===========================================================================
 # Model location
 #
@@ -142,7 +161,6 @@ def make_scan_all_ranks(data_store, num_ranks: int):
             "keys_without_nans": cfls_without_nans,
             "report": report,
         }
-        print(f"[tool] scan_all_ranks() -> {out}", flush=True)
         return out
 
     return scan_all_ranks
@@ -188,14 +206,18 @@ def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResul
             serialized_ddict = upstream.serialized_ddict
 
             ddict = DDict.attach(serialized_ddict)
-            # -- Read the generator agent's proposed CFL text from the DDict --
+            # -- Read the upstream node's proposed CFL text from the DDict ----
+            # The upstream may be an LLM generator agent or a deterministic
+            # choose_new_cfls function node; either way its result is keyed by
+            # its own agent_id, so read that off the TaskResult rather than
+            # hard-coding a single producer.
             gen_dispatch_id = ddict[
-                DISPATCH_ID_KEY.format(task_id=task_id, agent_id="generator_agent")
+                DISPATCH_ID_KEY.format(task_id=task_id, agent_id=upstream.agent_id)
             ]
             gen_result = ddict[
                 RESULT_KEY.format(
                     task_id=task_id,
-                    agent_id="generator_agent",
+                    agent_id=upstream.agent_id,
                     dispatch_id=gen_dispatch_id,
                 )
             ]
@@ -225,9 +247,6 @@ def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResul
                 print(f"Got exception from MPI job: {e}", flush=True)
 
         if pipeline_run:
-            for key, val in ddict.items():
-                print(f"[fn] run_experiments_node -> {key}={val}", flush=True)
-
             # -- Publish this node's own result so downstream nodes can run ---
             own_dispatch_id = f"fn-run-experiments-{task_id[:8]}"
             ddict[DISPATCH_ID_KEY.format(

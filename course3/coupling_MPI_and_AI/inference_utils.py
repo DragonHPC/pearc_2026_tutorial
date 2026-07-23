@@ -97,7 +97,6 @@ def _coerce_to_envelope(text: str) -> str:
     }
     return json.dumps(envelope)
 
-CFL_CRITICAL = 1.0          # hidden stability limit: CFL > this -> NaNs
 def _parse_cfls(text: str) -> list:
     """Extract up to *num_ranks* CFL numbers from the generator's free text.
 
@@ -121,18 +120,7 @@ def _parse_cfls(text: str) -> list:
     decimals = [float(t) for t in tokens if "." in t]
     pool = decimals if decimals else [float(t) for t in tokens]
     vals = [v for v in pool if 0 < v <= 10]
-    #vals = [v for v in pool if 0 < v <= 10][:num_ranks]
 
-#    if not vals:
-#        # Deterministic fallback: spread values bracketing the stability limit.
-#        lo, hi = 0.5 * CFL_CRITICAL, 1.5 * CFL_CRITICAL
-#        if num_ranks == 1:
-#            return [round(CFL_CRITICAL, 4)]
-#        return [round(lo + (hi - lo) * k / (num_ranks - 1), 4)
-#                for k in range(num_ranks)]
-
-    #while len(vals) < num_ranks:      # pad short lists by repeating the last
-    #    vals.append(vals[-1])
     return [round(v, 4) for v in vals]
 
 
@@ -251,11 +239,11 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
             # is free to emit <think> traces, markdown fences, or prose — any of
             # which make the parser fail and the agent produce no final answer.
             # Print the raw output so we can see whether it is valid JSON.
-            print(
-                f"[inference][debug] schema_hint={'yes' if len(request) > 5 and request[5] else 'no'} "
-                f"tools={'yes' if tools else 'no'} raw_output={text!r}",
-                flush=True,
-            )
+            #print(
+            #    f"[inference][debug] schema_hint={'yes' if len(request) > 5 and request[5] else 'no'} "
+            #    f"tools={'yes' if tools else 'no'} raw_output={text!r}",
+            #    flush=True,
+            #)
 
             # Coerce non-schema output (prose / think trace / fenced JSON) into
             # a valid response envelope so a format-breaking "final" turn still
@@ -269,7 +257,7 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
             else:
                 payload = text
 
-            print(f"[inference][debug] payload={payload!r}", flush=True)
+            print(f"[inference] payload={payload!r}", flush=True)
             # The agent's DragonQueueLLMProxy accepts a dict with "assistant".
             response_queue.put({"assistant": payload})
         except Exception as exc:  # noqa: BLE001 — report failure to the agent
