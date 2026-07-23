@@ -4,3 +4,4 @@ numpy>=2.5.0
 dragonhpc[telemetry]>=0.14.1
 torch
 transformers
+pydantic
