@@ -18,13 +18,16 @@ should be good to go!
 
 If using VS Code you can shutdown the Jupyter Server and restart VS Code. That should restart the Jupyter Server for you.
 
-If still having issues or you are not using VS Code you can examine processes
+If you are still having issues you can clean up by typing `dragon-cleanup` in the
+terminal window and then try restarting by running `dragon-jupyter`.
+
+If that does not work you can then examine processes
 with `ps aux | grep -E 'jupyter'` and you can kill them all with
 `pkill -9 -f jupyter`.
 
 Then run `dragon-jupyter` again.
 
-After running `dragon-jupyter` look for the line URL that looks like this in the terminal window.
+After running `dragon-jupyter` look for the line that looks like this in the terminal window.
 
 ```bash
 http://127.0.0.1:8888/tree?token=e335a788b94549b8113efa59c098948e911221e56e34cdbf

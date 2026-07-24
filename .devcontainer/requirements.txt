@@ -1,6 +1,6 @@
 jupyter>=1.1.1
 mpi4py>=4.1.2
-numpy>=2.5.0
+numpy
 dragonhpc[telemetry]>=0.14.1
 torch
 transformers

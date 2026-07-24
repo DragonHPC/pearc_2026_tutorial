@@ -105,6 +105,14 @@ When prompted, click the button to open the URL in your browser. At the **Log in
 your own token as printed like it is above after the string *?token=*. Copy the token and then
 pasted it into the **Log in** field.
 
+If after running `dragon-jupyter` you don't get a pop-up asking you to open a URL in your browswer, look for the line that looks like this in the terminal window.
+
+```bash
+http://127.0.0.1:8888/tree?token=e335a788b94549b8113efa59c098948e911221e56e34cdbf
+```
+
+Paste your similar line it into your browser. If it still asks for a token then copy your token from after the `?token=` and paste that into the **Log in** field.
+
 ## Displaying the Agenda
 
 Once you have the Jupyter directory page in view, click on the `README.ipynb` notebook and
