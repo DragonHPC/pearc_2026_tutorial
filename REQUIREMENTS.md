@@ -68,9 +68,14 @@ to run [natively on your Laptop](#running-natively-on-your-laptop).
 
 ## Setting up Mac OS
 
-Mac OS has two different options for running in a container (with and without VS Code). This tutorial
-uses MPI and MPI support for Mac OS is something we are working on, but is not ready yet. So running
-in a container is necessary on Mac OS to enable MPI support.
+Mac OS has two different options for setting up Dragon on your laptop. Please
+pick the route that best matches your desired setup. The first method, running in a Docker
+container with VS Code is the easiest route if you have that available to you.
+
+* [Mac OS with Docker](#mac-os-with-docker)
+* [Mac OS Native](#mac-os-native)
+
+### Mac OS with Docker
 
 To run with VS Code and Docker please follow the instructions to
 [use VS Code and Docker](#running-in-a-docker-container-with-vs-code).
@@ -78,6 +83,19 @@ To run with VS Code and Docker please follow the instructions to
 If running on Mac OS with access to Docker, but without VS Code, you can
 [follow the directions for using DevPod](#using-devpod-to-run-in-a-docker-container-without-vs-code)
 to get up and running on Mac OS in a container.
+
+### Mac OS Native
+
+Disclaimer that Mac OS Native support is relatively new. However, it passes the
+smoke_test.py and runs the tutorial code just fine. But for a more thoroughly
+tested environment you could opt for running it in a container on your Mac
+instead. But again, running natively on a Mac is working.
+
+You must be running Mac OS 26 or later to run natively on a Mac. Mac OS 15 is not
+supported.
+
+If you are running natively on your Mac then you would follow the directions
+to run [natively on your Laptop](#running-natively-on-your-laptop).
 
 ## Setting up Linux
 
@@ -132,9 +150,9 @@ and run the [smoke test](#smoke-test) to be sure you having everything set up co
 
 ## Running natively on your Laptop
 
-In this mode you run Dragon natively on Windows with WSL 2. These
+In this mode you run Dragon natively on Windows with WSL 2 or Mac OS. These
 directions are considerably less detailed and it is up to you to know how to
-install and configure software on your Windows laptop. In this mode
+install and configure software on your Windows or Mac laptop. In this mode
 you are not running in a container.
 
 If planning to running natively on Windows you will need to install WSL 2. You
@@ -146,13 +164,20 @@ installed before pip installing Python dependencies.
 
 You will want to make sure you have a g++ compiler.
 
+* That may be available with the XCode Command-line Tools and/or by installing the XCode
+package on Mac OS. If you don't find `g++` there, then using Brew for Mac OS to
+install the GNU C++ compiler may be required.
 * Under WSL 2 you will need to do `sudo apt-get install g++` to install the C++ compiler.
 * Under Linux insure you have the necessary compiler and dev environment installed.
 
 You will need an open-mpi library installed on your laptop to be able to run the MPI based
 tutorials.
 
-* The WSL 2 environment will need you to `sudo apt-get install libopenmpi-dev openmpi-bin`.
+* The Brew package manager for Mac OS includes a package called open-mpi
+that is required for the tutorial. `brew install open-mpi` will install the package using Brew. After installing you need to add the library path `export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:${DYLD_FALLBACK_LIBRARY_PATH}` so Dragon's MPI support can find the MPI library.
+Add this to your shell init file (i.e. .bashrc or .zshrc) and source it or open a new terminal window.
+* The WSL 2 environment will need you to `sudo apt-get install libopenmpi-dev openmpi-bin`. You likely will have
+to add a library path for openmpi so Dragon's MPI support can find the MPI library.
 * The packages under Linux are installed with `sudo apt-get install libopenmpi-dev openmpi-bin`
 or other appropriate package manager.
 
