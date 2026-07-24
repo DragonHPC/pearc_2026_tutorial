@@ -86,6 +86,14 @@ to get up and running on Mac OS in a container.
 
 ### Mac OS Native
 
+Disclaimer that Mac OS Native support is relatively new. However, it passes the
+smoke_test.py and runs the tutorial code just fine. But for a more thoroughly
+tested environment you could opt for running it in a container on your Mac
+instead. But again, running natively on a Mac is working.
+
+You must be running Mac OS 26 or later to run natively on a Mac. Mac OS 15 is not
+supported.
+
 If you are running natively on your Mac then you would follow the directions
 to run [natively on your Laptop](#running-natively-on-your-laptop).
 
@@ -166,8 +174,7 @@ You will need an open-mpi library installed on your laptop to be able to run the
 tutorials.
 
 * The Brew package manager for Mac OS includes a package called open-mpi
-that should prove useful. `brew install open-mpi`. After installing you need to add the library path to
-the file with something close to `export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:${DYLD_FALLBACK_LIBRARY_PATH}`.
+that is required for the tutorial. `brew install open-mpi` will install the package using Brew. After installing you need to add the library path `export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:${DYLD_FALLBACK_LIBRARY_PATH}` so Dragon's MPI support can find the MPI library.
 Add this to your shell init file (i.e. .bashrc or .zshrc) and source it or open a new terminal window.
 * The WSL 2 environment will need you to `sudo apt-get install libopenmpi-dev openmpi-bin`. You likely will have
 to add a library path for openmpi so Dragon's MPI support can find the MPI library.
