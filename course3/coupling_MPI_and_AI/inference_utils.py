@@ -1,5 +1,11 @@
 import os
 import queue as _pyqueue
+import json
+import re
+import dragon.ai.torch  # noqa: F401  — Dragon-aware torch shims
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
 
 MAX_NEW_TOKENS = int(os.environ.get("DRAGON_MAX_NEW_TOKENS", "1024"))
 
@@ -60,8 +66,6 @@ def _coerce_to_envelope(text: str) -> str:
     :param text: Raw decoded model output.
     :returns: A JSON string that satisfies the agent's ResponseModel schema.
     """
-    import json
-    import re
 
     cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
     # Strip a leading ```json / ``` fence and trailing ``` if present.
@@ -142,10 +146,6 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
     :param shutdown_event: Dragon Event; set by the parent to stop the loop.
     :param model_name: Path or name of the transformers checkpoint to load.
     """
-    import dragon.ai.torch  # noqa: F401  — Dragon-aware torch shims
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-
     torch.set_num_threads(8)
     torch.set_num_interop_threads(1)
 

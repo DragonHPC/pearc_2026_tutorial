@@ -472,9 +472,6 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
 
             print(f"\n[error] CFL search failed: {exc}", flush=True)
             traceback.print_exc()
-        finally:
-            orchestrator.destroy()
-            batch.join()
 
     except Exception as exc:
         import traceback
@@ -482,6 +479,7 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
         print(f"\n[error] Fatal: {exc}", flush=True)
         traceback.print_exc()
     finally:
+
         for spec in agent_specs:
             try:
                 spec["shutdown_event"].set()
@@ -500,7 +498,22 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
         except Exception:
             pass
         print("[teardown] Inference service stopped.", flush=True)
-
+        if orchestrator is not None:
+            try:
+                orchestrator.destroy()
+            except Exception:
+                pass
+            print("[teardown] Orchestrator destroyed.", flush=True)
+        if batch is not None:
+            try:
+                batch.join()
+            except Exception:
+                pass
+            try:
+                batch.destroy(force_timeout=1.0)
+            except Exception:
+                pass
+            print("[teardown] Batch joined (results DDict destroyed).", flush=True)
         try:
             data_store.destroy()
         except Exception:
