@@ -34,7 +34,7 @@ We meet in Room 202AB for the tutorial at 9am.
 | 9:00 - 9:15  |  15 | | Tutorial introduction | P. Mendygral |
 | 9:15 - 9:45  | 30 | | Presentation: AI+HPC workflows and DragonHPC | C. Simpson |
 | 9:45 - 10:00 | 15 | 1 | Preparations for exercises | P. Mendygral<br>T. Maiden |
-| 10:00 - 10:30  | 30 | 1 | [Python multiprocessing across multiple nodes](course1/multiprocessing_across_nodes/multiprocessing_intro.ipynb) | P. Mendygral<br>D. Potts |
+| 10:00 - 10:30  | 30 | 1 | [Python multiprocessing across multiple nodes](course1/multiprocessing_across_nodes/multiprocessing_tutorial.ipynb) | P. Mendygral<br>D. Potts |
 | 10:30 - 11:00  | 30 | | Coffee Break | |
 | 11:00 - 11:35  | 35 | 1 | [Managing DDict objects across processes <br> in Python and C++ (DDict API)](course1/managing_data_with_ddict/ddict_tutorial.ipynb) | C. Simpson<br>K. Lee |
 | 11:35 - 12:15  | 40 | 2 | [Using Python multiprocessing with GPUs, and<br>PyTorch for multi-node LLM inference](course2/multiprocessing_with_GPUs_and_LLMs/gpu_llm_inference_tutorial.ipynb) | P. Mendygral |
