@@ -69,20 +69,20 @@ from dragon.workflows.batch import Batch
 from inference_utils import lightweight_inference_service, _parse_cfls
 
 NUM_RANKS = 4
-NUM_ITERATIONS = 2          # number of CFL search rounds
-CFL_CRITICAL = 1.0          # hidden stability limit: CFL > this -> NaNs
+NUM_ITERATIONS = 2  # number of CFL search rounds
+CFL_CRITICAL = 1.0  # hidden stability limit: CFL > this -> NaNs
 # ===========================================================================
 # Model location
 #
-# Defaults to the repository's ``model/`` directory (SmolLM3), matching the
+# Defaults to the repository's ``SmolLM3_3B/`` directory (SmolLM3), matching the
 # convention in agents.py.  Override with DRAGON_LOCAL_MODEL_DIR.
 # ===========================================================================
 
-_REPO_ROOT = Path(__file__).resolve().parents[2]
-_DEFAULT_MODEL_DIR = _REPO_ROOT / "model"
+_REPO_ROOT = Path.cwd().resolve().parents[1]
+_DEFAULT_MODEL_DIR = _REPO_ROOT / "SmolLM3_3B"
 LOCAL_MODEL_DIR = os.environ.get(
     "DRAGON_LOCAL_MODEL_DIR",
-    str(_DEFAULT_MODEL_DIR if _DEFAULT_MODEL_DIR.exists() else Path("/tmp/model")),
+    str(_DEFAULT_MODEL_DIR if _DEFAULT_MODEL_DIR.exists() else Path("/tmp/SmolLM3_3B")),
 )
 # Max tokens the model may generate per LLM call.  NOTE: this is *not* the
 # length of the final yes/no answer — the agent's tool-calling loop makes the
@@ -90,6 +90,7 @@ LOCAL_MODEL_DIR = os.environ.get(
 # then a final_answer).  Setting this too low (e.g. 4) truncates that JSON and
 # breaks the reasoning loop.  Lower it only as far as your prompts allow.
 MAX_NEW_TOKENS = int(os.environ.get("DRAGON_MAX_NEW_TOKENS", "1024"))
+
 
 def _check_nans(values: list) -> dict:
     """Core NaN check shared by the tool and the ultralight service."""
@@ -104,12 +105,13 @@ def _check_nans(values: list) -> dict:
 
     max_value = max(values)
     min_value = min(values)
-    considered_nans = max_value > 10**6 or min_value < -10**6
+    considered_nans = max_value > 10**6 or min_value < -(10**6)
     return {
         "has_nans": len(nan_indices) > 0 or considered_nans,
         "max_value": max_value,
         "min_value": min_value,
     }
+
 
 # This function generates a tool that scans all ranks for NaNs in the shared data store. This cannot be a partial function because partials do not retain the necessary metadata for tool registration.
 def make_scan_all_ranks(data_store, num_ranks: int):
@@ -165,6 +167,7 @@ def make_scan_all_ranks(data_store, num_ranks: int):
 
     return scan_all_ranks
 
+
 # ===========================================================================
 # Experiment execution as a plain-function DAG node (no LLM)
 #
@@ -183,7 +186,9 @@ def make_scan_all_ranks(data_store, num_ranks: int):
 # ===========================================================================
 
 
-def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResult) -> TaskResult:
+def run_experiments_node(
+    batch, data_ddict_ser, num_ranks, *upstreams: TaskResult
+) -> TaskResult:
     """Read the generator's proposed CFLs and run one experiment per rank.
 
     :param upstreams: TaskResult tokens from upstream nodes (the generator).
@@ -223,9 +228,10 @@ def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResul
             ]
             gen_text = (
                 gen_result.get("response", str(gen_result))
-                if isinstance(gen_result, dict) else str(gen_result)
+                if isinstance(gen_result, dict)
+                else str(gen_result)
             )
-            #cfls = _parse_cfls(gen_text, num_ranks)
+            # cfls = _parse_cfls(gen_text, num_ranks)
             cfls = _parse_cfls(gen_text)
             data_ddict["cfl_values"] = cfls
         # it's the first run so we're running with user provided cfls
@@ -249,16 +255,23 @@ def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResul
         if pipeline_run:
             # -- Publish this node's own result so downstream nodes can run ---
             own_dispatch_id = f"fn-run-experiments-{task_id[:8]}"
-            ddict[DISPATCH_ID_KEY.format(
-                task_id=task_id, agent_id="run_experiments")] = own_dispatch_id
-            ddict[RESULT_KEY.format(
-                task_id=task_id, agent_id="run_experiments",
-                dispatch_id=own_dispatch_id)] = {
-                "response": f"Ran experiments at CFL values {cfls}."
-            }
-            ddict[STATUS_KEY.format(
-                task_id=task_id, agent_id="run_experiments",
-                dispatch_id=own_dispatch_id)] = TaskStatus.DONE
+            ddict[
+                DISPATCH_ID_KEY.format(task_id=task_id, agent_id="run_experiments")
+            ] = own_dispatch_id
+            ddict[
+                RESULT_KEY.format(
+                    task_id=task_id,
+                    agent_id="run_experiments",
+                    dispatch_id=own_dispatch_id,
+                )
+            ] = {"response": f"Ran experiments at CFL values {cfls}."}
+            ddict[
+                STATUS_KEY.format(
+                    task_id=task_id,
+                    agent_id="run_experiments",
+                    dispatch_id=own_dispatch_id,
+                )
+            ] = TaskStatus.DONE
     finally:
         if ddict is not None:
             ddict.detach()
@@ -271,9 +284,11 @@ def run_experiments_node(batch, data_ddict_ser, num_ranks, *upstreams: TaskResul
         serialized_ddict=serialized_ddict,
     )
 
+
 # ===========================================================================
 # Main
 # ===========================================================================
+
 
 def run(init_cfls, num_ranks, iterations, user_prompt):
     input_queue = Queue()
@@ -287,7 +302,9 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
     data_store = DDict(1, 1, 2 * 1024 * 1024)
     batch = Batch(results_ddict_mem=int(10 * 1024 * 1024))
 
-    partial_run_experiments_node = partial(run_experiments_node, batch, data_store.serialize(), num_ranks)
+    partial_run_experiments_node = partial(
+        run_experiments_node, batch, data_store.serialize(), num_ranks
+    )
     scan_all_ranks_tool = make_scan_all_ranks(data_store, num_ranks)
 
     # Generator agent proposes CFL numbers as plain text (NO tools) — the
@@ -303,7 +320,7 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
     nan_registry.register(scan_all_ranks_tool)
 
     print("[startup] Launching lightweight inference service...", flush=True)
-    #CPW: maybe something for them to plug in
+    # CPW: maybe something for them to plug in
     inference_proc = Process(
         target=lightweight_inference_service,
         args=(input_queue, inference_shutdown, LOCAL_MODEL_DIR),
@@ -312,48 +329,50 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
 
     procs, agent_specs = [], []
     try:
-        pipeline = Pipeline(nodes=[
-            # Plain-function node (no LLM): parses the generator's proposed CFLs and
-            # runs the experiments deterministically, so the generator never has to
-            # make a tool call.
-            PipelineNode(
-                agent_id="nan_agent",
-                task_description=(
-                    "You are a data-quality assistant.  A CFD experiment has just "
-                    f"written result arrays for N MPI ranks into the Distributed Dictionary (DDict)."
-                    "WORKFLOW (do this exactly):\n"
-                    "  1. Call the scan_all_ranks tool ONCE.  It takes no arguments "
-                    "and checks every rank in a single call.\n"
-                    "  2. Take the 'report' string from the tool result and return it "
-                    "verbatim as your final answer.  Do NOT call any tool again and "
-                    "do NOT invent numbers — use only the tool's output."
+        pipeline = Pipeline(
+            nodes=[
+                # Plain-function node (no LLM): parses the generator's proposed CFLs and
+                # runs the experiments deterministically, so the generator never has to
+                # make a tool call.
+                PipelineNode(
+                    agent_id="nan_agent",
+                    task_description=(
+                        "You are a data-quality assistant.  A CFD experiment has just "
+                        f"written result arrays for N MPI ranks into the Distributed Dictionary (DDict)."
+                        "WORKFLOW (do this exactly):\n"
+                        "  1. Call the scan_all_ranks tool ONCE.  It takes no arguments "
+                        "and checks every rank in a single call.\n"
+                        "  2. Take the 'report' string from the tool result and return it "
+                        "verbatim as your final answer.  Do NOT call any tool again and "
+                        "do NOT invent numbers — use only the tool's output."
+                    ),
+                    depends_on=[],
                 ),
-                depends_on=[],
-            ),
-            PipelineNode(
-                agent_id="generator_agent",
-                task_description=(
-                    "You are a CFL (Courant number) search planner for a CFD solver "
-                    f"running on N MPI ranks.  Your goal is to find the "
-                    "LARGEST CFL number that does NOT make the solver blow up "
-                    "(produce NaNs). The message tells you the previous round's results (the CFL tested and whether that it produced NaNs)\n\n"
-                    "Decision rules:\n"
-                    "INCREASE the CFL for ranks that were stable and "
-                    "DECREASE it for ranks that produced NaNs, narrowing toward the "
-                    "largest stable CFL.\n\n"
-                    "OUTPUT FORMAT:\n"
-                    f"  Respond with a list of new CFL numbers (one per rank) as a "
-                    "plain comma-separated list, e.g. '0.4, 0.8, 1.2, 1.6'.  Do not "
-                    "call any tools and do not add any other text."
+                PipelineNode(
+                    agent_id="generator_agent",
+                    task_description=(
+                        "You are a CFL (Courant number) search planner for a CFD solver "
+                        f"running on N MPI ranks.  Your goal is to find the "
+                        "LARGEST CFL number that does NOT make the solver blow up "
+                        "(produce NaNs). The message tells you the previous round's results (the CFL tested and whether that it produced NaNs)\n\n"
+                        "Decision rules:\n"
+                        "INCREASE the CFL for ranks that were stable and "
+                        "DECREASE it for ranks that produced NaNs, narrowing toward the "
+                        "largest stable CFL.\n\n"
+                        "OUTPUT FORMAT:\n"
+                        f"  Respond with a list of new CFL numbers (one per rank) as a "
+                        "plain comma-separated list, e.g. '0.4, 0.8, 1.2, 1.6'.  Do not "
+                        "call any tools and do not add any other text."
+                    ),
+                    depends_on=["nan_agent"],
                 ),
-                depends_on=["nan_agent"],
-            ),
-            PipelineNode(
-                agent_id="run_experiments",
-                fn=partial_run_experiments_node,
-                depends_on=["generator_agent"],
-            ),
-        ])
+                PipelineNode(
+                    agent_id="run_experiments",
+                    fn=partial_run_experiments_node,
+                    depends_on=["generator_agent"],
+                ),
+            ]
+        )
         # --- Create the two agents: generator + NaN checker ---
         agent_specs = [
             {
@@ -430,7 +449,7 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
                     # Bootstrap: run the user-provided CFLs once so the NaN
                     # checker has results to scan on the first pipeline pass.
                     data_store["cfl_values"] = init_cfls
-                    run_experiments_node(batch, data_store.serialize(),  num_ranks, None)
+                    run_experiments_node(batch, data_store.serialize(), num_ranks, None)
 
                 print("=" * 60, flush=True)
                 print(f"Iteration {iteration + 1}/{iterations}", flush=True)
@@ -442,24 +461,25 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
                 result = orchestrator.run(user_input=user_prompt, batch=batch)
                 summary = (
                     result.get("response", str(result))
-                    if isinstance(result, dict) else str(result)
+                    if isinstance(result, dict)
+                    else str(result)
                 )
                 print("\n--- Latest run ---", flush=True)
                 print(summary, flush=True)
 
         except Exception as exc:
             import traceback
+
             print(f"\n[error] CFL search failed: {exc}", flush=True)
             traceback.print_exc()
-        finally:
-            orchestrator.destroy()
-            batch.join()
 
     except Exception as exc:
         import traceback
+
         print(f"\n[error] Fatal: {exc}", flush=True)
         traceback.print_exc()
     finally:
+
         for spec in agent_specs:
             try:
                 spec["shutdown_event"].set()
@@ -478,7 +498,22 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
         except Exception:
             pass
         print("[teardown] Inference service stopped.", flush=True)
-
+        if orchestrator is not None:
+            try:
+                orchestrator.destroy()
+            except Exception:
+                pass
+            print("[teardown] Orchestrator destroyed.", flush=True)
+        if batch is not None:
+            try:
+                batch.join()
+            except Exception:
+                pass
+            try:
+                batch.destroy(force_timeout=1.0)
+            except Exception:
+                pass
+            print("[teardown] Batch joined (results DDict destroyed).", flush=True)
         try:
             data_store.destroy()
         except Exception:
@@ -503,4 +538,9 @@ if __name__ == "__main__":
         "stable ranks and decreasing it for ranks that produced "
         "NaNs."
     )
-    run(init_cfls=init_cfls, num_ranks=NUM_RANKS, iterations=NUM_ITERATIONS,user_prompt=user_prompt)
+    run(
+        init_cfls=init_cfls,
+        num_ranks=NUM_RANKS,
+        iterations=NUM_ITERATIONS,
+        user_prompt=user_prompt,
+    )

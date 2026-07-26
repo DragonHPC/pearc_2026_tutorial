@@ -1,5 +1,7 @@
 import os
 import queue as _pyqueue
+import json
+import re
 
 MAX_NEW_TOKENS = int(os.environ.get("DRAGON_MAX_NEW_TOKENS", "1024"))
 
@@ -35,7 +37,7 @@ def _extract_first_json_object(text: str) -> str | None:
         elif c == "}":
             depth -= 1
             if depth == 0:
-                return text[start:i + 1]
+                return text[start : i + 1]
     return None
 
 
@@ -60,8 +62,6 @@ def _coerce_to_envelope(text: str) -> str:
     :param text: Raw decoded model output.
     :returns: A JSON string that satisfies the agent's ResponseModel schema.
     """
-    import json
-    import re
 
     cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
     # Strip a leading ```json / ``` fence and trailing ``` if present.
@@ -97,6 +97,7 @@ def _coerce_to_envelope(text: str) -> str:
     }
     return json.dumps(envelope)
 
+
 def _parse_cfls(text: str) -> list:
     """Extract up to *num_ranks* CFL numbers from the generator's free text.
 
@@ -124,7 +125,6 @@ def _parse_cfls(text: str) -> list:
     return [round(v, 4) for v in vals]
 
 
-
 # ===========================================================================
 # Lightweight inference service
 #
@@ -146,9 +146,6 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    torch.set_num_threads(8)
-    torch.set_num_interop_threads(1)
-
     device = "cuda" if torch.cuda.is_available() else "cpu"
     dtype = torch.float16
 
@@ -157,7 +154,7 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         dtype=dtype,
-        low_cpu_mem_usage=True,   # avoid holding two weight copies during load
+        low_cpu_mem_usage=True,  # avoid holding two weight copies during load
     ).to(device)
     model.eval()
     print("[inference] Model ready — serving requests.\n", flush=True)
@@ -171,9 +168,9 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
         except Exception:
             continue
 
-        messages = request[0]                              # chat messages
-        response_queue = request[2]                        # per-request reply
-        tools = request[4] if len(request) > 4 else None   # tool schemas
+        messages = request[0]  # chat messages
+        response_queue = request[2]  # per-request reply
+        tools = request[4] if len(request) > 4 else None  # tool schemas
 
         try:
             # Build the prompt with the model's chat template.  Pass the tool
@@ -214,17 +211,21 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
                 isinstance(m, dict) and m.get("role") == "tool" for m in messages
             )
             if tools and not tool_result_seen:
-                primer = '{"response": {"type": "tool_request", "tool_calls": [{"name": "'
+                primer = (
+                    '{"response": {"type": "tool_request", "tool_calls": [{"name": "'
+                )
                 prompt_text += primer
 
-            model_inputs = tokenizer([prompt_text], return_tensors="pt").to(model.device)
+            model_inputs = tokenizer([prompt_text], return_tensors="pt").to(
+                model.device
+            )
             with torch.inference_mode():
                 generated = model.generate(
                     **model_inputs,
                     max_new_tokens=MAX_NEW_TOKENS,
-                    do_sample=False,           # greedy → stable JSON output
+                    do_sample=False,  # greedy → stable JSON output
                 )
-            new_ids = generated[0][len(model_inputs.input_ids[0]):]
+            new_ids = generated[0][len(model_inputs.input_ids[0]) :]
             text = tokenizer.decode(new_ids, skip_special_tokens=True).strip()
 
             # Re-attach the primer so the returned text is the complete
@@ -239,11 +240,11 @@ def lightweight_inference_service(input_queue, shutdown_event, model_name):
             # is free to emit <think> traces, markdown fences, or prose — any of
             # which make the parser fail and the agent produce no final answer.
             # Print the raw output so we can see whether it is valid JSON.
-            #print(
+            # print(
             #    f"[inference][debug] schema_hint={'yes' if len(request) > 5 and request[5] else 'no'} "
             #    f"tools={'yes' if tools else 'no'} raw_output={text!r}",
             #    flush=True,
-            #)
+            # )
 
             # Coerce non-schema output (prose / think trace / fenced JSON) into
             # a valid response envelope so a format-breaking "final" turn still

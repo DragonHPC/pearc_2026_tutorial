@@ -64,8 +64,9 @@ def _read_prev_state(data_store, num_ranks):
 
     # Guard against a length mismatch between the two keys.
     if len(flags) != len(cfl_values):
-        flags = (flags + [False] * len(cfl_values))[:len(cfl_values)]
+        flags = (flags + [False] * len(cfl_values))[: len(cfl_values)]
     return cfl_values, flags
+
 
 def _propose_cfls(cfl_values, flags, num_ranks):
     """Pick num_ranks CFLs bracketing the stability boundary."""
@@ -141,14 +142,19 @@ def check_nans(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
 
         # -- Publish this node's own result so downstream nodes can run -------
         own_dispatch_id = f"fn-check-nans-{task_id[:8]}"
-        ddict[DISPATCH_ID_KEY.format(
-            task_id=task_id, agent_id="check_nans")] = own_dispatch_id
-        ddict[RESULT_KEY.format(
-            task_id=task_id, agent_id="check_nans",
-            dispatch_id=own_dispatch_id)] = {"response": scan["report"]}
-        ddict[STATUS_KEY.format(
-            task_id=task_id, agent_id="check_nans",
-            dispatch_id=own_dispatch_id)] = TaskStatus.DONE
+        ddict[DISPATCH_ID_KEY.format(task_id=task_id, agent_id="check_nans")] = (
+            own_dispatch_id
+        )
+        ddict[
+            RESULT_KEY.format(
+                task_id=task_id, agent_id="check_nans", dispatch_id=own_dispatch_id
+            )
+        ] = {"response": scan["report"]}
+        ddict[
+            STATUS_KEY.format(
+                task_id=task_id, agent_id="check_nans", dispatch_id=own_dispatch_id
+            )
+        ] = TaskStatus.DONE
     finally:
         ddict.detach()
 
@@ -183,8 +189,9 @@ def chose_new_cfls(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
         # Read the previous round's CFLs + NaN flags (the check_nans node's
         # output), then bracket the stability boundary.
         cfl_values, flags = _read_prev_state(data_store, num_ranks)
-        new_cfls = [round(float(c), 4)
-                    for c in _propose_cfls(cfl_values, flags, num_ranks)]
+        new_cfls = [
+            round(float(c), 4) for c in _propose_cfls(cfl_values, flags, num_ranks)
+        ]
 
         # Publish the chosen CFLs as a comma-separated string so the downstream
         # run_experiments node can parse them exactly like the generator
@@ -193,14 +200,19 @@ def chose_new_cfls(data_store, num_ranks, *upstreams: TaskResult) -> TaskResult:
         print(f"[fn] chose_new_cfls -> {content}", flush=True)
 
         own_dispatch_id = f"fn-choose-cfls-{task_id[:8]}"
-        ddict[DISPATCH_ID_KEY.format(
-            task_id=task_id, agent_id="choose_new_cfls")] = own_dispatch_id
-        ddict[RESULT_KEY.format(
-            task_id=task_id, agent_id="choose_new_cfls",
-            dispatch_id=own_dispatch_id)] = {"response": content}
-        ddict[STATUS_KEY.format(
-            task_id=task_id, agent_id="choose_new_cfls",
-            dispatch_id=own_dispatch_id)] = TaskStatus.DONE
+        ddict[DISPATCH_ID_KEY.format(task_id=task_id, agent_id="choose_new_cfls")] = (
+            own_dispatch_id
+        )
+        ddict[
+            RESULT_KEY.format(
+                task_id=task_id, agent_id="choose_new_cfls", dispatch_id=own_dispatch_id
+            )
+        ] = {"response": content}
+        ddict[
+            STATUS_KEY.format(
+                task_id=task_id, agent_id="choose_new_cfls", dispatch_id=own_dispatch_id
+            )
+        ] = TaskStatus.DONE
     finally:
         ddict.detach()
 
@@ -234,9 +246,11 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
     orchestrator = None
     try:
         data_store = DDict(1, 1, 2 * 1024 * 1024)
-        batch = Batch(results_ddict_mem=int(10 * 1024 * 1024))
+        batch = Batch(managed_lifecycle=True, results_ddict_mem=int(10 * 1024 * 1024))
 
-        partial_run_experiments_node = partial(run_experiments_node, batch, data_store.serialize(), num_ranks)
+        partial_run_experiments_node = partial(
+            run_experiments_node, batch, data_store.serialize(), num_ranks
+        )
         partial_check_nans = partial(check_nans, data_store, num_ranks)
         partial_choose_new_cfls = partial(chose_new_cfls, data_store, num_ranks)
 
@@ -245,23 +259,25 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
         # and run_experiments parses that text and runs the (fake) simulation.
         # No LLM, no agents, no inference service — fully deterministic.
         # This is NOT the recommended way to structure a production pipeline; it is only for demonstration purposes and attempts to align with how the original agent workflow was structured.
-        pipeline = Pipeline(nodes=[
-            PipelineNode(
-                agent_id="check_nans",
-                fn=partial_check_nans,
-                depends_on=[],
-            ),
-            PipelineNode(
-                agent_id="choose_new_cfls",
-                fn=partial_choose_new_cfls,
-                depends_on=["check_nans"],
-            ),
-            PipelineNode(
-                agent_id="run_experiments",
-                fn=partial_run_experiments_node,
-                depends_on=["choose_new_cfls"],
-            ),
-        ])
+        pipeline = Pipeline(
+            nodes=[
+                PipelineNode(
+                    agent_id="check_nans",
+                    fn=partial_check_nans,
+                    depends_on=[],
+                ),
+                PipelineNode(
+                    agent_id="choose_new_cfls",
+                    fn=partial_choose_new_cfls,
+                    depends_on=["check_nans"],
+                ),
+                PipelineNode(
+                    agent_id="run_experiments",
+                    fn=partial_run_experiments_node,
+                    depends_on=["choose_new_cfls"],
+                ),
+            ]
+        )
 
         # --- Iterative CFL search -----------------------------------------
         # The orchestrator and Batch are created ONCE and reused every round:
@@ -283,7 +299,7 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
                 # Bootstrap: run the user-provided CFLs once so the NaN
                 # checker has results to scan on the first pipeline pass.
                 data_store["cfl_values"] = init_cfls
-                run_experiments_node(batch, data_store.serialize(),  num_ranks, None)
+                run_experiments_node(batch, data_store.serialize(), num_ranks, None)
 
             print("=" * 60, flush=True)
             print(f"Iteration {iteration + 1}/{iterations}", flush=True)
@@ -295,13 +311,15 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
             result = orchestrator.run(user_input=user_prompt, batch=batch)
             summary = (
                 result.get("response", str(result))
-                if isinstance(result, dict) else str(result)
+                if isinstance(result, dict)
+                else str(result)
             )
             print("\n--- Latest run ---", flush=True)
             print(summary, flush=True)
 
     except Exception as exc:
         import traceback
+
         print(f"\n[error] CFL search failed: {exc}", flush=True)
         traceback.print_exc()
     finally:
@@ -314,6 +332,10 @@ def run(init_cfls, num_ranks, iterations, user_prompt):
         if batch is not None:
             try:
                 batch.join()
+            except Exception:
+                pass
+            try:
+                batch.destroy(force_timeout=1.0)
             except Exception:
                 pass
             print("[teardown] Batch joined (results DDict destroyed).", flush=True)
@@ -342,4 +364,4 @@ if __name__ == "__main__":
         "stable ranks and decreasing it for ranks that produced "
         "NaNs."
     )
-    run(init_cfls=init_cfls, num_ranks=NUM_RANKS, iterations=NUM_ITERATIONS, user_prompt=user_prompt)
+    run(init_cfls=init_cfls, num_ranks=2, iterations=1, user_prompt=user_prompt)
