@@ -1,0 +1,8 @@
+{
+  "name": "Dev Container (CI Build)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode"
+}
