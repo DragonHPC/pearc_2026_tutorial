@@ -49,4 +49,5 @@ jobs:
           imageName: ${{ env.IMAGE_NAME }}
           imageTag: latest
           platform: linux/amd64,linux/arm64
+          no-cache: true
           push: always
