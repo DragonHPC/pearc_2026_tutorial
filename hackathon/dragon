@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cleanup() {
+    rm -f slurm.yaml
+}
+
+dragon-network-config --wlm slurm -y --no-stdout
+cat slurm.yaml | sed 's/\.ib\.bridges2\.psc\.edu//g' > s.yaml
+mv s.yaml slurm.yaml
+
+path=$(python -c "import sysconfig; scripts_path = sysconfig.get_path('scripts'); print(scripts_path)")
+
+trap cleanup EXIT
+
+${path}/dragon --network-config slurm.yaml $@
