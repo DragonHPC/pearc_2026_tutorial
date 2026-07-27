@@ -34,6 +34,16 @@ Look at the examples in the Dragon
 [multiprocessing examples](https://dragonhpc.github.io/dragon/doc/_build/html/cbook/multiprocessing.html) and
 try running them.
 
+### Running tutorial content
+
+The `dragonhpc` module has the minimal environment needed to run `multiprocessing` with Dragon. To run the more
+examples in the tutorial you should create your own Python virtual environment and install the additional
+dependencies. There is a script that does that for you that you can run from some work directory:
+
+```bash
+$PROJECT/../shared/bin/makeenv.sh
+```
+
 # Create new examples
 
 We love new example code! Create your own and create a pull request on the (Dragon repo)[https://github.com/DragonHPC/dragon].
