@@ -42,7 +42,7 @@ We meet in Room 202AB for the tutorial at 9am.
 | 12:30 - 1:30   | 60 |   | Lunch Break |  |
 | 1:30 -  2:00  | 30 | 2 | [Orchestrating MPI applications with the<br>ProcessGroup API](course2/orchestrating_MPI/processgroup_mpi_tutorial.ipynb) | P. Mendygral |
 | 2:00 - 2:30  | 30 | 2 | [Sharing data between MPI and other processes<br>using the DDict API](course2/sharing_data_mpi_and_others/ddict_tutorial_2.ipynb) | K. Lee<br>C. Simpson |
-| 2:30 - 3:00  | 30 | 3 | [Coupling MPI applications with PyTorch-based<br>inference and training](course3/coupling_MPI_and_AI/mpi_pytorch_coupled_tutorial.ipynb) | P. Mendygral<br>C. Simpson |
+| 2:30 - 3:00  | 30 | 3 | [Coupling MPI applications with PyTorch-based<br>inference and training](course3/coupling_MPI_and_AI/agentic_loop_exercises.ipynb) | P. Mendygral<br>C. Simpson |
 | 3:00 - 3:30  | 30 | | Coffee Break | |
 | 3:30 - 3:45  | 15 | 3 | Checkpoint with attendees/Q&A | All presenters |
 | 3:45 - 4:50  | 65 |  | Review/discussion/Q&A/hackathon | All presenters |
